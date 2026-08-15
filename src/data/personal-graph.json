@@ -1,0 +1,1349 @@
+{
+  "meta": {
+    "title": "Personal BJJ Game Automata",
+    "description": "Finite-state model of positions (states) and techniques (transitions), seeded from Obsidian notes and aligned with open-source BJJ graph ontologies (bjjgraph, daveyarwood/bjj-graph, GrappleMap).",
+    "sources": [
+      "Obsidian: BJJ/Outline.md",
+      "Obsidian: BJJ/Best moves.md",
+      "Obsidian: BJJ/Game Plan/Standing.md",
+      "Obsidian: BJJ/Journal (2024-01 → 2024-04)",
+      "https://github.com/diogoseca/bjjgraph",
+      "https://github.com/daveyarwood/bjj-graph",
+      "https://github.com/pajama/GrappleMap"
+    ],
+    "generatedFrom": "vault://BJJ/BJJ"
+  },
+  "positions": [
+    {
+      "id": "standing",
+      "label": "Standing / Neutral",
+      "category": "standing",
+      "proficiency": "purple",
+      "outlineBelt": "purple",
+      "role": "neutral",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "collar_tie",
+      "label": "Collar Tie",
+      "category": "clinch",
+      "outlineBelt": "purple",
+      "role": "neutral",
+      "notes": "Listed in Outline under Standing; no personal proficiency rating yet.",
+      "sources": [
+        "Outline.md",
+        "Game Plan/Standing.md"
+      ]
+    },
+    {
+      "id": "russian_tie",
+      "label": "Russian Tie",
+      "category": "clinch",
+      "proficiency": "purple",
+      "outlineBelt": "purple",
+      "role": "neutral",
+      "notes": "High journal heat — primary standing entry system.",
+      "sources": [
+        "Outline.md",
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "over_under",
+      "label": "Over / Under Clinch",
+      "category": "clinch",
+      "outlineBelt": "purple",
+      "role": "neutral",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "front_headlock",
+      "label": "Front Headlock",
+      "category": "clinch",
+      "proficiency": "black",
+      "outlineBelt": "purple",
+      "role": "top",
+      "notes": "Best-moves black; major strength hub.",
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "closed_guard_bottom",
+      "label": "Closed Guard (Bottom)",
+      "category": "guard",
+      "proficiency": "blue",
+      "outlineBelt": "blue",
+      "role": "bottom",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "closed_guard_top",
+      "label": "Closed Guard (Top)",
+      "category": "pass",
+      "proficiency": "blue",
+      "role": "top",
+      "notes": "Opening closed guard appears in Focus journals.",
+      "sources": [
+        "Journal"
+      ]
+    },
+    {
+      "id": "open_guard_bottom",
+      "label": "Open Guard (Bottom)",
+      "category": "guard",
+      "proficiency": "blue",
+      "outlineBelt": "blue",
+      "role": "bottom",
+      "sources": [
+        "Outline.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "open_guard_top",
+      "label": "Open Guard (Top)",
+      "category": "pass",
+      "proficiency": "brown",
+      "role": "top",
+      "notes": "Guard passes rated brown overall.",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "half_guard_bottom",
+      "label": "Half Guard (Bottom)",
+      "category": "guard",
+      "proficiency": "purple",
+      "outlineBelt": "purple",
+      "role": "bottom",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "half_guard_top",
+      "label": "Half Guard (Top)",
+      "category": "pass",
+      "proficiency": "black",
+      "role": "top",
+      "notes": "Hip switch from half rated black.",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "deep_half_bottom",
+      "label": "Deep Half (Bottom)",
+      "category": "guard",
+      "proficiency": "purple",
+      "outlineBelt": "purple",
+      "role": "bottom",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "butterfly_bottom",
+      "label": "Butterfly Guard",
+      "category": "guard",
+      "proficiency": "blue",
+      "outlineBelt": "blue",
+      "role": "bottom",
+      "sources": [
+        "Outline.md",
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "shin_to_shin",
+      "label": "Shin to Shin",
+      "category": "guard",
+      "proficiency": "blue",
+      "role": "bottom",
+      "sources": [
+        "Outline.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "dogfight",
+      "label": "Dogfight",
+      "category": "transition",
+      "proficiency": "purple",
+      "role": "either",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "side_control_top",
+      "label": "Side Control (Top)",
+      "category": "pin",
+      "proficiency": "brown",
+      "outlineBelt": "brown",
+      "role": "top",
+      "notes": "Journal: side mount submissions are there — stop working them; reinforce back takes.",
+      "sources": [
+        "Outline.md",
+        "Journal 2024-04-08"
+      ]
+    },
+    {
+      "id": "side_control_bottom",
+      "label": "Side Control (Bottom)",
+      "category": "pin",
+      "role": "bottom",
+      "notes": "Escapes appear in Focus (knee to elbow) but no proficiency rating.",
+      "sources": [
+        "Journal"
+      ]
+    },
+    {
+      "id": "knee_on_belly",
+      "label": "Knee on Belly",
+      "category": "pin",
+      "role": "top",
+      "sources": [
+        "Journal 2024-02-27"
+      ]
+    },
+    {
+      "id": "mount_top",
+      "label": "Full Mount",
+      "category": "pin",
+      "proficiency": "brown",
+      "outlineBelt": "brown",
+      "role": "top",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "high_mount",
+      "label": "High Mount",
+      "category": "pin",
+      "outlineBelt": "brown",
+      "role": "top",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "low_mount",
+      "label": "Low Mount / Leg Ride",
+      "category": "pin",
+      "outlineBelt": "brown",
+      "role": "top",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "gift_wrap",
+      "label": "Gift Wrap",
+      "category": "pin",
+      "outlineBelt": "brown",
+      "role": "top",
+      "notes": "Listed under Full Mount with no outbound submissions attached in Outline.",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "back_control",
+      "label": "Back Control",
+      "category": "back",
+      "proficiency": "purple",
+      "outlineBelt": "brown",
+      "role": "top",
+      "sources": [
+        "Outline.md",
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "crucifix",
+      "label": "Crucifix",
+      "category": "back",
+      "outlineBelt": "brown",
+      "role": "top",
+      "notes": "Only Kimura listed — thin outbound graph.",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "submitted",
+      "label": "Submission (Terminal)",
+      "category": "submission",
+      "role": "either",
+      "notes": "Accepting state — match ends.",
+      "sources": [
+        "bjjgraph ontology"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t_firemans",
+      "label": "Fireman's Carry",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "proficiency": "brown",
+      "journalMentions": 2,
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_john_smith_single",
+      "label": "John Smith Single",
+      "from": "russian_tie",
+      "to": "half_guard_top",
+      "kind": "takedown",
+      "proficiency": "blue",
+      "journalMentions": 2,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-03-25"
+      ]
+    },
+    {
+      "id": "t_high_crotch",
+      "label": "High Crotch",
+      "from": "standing",
+      "to": "half_guard_top",
+      "kind": "takedown",
+      "proficiency": "blue",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_double_leg",
+      "label": "Double Leg",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "proficiency": "blue",
+      "journalMentions": 1,
+      "sources": [
+        "Best moves.md",
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_snap_down",
+      "label": "Snap Down",
+      "from": "russian_tie",
+      "to": "front_headlock",
+      "kind": "takedown",
+      "proficiency": "purple",
+      "journalMentions": 4,
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_russian_drag",
+      "label": "Russian Drag Down",
+      "from": "russian_tie",
+      "to": "front_headlock",
+      "kind": "takedown",
+      "proficiency": "purple",
+      "journalMentions": 3,
+      "notes": "Keep waiter elbow (journal cue).",
+      "sources": [
+        "Journal 2024-01-15",
+        "Journal 2024-01-16"
+      ]
+    },
+    {
+      "id": "t_russian_single",
+      "label": "Russian → Single",
+      "from": "russian_tie",
+      "to": "half_guard_top",
+      "kind": "takedown",
+      "proficiency": "blue",
+      "journalMentions": 2,
+      "sources": [
+        "Journal 2024-01-17"
+      ]
+    },
+    {
+      "id": "t_snow_shovel",
+      "label": "Snow Shovel",
+      "from": "russian_tie",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_fhl_back_take",
+      "label": "Front Headlock → Back Take",
+      "from": "front_headlock",
+      "to": "back_control",
+      "kind": "back_take",
+      "proficiency": "black",
+      "journalMentions": 2,
+      "sources": [
+        "Outline.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_guillotine",
+      "label": "High Elbow Guillotine",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "journalMentions": 6,
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_anaconda",
+      "label": "Anaconda",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "journalMentions": 2,
+      "notes": "Improve: finish (journal).",
+      "sources": [
+        "Journal 2024-01-17",
+        "Journal 2024-01-18"
+      ]
+    },
+    {
+      "id": "t_chin_strap_mount",
+      "label": "Chin Strap → Mount",
+      "from": "front_headlock",
+      "to": "mount_top",
+      "kind": "transition",
+      "journalMentions": 1,
+      "sources": [
+        "Journal 2024-01-18"
+      ]
+    },
+    {
+      "id": "t_scissor_sweep",
+      "label": "Scissor Sweep",
+      "from": "closed_guard_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "proficiency": "blue",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_hip_bump",
+      "label": "Hip Bump Sweep",
+      "from": "closed_guard_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "proficiency": "blue",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_kimura_sweep",
+      "label": "Kimura Trap Sweep",
+      "from": "closed_guard_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "proficiency": "purple",
+      "journalMentions": 2,
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_cg_triangle",
+      "label": "Triangle (Closed Guard)",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_cg_armbar",
+      "label": "Armbar (Closed Guard)",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "blue",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_cg_kimura",
+      "label": "Kimura (Closed Guard)",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "brown",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_cg_guillotine",
+      "label": "Guillotine (Closed Guard)",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_cg_wristlock",
+      "label": "Wrist Lock (Closed Guard)",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_dummy_sweep",
+      "label": "Dummy Sweep",
+      "from": "open_guard_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "journalMentions": 2,
+      "sources": [
+        "Outline.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_shin_sweep",
+      "label": "Shin to Shin Sweep",
+      "from": "shin_to_shin",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_shin_back",
+      "label": "Shin to Shin → Back Take",
+      "from": "shin_to_shin",
+      "to": "back_control",
+      "kind": "back_take",
+      "journalMentions": 2,
+      "sources": [
+        "Journal 2024-01-15"
+      ]
+    },
+    {
+      "id": "t_arm_drag_back",
+      "label": "Arm Drag → Back Take",
+      "from": "open_guard_bottom",
+      "to": "back_control",
+      "kind": "back_take",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_enter_shin",
+      "label": "Open Guard → Shin to Shin",
+      "from": "open_guard_bottom",
+      "to": "shin_to_shin",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_hg_toehold",
+      "label": "Toe Hold (Half Guard)",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_hg_kimura",
+      "label": "Kimura (Half Guard)",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "brown",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_hg_darce",
+      "label": "Darce (Half Guard)",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "journalMentions": 1,
+      "sources": [
+        "Outline.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_hg_wristlock",
+      "label": "Wrist Lock (Half Guard)",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_hg_kneebar",
+      "label": "Kneebar (Half Guard)",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "journalMentions": 1,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-03-04"
+      ]
+    },
+    {
+      "id": "t_dogfight_knee_pick",
+      "label": "Dogfight Knee Pick",
+      "from": "dogfight",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "proficiency": "purple",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_dh_ankle",
+      "label": "Deep Half Ankle Grab",
+      "from": "deep_half_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "proficiency": "purple",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_dh_backdoor",
+      "label": "Deep Half Backdoor",
+      "from": "deep_half_bottom",
+      "to": "back_control",
+      "kind": "back_take",
+      "proficiency": "blue",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_dh_over_under",
+      "label": "Deep Half Over/Under Sweep",
+      "from": "deep_half_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "proficiency": "purple",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_enter_deep_half",
+      "label": "Half → Deep Half",
+      "from": "half_guard_bottom",
+      "to": "deep_half_bottom",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_enter_dogfight",
+      "label": "Half → Dogfight",
+      "from": "half_guard_bottom",
+      "to": "dogfight",
+      "kind": "transition",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_bf_sweep",
+      "label": "Basic Butterfly Sweep",
+      "from": "butterfly_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "proficiency": "blue",
+      "journalMentions": 3,
+      "sources": [
+        "Best moves.md",
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_half_bf_ou",
+      "label": "Half Butterfly Over/Under",
+      "from": "butterfly_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "proficiency": "purple",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_bf_to_x",
+      "label": "Butterfly → X-Guard",
+      "from": "butterfly_bottom",
+      "to": "open_guard_bottom",
+      "kind": "transition",
+      "journalMentions": 1,
+      "notes": "Journal focus; X-Guard not yet a first-class node — maps to open guard for now.",
+      "sources": [
+        "Journal 2024-03-06"
+      ]
+    },
+    {
+      "id": "t_pass_over_under",
+      "label": "Over/Under Pass",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "purple",
+      "journalMentions": 3,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-04-07"
+      ]
+    },
+    {
+      "id": "t_pass_knee_cut",
+      "label": "Knee Cut / Baseball Slide",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "brown",
+      "journalMentions": 2,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-04-07"
+      ]
+    },
+    {
+      "id": "t_pass_hip_switch",
+      "label": "Hip Switch from Half",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "black",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_pass_leg_drag",
+      "label": "Leg Drag / Torreando",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "blue",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_pass_double_over",
+      "label": "Double Over Smash",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "brown",
+      "journalMentions": 2,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-04-09"
+      ]
+    },
+    {
+      "id": "t_pass_diaper",
+      "label": "Diaper Change",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "proficiency": "purple",
+      "journalMentions": 1,
+      "sources": [
+        "Best moves.md",
+        "Journal 2024-04-07"
+      ]
+    },
+    {
+      "id": "t_open_closed",
+      "label": "Open Closed Guard",
+      "from": "closed_guard_top",
+      "to": "open_guard_top",
+      "kind": "pass",
+      "journalMentions": 3,
+      "sources": [
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_land_in_pass",
+      "label": "Takedown → Pass Position",
+      "from": "standing",
+      "to": "open_guard_top",
+      "kind": "transition",
+      "journalMentions": 1,
+      "notes": "Journal: landing in a guard pass.",
+      "sources": [
+        "Journal 2024-03-25"
+      ]
+    },
+    {
+      "id": "t_sc_north_south",
+      "label": "North-South Choke",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "black",
+      "journalMentions": 2,
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_sc_kimura",
+      "label": "Kimura (Side)",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "brown",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_sc_keylock",
+      "label": "Keylock / Americana",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_sc_darce",
+      "label": "Darce (Side)",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_sc_guillotine",
+      "label": "Guillotine (Side)",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_sc_wristlock",
+      "label": "Wrist Lock (Side)",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_sc_to_mount",
+      "label": "Side → Mount",
+      "from": "side_control_top",
+      "to": "mount_top",
+      "kind": "transition",
+      "sources": [
+        "bjjgraph positional hierarchy"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "t_sc_to_back",
+      "label": "Side → Back Take",
+      "from": "side_control_top",
+      "to": "back_control",
+      "kind": "back_take",
+      "journalMentions": 2,
+      "notes": "Journal: reinforce success with back takes instead of more side subs.",
+      "sources": [
+        "Journal 2024-04-08"
+      ]
+    },
+    {
+      "id": "t_sc_escape",
+      "label": "Side Escape (Knee to Elbow)",
+      "from": "side_control_bottom",
+      "to": "half_guard_bottom",
+      "kind": "escape",
+      "journalMentions": 1,
+      "sources": [
+        "Journal 2024-01-16"
+      ]
+    },
+    {
+      "id": "t_kob_armbar",
+      "label": "Armbar from Knee on Belly",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "journalMentions": 1,
+      "sources": [
+        "Journal 2024-02-27"
+      ]
+    },
+    {
+      "id": "t_side_to_kob",
+      "label": "Side → Knee on Belly",
+      "from": "side_control_top",
+      "to": "knee_on_belly",
+      "kind": "transition",
+      "sources": [
+        "Journal 2024-02-27"
+      ]
+    },
+    {
+      "id": "t_mount_ezekiel",
+      "label": "Ezekiel (Mount)",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_high_ezekiel",
+      "label": "Ezekiel (High Mount)",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_low_ezekiel",
+      "label": "Ezekiel (Low Mount)",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_mount_to_high",
+      "label": "Mount → High Mount",
+      "from": "mount_top",
+      "to": "high_mount",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_mount_to_low",
+      "label": "Mount → Low Mount",
+      "from": "mount_top",
+      "to": "low_mount",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_mount_to_gift",
+      "label": "Mount → Gift Wrap",
+      "from": "mount_top",
+      "to": "gift_wrap",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_mount_to_back",
+      "label": "Mount → Back Take",
+      "from": "mount_top",
+      "to": "back_control",
+      "kind": "back_take",
+      "journalMentions": 1,
+      "sources": [
+        "Journal 2024-04-09"
+      ]
+    },
+    {
+      "id": "t_rnc",
+      "label": "Rear Naked Choke",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Outline.md",
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_bulldog",
+      "label": "Bulldog Choke",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_back_armbar",
+      "label": "Armbar (Back)",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "blue",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_crucifix_kimura",
+      "label": "Kimura (Crucifix)",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "brown",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_heel_hook",
+      "label": "Heel Hook",
+      "from": "open_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "blue",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_straight_ankle",
+      "label": "Straight Ankle Lock",
+      "from": "open_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "proficiency": "purple",
+      "sources": [
+        "Best moves.md"
+      ]
+    },
+    {
+      "id": "t_enter_russian",
+      "label": "Hand Fight → Russian Tie",
+      "from": "standing",
+      "to": "russian_tie",
+      "kind": "transition",
+      "journalMentions": 5,
+      "sources": [
+        "Journal"
+      ]
+    },
+    {
+      "id": "t_enter_collar",
+      "label": "Hand Fight → Collar Tie",
+      "from": "standing",
+      "to": "collar_tie",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_enter_ou_clinch",
+      "label": "Hand Fight → Over/Under",
+      "from": "standing",
+      "to": "over_under",
+      "kind": "transition",
+      "sources": [
+        "Outline.md"
+      ]
+    },
+    {
+      "id": "t_hg_bottom_back",
+      "label": "Back Take from Bottom Half",
+      "from": "half_guard_bottom",
+      "to": "back_control",
+      "kind": "back_take",
+      "journalMentions": 1,
+      "notes": "Improve target (journal).",
+      "sources": [
+        "Journal 2024-04-09"
+      ]
+    },
+    {
+      "id": "t_hg_top_back",
+      "label": "Back Take from Top Half",
+      "from": "half_guard_top",
+      "to": "back_control",
+      "kind": "back_take",
+      "journalMentions": 1,
+      "notes": "Improve target (journal).",
+      "sources": [
+        "Journal 2024-04-09"
+      ]
+    },
+    {
+      "id": "t_pull_by",
+      "label": "Pull By",
+      "from": "collar_tie",
+      "to": "russian_tie",
+      "kind": "transition",
+      "sources": [
+        "ui:add-move"
+      ],
+      "proficiency": "black"
+    },
+    {
+      "id": "t_fireman_s_carry",
+      "label": "FIreman's Carry",
+      "from": "over_under",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "sources": [
+        "ui:add-move"
+      ],
+      "proficiency": "black"
+    },
+    {
+      "id": "t_back_take",
+      "label": "Back Take",
+      "from": "gift_wrap",
+      "to": "back_control",
+      "kind": "transition",
+      "sources": [
+        "ui:add-move"
+      ]
+    },
+    {
+      "id": "t_back_take_2",
+      "label": "Back Take",
+      "from": "gift_wrap",
+      "to": "back_control",
+      "kind": "transition",
+      "sources": [
+        "ui:add-move"
+      ],
+      "proficiency": "purple"
+    }
+  ],
+  "journalMentions": [
+    {
+      "date": "2024-01-15",
+      "section": "focus",
+      "text": "Russian tie → drag down; Snap down → front head lock; Shin to shin → back take",
+      "linkedTransitionIds": [
+        "t_russian_drag",
+        "t_snap_down",
+        "t_shin_back"
+      ],
+      "linkedPositionIds": [
+        "russian_tie",
+        "front_headlock",
+        "shin_to_shin"
+      ]
+    },
+    {
+      "date": "2024-01-16",
+      "section": "focus",
+      "text": "Russian tie → drag down (waiter elbow); Side control escapes → knee to elbow",
+      "linkedTransitionIds": [
+        "t_russian_drag",
+        "t_sc_escape"
+      ]
+    },
+    {
+      "date": "2024-01-16",
+      "section": "improve",
+      "text": "Closing distance from neutral; Finishing single from underhooks; Open guard grips; Breaking open guard",
+      "linkedPositionIds": [
+        "standing",
+        "open_guard_bottom",
+        "closed_guard_top"
+      ]
+    },
+    {
+      "date": "2024-01-16",
+      "section": "sustain",
+      "text": "One arm guillotine; Single leg finish; Mount escapes",
+      "linkedTransitionIds": [
+        "t_guillotine"
+      ],
+      "linkedPositionIds": [
+        "mount_top"
+      ]
+    },
+    {
+      "date": "2024-01-17",
+      "section": "focus",
+      "text": "Russian Tie → single; Close distance on feet; Teach: half guard pass → toe hold",
+      "linkedTransitionIds": [
+        "t_russian_single",
+        "t_hg_toehold"
+      ]
+    },
+    {
+      "date": "2024-01-18",
+      "section": "focus",
+      "text": "Anaconda finish; Shin to shin; Butterfly sweep",
+      "linkedTransitionIds": [
+        "t_anaconda",
+        "t_bf_sweep"
+      ],
+      "linkedPositionIds": [
+        "shin_to_shin"
+      ]
+    },
+    {
+      "date": "2024-02-06",
+      "section": "focus",
+      "text": "Competition: hand fighting, escapes, front headlock, guard, Kimura trap, armbar drill",
+      "linkedPositionIds": [
+        "front_headlock",
+        "standing"
+      ],
+      "linkedTransitionIds": [
+        "t_kimura_sweep",
+        "t_cg_armbar"
+      ]
+    },
+    {
+      "date": "2024-02-07",
+      "section": "sustain",
+      "text": "Darce; Guillotine; North south",
+      "linkedTransitionIds": [
+        "t_hg_darce",
+        "t_guillotine",
+        "t_sc_north_south"
+      ]
+    },
+    {
+      "date": "2024-04-07",
+      "section": "focus",
+      "text": "Guard passing systems: over/under, knee cut, double under, double over smash",
+      "linkedTransitionIds": [
+        "t_pass_over_under",
+        "t_pass_knee_cut",
+        "t_pass_diaper",
+        "t_pass_double_over"
+      ]
+    },
+    {
+      "date": "2024-04-08",
+      "section": "improve",
+      "text": "Guard retention is trash; need flexibility; DLH/RDH may be the answer",
+      "linkedPositionIds": [
+        "open_guard_bottom",
+        "closed_guard_bottom"
+      ]
+    },
+    {
+      "date": "2024-04-08",
+      "section": "sustain",
+      "text": "Back takes getting there; side mount submissions are there (stop working them); reinforce back takes",
+      "linkedTransitionIds": [
+        "t_sc_to_back"
+      ],
+      "linkedPositionIds": [
+        "side_control_top",
+        "back_control"
+      ]
+    },
+    {
+      "date": "2024-04-09",
+      "section": "improve",
+      "text": "Back take from bottom half; back take from top half; single leg",
+      "linkedTransitionIds": [
+        "t_hg_bottom_back",
+        "t_hg_top_back"
+      ]
+    },
+    {
+      "date": "2024-04-13",
+      "section": "improve",
+      "text": "Loop choke attacks; guard retention (early and mid stage)",
+      "linkedPositionIds": [
+        "open_guard_bottom"
+      ]
+    }
+  ]
+}

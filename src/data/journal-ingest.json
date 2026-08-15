@@ -1,0 +1,437 @@
+{
+  "generatedAt": "2026-07-11T01:54:20.265Z",
+  "vault": "/Users/hellbentactual/Library/Mobile Documents/iCloud~md~obsidian/Documents/BJJ/BJJ",
+  "mentionCount": 38,
+  "frequency": {
+    "russian_tie": 9,
+    "front_headlock": 3,
+    "shin_to_shin": 2,
+    "back_control": 4,
+    "t_snap_down": 2,
+    "side_control_top": 2,
+    "standing": 5,
+    "mount_top": 5,
+    "t_guillotine": 3,
+    "half_guard_bottom": 3,
+    "t_anaconda": 2,
+    "butterfly_bottom": 5,
+    "t_cg_armbar": 2,
+    "t_firemans": 1,
+    "t_sc_north_south": 1,
+    "t_hg_darce": 1,
+    "open_guard_bottom": 5,
+    "t_pass_knee_cut": 1,
+    "t_pass_over_under": 2,
+    "t_pass_double_over": 2,
+    "t_pass_diaper": 1
+  },
+  "journalMentions": [
+    {
+      "date": "2024-01-15",
+      "section": "focus",
+      "text": "Russian tie → drag down Russian tie →Snap down → front head lock Shin to shin → back take",
+      "linkedPositionIds": [
+        "russian_tie",
+        "front_headlock",
+        "shin_to_shin",
+        "back_control"
+      ],
+      "linkedTransitionIds": [
+        "t_snap_down"
+      ],
+      "sourceFile": "Journal/2024-01-15 1801.md"
+    },
+    {
+      "date": "2024-01-16",
+      "section": "focus",
+      "text": "Russian tie →drag down (keep waiter elbow) Side control escapes →Knee to elbow",
+      "linkedPositionIds": [
+        "russian_tie",
+        "side_control_top"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-16 0501.md"
+    },
+    {
+      "date": "2024-01-16",
+      "section": "improve",
+      "text": "Closing distance from neutral Finishing single from underhooks Open guardgrips Breaking open guard",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-16 0501.md"
+    },
+    {
+      "date": "2024-01-16",
+      "section": "sustain",
+      "text": "One aRm guillotine Single leg finish Mount escapes",
+      "linkedPositionIds": [
+        "standing",
+        "mount_top"
+      ],
+      "linkedTransitionIds": [
+        "t_guillotine"
+      ],
+      "sourceFile": "Journal/2024-01-16 0501.md"
+    },
+    {
+      "date": "2024-01-17",
+      "section": "focus",
+      "text": "Russian Tie→ single Close distance on feet Teach: half guard pass → toe hold",
+      "linkedPositionIds": [
+        "russian_tie",
+        "half_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-17 0501.md"
+    },
+    {
+      "date": "2024-01-17",
+      "section": "improve",
+      "text": "Anaconda finish Single leg entry",
+      "linkedPositionIds": [
+        "standing"
+      ],
+      "linkedTransitionIds": [
+        "t_anaconda"
+      ],
+      "sourceFile": "Journal/2024-01-17 0501.md"
+    },
+    {
+      "date": "2024-01-17",
+      "section": "sustain",
+      "text": "Half guard octopus Open guard passing",
+      "linkedPositionIds": [
+        "half_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-17 0501.md"
+    },
+    {
+      "date": "2024-01-18",
+      "section": "focus",
+      "text": "Anaconda choke finish Shin t0 shin ButterflySweep",
+      "linkedPositionIds": [
+        "butterfly_bottom",
+        "shin_to_shin"
+      ],
+      "linkedTransitionIds": [
+        "t_anaconda"
+      ],
+      "sourceFile": "Journal/2024-01-18 1601.md"
+    },
+    {
+      "date": "2024-01-18",
+      "section": "improve",
+      "text": "Sweeps Single toDouble pickup",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-18 1601.md"
+    },
+    {
+      "date": "2024-01-18",
+      "section": "sustain",
+      "text": "Snap down t, double Guillotine Chin Strap to mount",
+      "linkedPositionIds": [
+        "mount_top"
+      ],
+      "linkedTransitionIds": [
+        "t_guillotine",
+        "t_snap_down"
+      ],
+      "sourceFile": "Journal/2024-01-18 1601.md"
+    },
+    {
+      "date": "2024-01-24",
+      "section": "focus",
+      "text": "Russian tie Single leg Opening closed guard",
+      "linkedPositionIds": [
+        "russian_tie",
+        "standing"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-01-24 0501.md"
+    },
+    {
+      "date": "2024-02-06",
+      "section": "focus",
+      "text": "Hand fighting Escapes Front headlock Guard KimoraTrap Armbar drill",
+      "linkedPositionIds": [
+        "front_headlock"
+      ],
+      "linkedTransitionIds": [
+        "t_cg_armbar"
+      ],
+      "sourceFile": "Journal/2024-02-06 0402.md"
+    },
+    {
+      "date": "2024-02-06",
+      "section": "improve",
+      "text": "Shoulder crunch Defense Russian entries (GoHighOnShoulder)",
+      "linkedPositionIds": [
+        "russian_tie"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-06 0402.md"
+    },
+    {
+      "date": "2024-02-06",
+      "section": "sustain",
+      "text": "Guillotine Fireman's Front headlock Wrist locks",
+      "linkedPositionIds": [
+        "front_headlock"
+      ],
+      "linkedTransitionIds": [
+        "t_guillotine",
+        "t_firemans"
+      ],
+      "sourceFile": "Journal/2024-02-06 0402.md"
+    },
+    {
+      "date": "2024-02-07",
+      "section": "focus",
+      "text": "Opening Guard Russian tie.",
+      "linkedPositionIds": [
+        "russian_tie"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-07 0502.md"
+    },
+    {
+      "date": "2024-02-07",
+      "section": "improve",
+      "text": "Russian tie snap ClosedGuardPassing",
+      "linkedPositionIds": [
+        "russian_tie"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-07 0502.md"
+    },
+    {
+      "date": "2024-02-07",
+      "section": "sustain",
+      "text": "Darce Guillotone North south",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [
+        "t_sc_north_south",
+        "t_hg_darce"
+      ],
+      "sourceFile": "Journal/2024-02-07 0502.md"
+    },
+    {
+      "date": "2024-02-09",
+      "section": "focus",
+      "text": "Keep the threat Under hooks from butterfly",
+      "linkedPositionIds": [
+        "butterfly_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-09 0502.md"
+    },
+    {
+      "date": "2024-02-25",
+      "section": "focus",
+      "text": "Shoulder crunch Butterfly - sweep - Triangle TEach - Head position - neutral - guard - offense",
+      "linkedPositionIds": [
+        "butterfly_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-25 2002.md"
+    },
+    {
+      "date": "2024-02-27",
+      "section": "focus",
+      "text": "Butterfly and medium distance open guard",
+      "linkedPositionIds": [
+        "butterfly_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-02-27 0502.md"
+    },
+    {
+      "date": "2024-03-04",
+      "section": "focus",
+      "text": "Arm bar trap from open guard?",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [
+        "t_cg_armbar"
+      ],
+      "sourceFile": "Journal/2024-03-04 0503.md"
+    },
+    {
+      "date": "2024-03-04",
+      "section": "improve",
+      "text": "Take downs Guard work",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-04 0503.md"
+    },
+    {
+      "date": "2024-03-04",
+      "section": "sustain",
+      "text": "Kimora Lo c k",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-04 0503.md"
+    },
+    {
+      "date": "2024-03-06",
+      "section": "focus",
+      "text": "Open butterfly to x-guard Hand behind shoulder Control",
+      "linkedPositionIds": [
+        "butterfly_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-06 0503.md"
+    },
+    {
+      "date": "2024-03-25",
+      "section": "focus",
+      "text": "Takedowns Russian to John smith single Landing In A guard pass Angles",
+      "linkedPositionIds": [
+        "russian_tie"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-25 0503.md"
+    },
+    {
+      "date": "2024-03-26",
+      "section": "focus",
+      "text": "Take downs Russian snap Low single Ankle pick",
+      "linkedPositionIds": [
+        "russian_tie"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-26 0503.md"
+    },
+    {
+      "date": "2024-03-26",
+      "section": "improve",
+      "text": "Guard retention ''",
+      "linkedPositionIds": [
+        "open_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-26 0503.md"
+    },
+    {
+      "date": "2024-03-26",
+      "section": "sustain",
+      "text": "Td Top submissions",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-03-26 0503.md"
+    },
+    {
+      "date": "2024-04-07",
+      "section": "focus",
+      "text": "Guard passing Over / Under Threats : triangle, sweeps Steps Open Guard Knee forward Step Over inside leg Option: Large backstep Baseball slide (with underhook) Knee Cut Mid range Must have underhook Head position Backtake Awareness Bail out procedures Leg entry Kesa Gatame finish",
+      "linkedPositionIds": [
+        "mount_top"
+      ],
+      "linkedTransitionIds": [
+        "t_pass_knee_cut",
+        "t_pass_over_under",
+        "t_pass_double_over",
+        "t_pass_diaper"
+      ],
+      "sourceFile": "Journal/2024-04-07 2004.md"
+    },
+    {
+      "date": "2024-04-08",
+      "section": "focus",
+      "text": "Guard Passing Over / Under pass",
+      "linkedPositionIds": [],
+      "linkedTransitionIds": [
+        "t_pass_over_under"
+      ],
+      "sourceFile": "Journal/2024-04-08 0404.md"
+    },
+    {
+      "date": "2024-04-08",
+      "section": "improve",
+      "text": "Guard retention is trash Need better (any) flexibility DLH RDH may be the answer",
+      "linkedPositionIds": [
+        "open_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-08 0404.md"
+    },
+    {
+      "date": "2024-04-08",
+      "section": "sustain",
+      "text": "Back takes are getting there Side mount submissions are there (stop working them!) Need to reinforce success with back takes",
+      "linkedPositionIds": [
+        "side_control_top",
+        "back_control",
+        "mount_top"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-08 0404.md"
+    },
+    {
+      "date": "2024-04-09",
+      "section": "focus",
+      "text": "Guard Passing Double Over Pass Lock the knees, cross the legs Heavy pressure Catch the foot Guard retention Back takes",
+      "linkedPositionIds": [
+        "back_control",
+        "open_guard_bottom"
+      ],
+      "linkedTransitionIds": [
+        "t_pass_double_over"
+      ],
+      "sourceFile": "Journal/2024-04-09 0500.md"
+    },
+    {
+      "date": "2024-04-09",
+      "section": "improve",
+      "text": "Back take from bottom half Back take from top half Single leg",
+      "linkedPositionIds": [
+        "back_control",
+        "standing"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-09 0500.md"
+    },
+    {
+      "date": "2024-04-09",
+      "section": "sustain",
+      "text": "Backtake from mount Single leg from outside",
+      "linkedPositionIds": [
+        "standing",
+        "mount_top"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-09 0500.md"
+    },
+    {
+      "date": "2024-04-13",
+      "section": "focus",
+      "text": "Gi... Takedowns Guard passing Guard retention",
+      "linkedPositionIds": [
+        "open_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-13 0904.md"
+    },
+    {
+      "date": "2024-04-13",
+      "section": "improve",
+      "text": "Loop choke attacks Guard retention (early and mid stage)",
+      "linkedPositionIds": [
+        "open_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-13 0904.md"
+    },
+    {
+      "date": "2024-04-13",
+      "section": "sustain",
+      "text": "Submission defense Guard passing (especially half guard) Roll / cartwheel passing",
+      "linkedPositionIds": [
+        "half_guard_bottom"
+      ],
+      "linkedTransitionIds": [],
+      "sourceFile": "Journal/2024-04-13 0904.md"
+    }
+  ]
+}

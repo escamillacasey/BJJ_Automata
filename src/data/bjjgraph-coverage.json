@@ -1,0 +1,1277 @@
+{
+  "generatedAt": "2026-07-13T01:23:03.781Z",
+  "mappedPositions": {
+    "standing": "standing-position",
+    "collar_tie": "clinch",
+    "russian_tie": "russian-cowboy",
+    "over_under": "clinch",
+    "front_headlock": "front-headlock/top",
+    "closed_guard_bottom": "closed-guard/bottom",
+    "closed_guard_top": "closed-guard/top",
+    "open_guard_bottom": "open-guard/bottom",
+    "open_guard_top": "open-guard/top",
+    "half_guard_bottom": "half-guard/bottom",
+    "half_guard_top": "half-guard/top",
+    "deep_half_bottom": "deep-half-guard/bottom",
+    "butterfly_bottom": "butterfly-guard/bottom",
+    "shin_to_shin": "shin-to-shin-guard/bottom",
+    "dogfight": "dogfight-position",
+    "side_control_top": "side-control/top",
+    "side_control_bottom": "side-control/bottom",
+    "knee_on_belly": "knee-on-belly/top",
+    "mount_top": "mount/top",
+    "high_mount": "high-mount/top",
+    "low_mount": "3-4-mount/top",
+    "gift_wrap": "gift-wrap/top",
+    "back_control": "back-control/top",
+    "crucifix": "crucifix/top",
+    "submitted": "game-over"
+  },
+  "referencePositionCount": 108,
+  "referenceTransitionCount": 256,
+  "gapCount": 84,
+  "gaps": [
+    {
+      "from": "open_guard_bottom",
+      "to": "open_guard_bottom",
+      "label": "Grip Break",
+      "kind": "transition",
+      "successRate": 82,
+      "sourceTechniqueId": "grip-break",
+      "priority": 8,
+      "reason": "bjjgraph lists “Grip Break” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "side_control_top",
+      "label": "Double Leg Finish",
+      "kind": "takedown",
+      "successRate": 82,
+      "sourceTechniqueId": "double-leg-finish",
+      "priority": 8,
+      "reason": "bjjgraph lists “Double Leg Finish” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:north-south/top",
+      "label": "Side Control to North-South",
+      "kind": "transition",
+      "successRate": 78,
+      "sourceTechniqueId": "side-control-to-north-south",
+      "priority": 8,
+      "reason": "bjjgraph lists “Side Control to North-South” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "mount_top",
+      "to": "mount_top",
+      "label": "Mount Control",
+      "kind": "transition",
+      "successRate": 78,
+      "sourceTechniqueId": "mount-control",
+      "priority": 8,
+      "reason": "bjjgraph lists “Mount Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "closed_guard_bottom",
+      "label": "Guard Pull",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "guard-pull",
+      "priority": 8,
+      "reason": "bjjgraph lists “Guard Pull” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "front_headlock",
+      "label": "Sprawl",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sprawl",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sprawl” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "front_headlock",
+      "label": "Sprawl Defense",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sprawl-defense",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sprawl Defense” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "bjj:seated-guard/bottom",
+      "label": "Sitting Guard Pull",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sitting-guard-pull",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sitting Guard Pull” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "bjj:combat-base/top",
+      "label": "Posture Recovery",
+      "kind": "escape",
+      "successRate": 75,
+      "sourceTechniqueId": "posture-recovery",
+      "priority": 8,
+      "reason": "bjjgraph lists “Posture Recovery” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:kesa-gatame/top",
+      "label": "Side Control to Kesa Gatame",
+      "kind": "transition",
+      "successRate": 72,
+      "sourceTechniqueId": "side-control-to-kesa-gatame",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Kesa Gatame” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Kimura from Mount",
+      "kind": "submission",
+      "successRate": 72,
+      "sourceTechniqueId": "kimura-from-mount",
+      "priority": 7,
+      "reason": "bjjgraph lists “Kimura from Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:scarf-hold-position/top",
+      "label": "Side Control to Scarf Hold Position",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "side-control-to-scarf-hold-position",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Scarf Hold Position” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:shoulder-of-justice/top",
+      "label": "Side Control to Shoulder of Justice",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "side-control-to-shoulder-of-justice",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Shoulder of Justice” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "bjj:quarter-guard/top",
+      "label": "Half Guard to Quarter Guard",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "half-guard-to-quarter-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Half Guard to Quarter Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:seat-belt-control-back/top",
+      "label": "Back Control to Seat Belt Control Back",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "back-control-to-seat-belt-control-back",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control to Seat Belt Control Back” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "back_control",
+      "label": "Back Control Maintenance",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "back-control-maintenance",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control Maintenance” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Armbar from Mount",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "armbar-from-mount",
+      "priority": 7,
+      "reason": "bjjgraph lists “Armbar from Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Americana from Side Control",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "americana-from-side-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Americana from Side Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "submitted",
+      "label": "Americana from Kimura Trap",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "americana-from-kimura-trap",
+      "priority": 7,
+      "reason": "bjjgraph lists “Americana from Kimura Trap” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_bottom",
+      "to": "back_control",
+      "label": "Arm Drag Sweep",
+      "kind": "sweep",
+      "successRate": 65,
+      "sourceTechniqueId": "arm-drag-sweep",
+      "priority": 7,
+      "reason": "bjjgraph lists “Arm Drag Sweep” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_bottom",
+      "to": "bjj:overhook-guard/bottom",
+      "label": "Closed Guard to Overhook Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "closed-guard-to-overhook-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Closed Guard to Overhook Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "label": "Triangle Choke from Closed Guard",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "triangle-choke-from-closed-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Triangle Choke from Closed Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_bottom",
+      "to": "bjj:collar-sleeve-guard/bottom",
+      "label": "Open Guard to Collar Sleeve Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "open-guard-to-collar-sleeve-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Open Guard to Collar Sleeve Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_bottom",
+      "to": "bjj:double-sleeve-guard/bottom",
+      "label": "Open Guard to Double Sleeve Guard",
+      "kind": "takedown",
+      "successRate": 65,
+      "sourceTechniqueId": "open-guard-to-double-sleeve-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Open Guard to Double Sleeve Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "submitted",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke from Gift Wrap” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "bjj:butterfly-hook-control/bottom",
+      "label": "Butterfly Guard to Butterfly Hook Control",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "butterfly-guard-to-butterfly-hook-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Butterfly Guard to Butterfly Hook Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "bjj:half-butterfly/top",
+      "label": "Butterfly Guard to Half Butterfly",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "butterfly-guard-to-half-butterfly",
+      "priority": 7,
+      "reason": "bjjgraph lists “Butterfly Guard to Half Butterfly” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "label": "Anaconda Setup",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-setup",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Setup” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "label": "Anaconda Choke",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "bjj:flattened-half-guard/top",
+      "label": "Half Guard to Flattened Half Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "half-guard-to-flattened-half-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Half Guard to Flattened Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "crucifix",
+      "to": "crucifix",
+      "label": "Crucifix Maintenance",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "crucifix-maintenance",
+      "priority": 7,
+      "reason": "bjjgraph lists “Crucifix Maintenance” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "back_control",
+      "label": "Restore Back Control",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "restore-back-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Restore Back Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:cross-body-ride/top",
+      "label": "Back Control to Cross Body Ride",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "back-control-to-cross-body-ride",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control to Cross Body Ride” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:harness/top",
+      "label": "Rear Naked Choke Setup",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-setup",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke Setup” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "submitted",
+      "label": "Rear Naked Choke from Russian Cowboy",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-from-russian-cowboy",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "submitted",
+      "label": "Kimura from Turtle",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-turtle",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Turtle” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "side_control_top",
+      "label": "Stack Pass",
+      "kind": "pass",
+      "successRate": 62,
+      "sourceTechniqueId": "stack-pass",
+      "priority": 6,
+      "reason": "bjjgraph lists “Stack Pass” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "label": "Triangle Choke from Spider Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "triangle-choke-from-spider-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Triangle Choke from Spider Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "label": "Armbar from Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "armbar-from-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Armbar from Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_top",
+      "to": "submitted",
+      "label": "Triangle Choke from Spider Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "triangle-choke-from-spider-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Triangle Choke from Spider Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_top",
+      "to": "submitted",
+      "label": "Armbar from Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "armbar-from-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Armbar from Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "bjj:technical-mount/top",
+      "label": "Gift Wrap to Technical Mount",
+      "kind": "transition",
+      "successRate": 62,
+      "sourceTechniqueId": "gift-wrap-to-technical-mount",
+      "priority": 6,
+      "reason": "bjjgraph lists “Gift Wrap to Technical Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "submitted",
+      "label": "Choke from Crucifix",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "choke-from-crucifix",
+      "priority": 6,
+      "reason": "bjjgraph lists “Choke from Crucifix” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "submitted",
+      "label": "Kimura from Gift Wrap",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-gift-wrap",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Gift Wrap” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "submitted",
+      "label": "Armbar from Crucifix",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "armbar-from-crucifix",
+      "priority": 6,
+      "reason": "bjjgraph lists “Armbar from Crucifix” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "label": "Kimura from Butterfly Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-butterfly-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Butterfly Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "label": "Armbar from Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "armbar-from-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Armbar from Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "label": "Guillotine Choke from Butterfly Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "guillotine-choke-from-butterfly-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Guillotine Choke from Butterfly Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "label": "Kimura from Half Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-half-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "label": "Electric Chair from Deep Half Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Electric Chair from Deep Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "submitted",
+      "label": "Kimura from Overhook Control",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-overhook-control",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Overhook Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "submitted",
+      "label": "Guillotine Choke from Guillotine Control",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "guillotine-choke-from-guillotine-control",
+      "priority": 6,
+      "reason": "bjjgraph lists “Guillotine Choke from Guillotine Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "crucifix",
+      "to": "bjj:armbar-control/top",
+      "label": "Armbar from Crucifix",
+      "kind": "transition",
+      "successRate": 62,
+      "sourceTechniqueId": "armbar-from-crucifix",
+      "priority": 6,
+      "reason": "bjjgraph lists “Armbar from Crucifix” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "submitted",
+      "label": "Kimura from Half Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-half-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "submitted",
+      "label": "Electric Chair from Deep Half Guard",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Electric Chair from Deep Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "submitted",
+      "label": "Bow and Arrow Choke from Russian Cowboy",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "bow-and-arrow-choke-from-russian-cowboy",
+      "priority": 6,
+      "reason": "bjjgraph lists “Bow and Arrow Choke from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_bottom",
+      "to": "bjj:feet-on-hips-guard/bottom",
+      "label": "Open Guard to Feet on Hips Guard",
+      "kind": "transition",
+      "successRate": 60,
+      "sourceTechniqueId": "open-guard-to-feet-on-hips-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Open Guard to Feet on Hips Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_top",
+      "to": "bjj:double-unders/top",
+      "label": "Open Guard to Double Unders",
+      "kind": "takedown",
+      "successRate": 60,
+      "sourceTechniqueId": "open-guard-to-double-unders",
+      "priority": 6,
+      "reason": "bjjgraph lists “Open Guard to Double Unders” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "gift_wrap",
+      "label": "Gift Wrap Maintenance",
+      "kind": "transition",
+      "successRate": 60,
+      "sourceTechniqueId": "gift-wrap-maintenance",
+      "priority": 6,
+      "reason": "bjjgraph lists “Gift Wrap Maintenance” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "label": "Suloev Stretch",
+      "kind": "submission",
+      "successRate": 60,
+      "sourceTechniqueId": "suloev-stretch",
+      "priority": 6,
+      "reason": "bjjgraph lists “Suloev Stretch” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "label": "Calf Slicer from Truck",
+      "kind": "submission",
+      "successRate": 60,
+      "sourceTechniqueId": "calf-slicer-from-truck",
+      "priority": 6,
+      "reason": "bjjgraph lists “Calf Slicer from Truck” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "label": "Suloev Stretch from Half Guard",
+      "kind": "submission",
+      "successRate": 60,
+      "sourceTechniqueId": "suloev-stretch-from-half-guard",
+      "priority": 6,
+      "reason": "bjjgraph lists “Suloev Stretch from Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "side_control_top",
+      "label": "High Crotch",
+      "kind": "takedown",
+      "successRate": 60,
+      "sourceTechniqueId": "high-crotch",
+      "priority": 6,
+      "reason": "bjjgraph lists “High Crotch” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "side_control_top",
+      "label": "Single Leg Takedown",
+      "kind": "takedown",
+      "successRate": 60,
+      "sourceTechniqueId": "single-leg-takedown",
+      "priority": 6,
+      "reason": "bjjgraph lists “Single Leg Takedown” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "side_control_top",
+      "label": "Fireman's Carry",
+      "kind": "takedown",
+      "successRate": 60,
+      "sourceTechniqueId": "firemans-carry",
+      "priority": 6,
+      "reason": "bjjgraph lists “Fireman's Carry” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "front_headlock",
+      "label": "Snap Down to Front Headlock",
+      "kind": "takedown",
+      "successRate": 60,
+      "sourceTechniqueId": "snap-down-to-front-headlock",
+      "priority": 6,
+      "reason": "bjjgraph lists “Snap Down to Front Headlock” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "low_mount",
+      "to": "bjj:mounted-triangle/top",
+      "label": "Triangle from Mount",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "triangle-from-mount",
+      "priority": 6,
+      "reason": "bjjgraph lists “Triangle from Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "low_mount",
+      "to": "bjj:s-mount/top",
+      "label": "3-4 Mount to S Mount",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "3-4-mount-to-s-mount",
+      "priority": 6,
+      "reason": "bjjgraph lists “3-4 Mount to S Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "low_mount",
+      "to": "bjj:technical-mount/top",
+      "label": "3-4 Mount to Technical Mount",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "3-4-mount-to-technical-mount",
+      "priority": 6,
+      "reason": "bjjgraph lists “3-4 Mount to Technical Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "shin_to_shin",
+      "to": "bjj:single-leg-x-guard/bottom",
+      "label": "Shin-to-Shin to Single Leg X",
+      "kind": "takedown",
+      "successRate": 55,
+      "sourceTechniqueId": "shin-to-shin-to-single-leg-x",
+      "priority": 6,
+      "reason": "bjjgraph lists “Shin-to-Shin to Single Leg X” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "shin_to_shin",
+      "to": "half_guard_top",
+      "label": "Pressure from Shin-to-Shin",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "pressure-from-shin-to-shin",
+      "priority": 6,
+      "reason": "bjjgraph lists “Pressure from Shin-to-Shin” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "half_guard_bottom",
+      "label": "Re-pull Half Guard from Dogfight",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "re-pull-half-guard-from-dogfight",
+      "priority": 6,
+      "reason": "bjjgraph lists “Re-pull Half Guard from Dogfight” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "half_guard_top",
+      "label": "Re-flatten from Dogfight",
+      "kind": "transition",
+      "successRate": 55,
+      "sourceTechniqueId": "re-flatten-from-dogfight",
+      "priority": 6,
+      "reason": "bjjgraph lists “Re-flatten from Dogfight” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "mount_top",
+      "label": "Forward Drive Sweep from Dogfight",
+      "kind": "sweep",
+      "successRate": 55,
+      "sourceTechniqueId": "forward-drive-sweep-from-dogfight",
+      "priority": 6,
+      "reason": "bjjgraph lists “Forward Drive Sweep from Dogfight” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "back_control",
+      "label": "Russian Cowboy to Back Control",
+      "kind": "back_take",
+      "successRate": 55,
+      "sourceTechniqueId": "russian-cowboy-to-back-control",
+      "priority": 6,
+      "reason": "bjjgraph lists “Russian Cowboy to Back Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "shin_to_shin",
+      "to": "mount_top",
+      "label": "Shin-to-Shin Sweep",
+      "kind": "sweep",
+      "successRate": 50,
+      "sourceTechniqueId": "shin-to-shin-sweep",
+      "priority": 5,
+      "reason": "bjjgraph lists “Shin-to-Shin Sweep” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "submitted",
+      "label": "Calf Slicer from Russian Cowboy",
+      "kind": "submission",
+      "successRate": 50,
+      "sourceTechniqueId": "calf-slicer-from-russian-cowboy",
+      "priority": 5,
+      "reason": "bjjgraph lists “Calf Slicer from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "dogfight",
+      "to": "front_headlock",
+      "label": "Snap Down from Dogfight",
+      "kind": "takedown",
+      "successRate": 45,
+      "sourceTechniqueId": "snap-down-from-dogfight",
+      "priority": 5,
+      "reason": "bjjgraph lists “Snap Down from Dogfight” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "bjj:turtle/bottom",
+      "label": "Roll Escape from Russian Cowboy",
+      "kind": "escape",
+      "successRate": 40,
+      "sourceTechniqueId": "roll-escape-from-russian-cowboy",
+      "priority": 4,
+      "reason": "bjjgraph lists “Roll Escape from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "half_guard_bottom",
+      "label": "Hip Escape from Russian Cowboy",
+      "kind": "escape",
+      "successRate": 40,
+      "sourceTechniqueId": "hip-escape-from-russian-cowboy",
+      "priority": 4,
+      "reason": "bjjgraph lists “Hip Escape from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "submitted",
+      "label": "Twister from Russian Cowboy",
+      "kind": "submission",
+      "successRate": 40,
+      "sourceTechniqueId": "twister-from-russian-cowboy",
+      "priority": 4,
+      "reason": "bjjgraph lists “Twister from Russian Cowboy” from this position; your personal graph has no matching flow."
+    }
+  ],
+  "topGaps": [
+    {
+      "from": "open_guard_bottom",
+      "to": "open_guard_bottom",
+      "label": "Grip Break",
+      "kind": "transition",
+      "successRate": 82,
+      "sourceTechniqueId": "grip-break",
+      "priority": 8,
+      "reason": "bjjgraph lists “Grip Break” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "side_control_top",
+      "label": "Double Leg Finish",
+      "kind": "takedown",
+      "successRate": 82,
+      "sourceTechniqueId": "double-leg-finish",
+      "priority": 8,
+      "reason": "bjjgraph lists “Double Leg Finish” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:north-south/top",
+      "label": "Side Control to North-South",
+      "kind": "transition",
+      "successRate": 78,
+      "sourceTechniqueId": "side-control-to-north-south",
+      "priority": 8,
+      "reason": "bjjgraph lists “Side Control to North-South” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "mount_top",
+      "to": "mount_top",
+      "label": "Mount Control",
+      "kind": "transition",
+      "successRate": 78,
+      "sourceTechniqueId": "mount-control",
+      "priority": 8,
+      "reason": "bjjgraph lists “Mount Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "closed_guard_bottom",
+      "label": "Guard Pull",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "guard-pull",
+      "priority": 8,
+      "reason": "bjjgraph lists “Guard Pull” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "front_headlock",
+      "label": "Sprawl",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sprawl",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sprawl” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "front_headlock",
+      "label": "Sprawl Defense",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sprawl-defense",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sprawl Defense” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "bjj:seated-guard/bottom",
+      "label": "Sitting Guard Pull",
+      "kind": "transition",
+      "successRate": 75,
+      "sourceTechniqueId": "sitting-guard-pull",
+      "priority": 8,
+      "reason": "bjjgraph lists “Sitting Guard Pull” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "bjj:combat-base/top",
+      "label": "Posture Recovery",
+      "kind": "escape",
+      "successRate": 75,
+      "sourceTechniqueId": "posture-recovery",
+      "priority": 8,
+      "reason": "bjjgraph lists “Posture Recovery” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:kesa-gatame/top",
+      "label": "Side Control to Kesa Gatame",
+      "kind": "transition",
+      "successRate": 72,
+      "sourceTechniqueId": "side-control-to-kesa-gatame",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Kesa Gatame” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Kimura from Mount",
+      "kind": "submission",
+      "successRate": 72,
+      "sourceTechniqueId": "kimura-from-mount",
+      "priority": 7,
+      "reason": "bjjgraph lists “Kimura from Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:scarf-hold-position/top",
+      "label": "Side Control to Scarf Hold Position",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "side-control-to-scarf-hold-position",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Scarf Hold Position” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_top",
+      "to": "bjj:shoulder-of-justice/top",
+      "label": "Side Control to Shoulder of Justice",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "side-control-to-shoulder-of-justice",
+      "priority": 7,
+      "reason": "bjjgraph lists “Side Control to Shoulder of Justice” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "bjj:quarter-guard/top",
+      "label": "Half Guard to Quarter Guard",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "half-guard-to-quarter-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Half Guard to Quarter Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:seat-belt-control-back/top",
+      "label": "Back Control to Seat Belt Control Back",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "back-control-to-seat-belt-control-back",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control to Seat Belt Control Back” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "back_control",
+      "label": "Back Control Maintenance",
+      "kind": "transition",
+      "successRate": 70,
+      "sourceTechniqueId": "back-control-maintenance",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control Maintenance” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Armbar from Mount",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "armbar-from-mount",
+      "priority": 7,
+      "reason": "bjjgraph lists “Armbar from Mount” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "label": "Americana from Side Control",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "americana-from-side-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Americana from Side Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "submitted",
+      "label": "Americana from Kimura Trap",
+      "kind": "submission",
+      "successRate": 68,
+      "sourceTechniqueId": "americana-from-kimura-trap",
+      "priority": 7,
+      "reason": "bjjgraph lists “Americana from Kimura Trap” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_bottom",
+      "to": "back_control",
+      "label": "Arm Drag Sweep",
+      "kind": "sweep",
+      "successRate": 65,
+      "sourceTechniqueId": "arm-drag-sweep",
+      "priority": 7,
+      "reason": "bjjgraph lists “Arm Drag Sweep” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_bottom",
+      "to": "bjj:overhook-guard/bottom",
+      "label": "Closed Guard to Overhook Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "closed-guard-to-overhook-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Closed Guard to Overhook Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "label": "Triangle Choke from Closed Guard",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "triangle-choke-from-closed-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Triangle Choke from Closed Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_bottom",
+      "to": "bjj:collar-sleeve-guard/bottom",
+      "label": "Open Guard to Collar Sleeve Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "open-guard-to-collar-sleeve-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Open Guard to Collar Sleeve Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "open_guard_bottom",
+      "to": "bjj:double-sleeve-guard/bottom",
+      "label": "Open Guard to Double Sleeve Guard",
+      "kind": "takedown",
+      "successRate": 65,
+      "sourceTechniqueId": "open-guard-to-double-sleeve-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Open Guard to Double Sleeve Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "gift_wrap",
+      "to": "submitted",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke from Gift Wrap” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "bjj:butterfly-hook-control/bottom",
+      "label": "Butterfly Guard to Butterfly Hook Control",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "butterfly-guard-to-butterfly-hook-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Butterfly Guard to Butterfly Hook Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "butterfly_bottom",
+      "to": "bjj:half-butterfly/top",
+      "label": "Butterfly Guard to Half Butterfly",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "butterfly-guard-to-half-butterfly",
+      "priority": 7,
+      "reason": "bjjgraph lists “Butterfly Guard to Half Butterfly” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "label": "Anaconda Setup",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-setup",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Setup” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "label": "Anaconda Choke",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "bjj:flattened-half-guard/top",
+      "label": "Half Guard to Flattened Half Guard",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "half-guard-to-flattened-half-guard",
+      "priority": 7,
+      "reason": "bjjgraph lists “Half Guard to Flattened Half Guard” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "half_guard_top",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "over_under",
+      "to": "submitted",
+      "label": "Anaconda Choke from Anaconda Control",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Anaconda Choke from Anaconda Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "crucifix",
+      "to": "crucifix",
+      "label": "Crucifix Maintenance",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "crucifix-maintenance",
+      "priority": 7,
+      "reason": "bjjgraph lists “Crucifix Maintenance” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "back_control",
+      "label": "Restore Back Control",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "restore-back-control",
+      "priority": 7,
+      "reason": "bjjgraph lists “Restore Back Control” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:cross-body-ride/top",
+      "label": "Back Control to Cross Body Ride",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "back-control-to-cross-body-ride",
+      "priority": 7,
+      "reason": "bjjgraph lists “Back Control to Cross Body Ride” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "back_control",
+      "to": "bjj:harness/top",
+      "label": "Rear Naked Choke Setup",
+      "kind": "transition",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-setup",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke Setup” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "russian_tie",
+      "to": "submitted",
+      "label": "Rear Naked Choke from Russian Cowboy",
+      "kind": "submission",
+      "successRate": 65,
+      "sourceTechniqueId": "rear-naked-choke-from-russian-cowboy",
+      "priority": 7,
+      "reason": "bjjgraph lists “Rear Naked Choke from Russian Cowboy” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "standing",
+      "to": "submitted",
+      "label": "Kimura from Turtle",
+      "kind": "submission",
+      "successRate": 62,
+      "sourceTechniqueId": "kimura-from-turtle",
+      "priority": 6,
+      "reason": "bjjgraph lists “Kimura from Turtle” from this position; your personal graph has no matching flow."
+    },
+    {
+      "from": "closed_guard_top",
+      "to": "side_control_top",
+      "label": "Stack Pass",
+      "kind": "pass",
+      "successRate": 62,
+      "sourceTechniqueId": "stack-pass",
+      "priority": 6,
+      "reason": "bjjgraph lists “Stack Pass” from this position; your personal graph has no matching flow."
+    }
+  ]
+}

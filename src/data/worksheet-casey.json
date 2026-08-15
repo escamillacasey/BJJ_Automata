@@ -1,0 +1,607 @@
+{
+  "athleteName": "Casey",
+  "date": "2026-08-14",
+  "notes": "Prototype 1",
+  "seats": [
+    {
+      "seatId": "standing",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Fireman's Carry",
+          "endsIn": "side_control_top",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Snap Down",
+          "endsIn": "front_headlock_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Low Single",
+          "endsIn": "half_guard_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "front_headlock_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "High Elbow Guillotine",
+          "endsIn": "submitted",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Back take",
+          "endsIn": "back_control",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "D'arce",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "open_guard_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Butterfly sweep",
+          "endsIn": "mount_top",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "High Elbow Guillotine",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Front Headlock transition",
+          "endsIn": "front_headlock_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "Kimura Sweep",
+          "endsIn": "side_control_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "Kimura",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "open_guard_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Double over pass",
+          "endsIn": "side_control_top",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Knee cut pass",
+          "endsIn": "side_control_top",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Double under pass",
+          "endsIn": "side_control_top",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "closed_guard_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Open guard",
+          "endsIn": "open_guard_bottom",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "closed_guard_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Two on one stand",
+          "endsIn": "open_guard_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Knee in butt",
+          "endsIn": "front_headlock_top",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "half_guard_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Underhook to dogfight sweep",
+          "endsIn": "side_control_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Kimura sweep",
+          "endsIn": "side_control_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Kimura",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "Deep half pendulum sweep",
+          "endsIn": "side_control_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "half_guard_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Hip switch pass",
+          "endsIn": "side_control_top",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Double over pass",
+          "endsIn": "side_control_top",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Toe Hold",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "Cradle pass",
+          "endsIn": "side_control_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "Knee slide pass",
+          "endsIn": "mount_top",
+          "belt": "purple",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "side_control_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "North south choke",
+          "endsIn": "submitted",
+          "belt": "black",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "D'arce",
+          "endsIn": "submitted",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Kimura",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "Wrist Lock",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "Knee slide",
+          "endsIn": "mount_top",
+          "belt": "brown",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "side_control_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Belt grab sweep",
+          "endsIn": "side_control_top",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Knee to elbow",
+          "endsIn": "half_guard_bottom",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Hitchhiker",
+          "endsIn": "front_headlock_top",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "mount_top",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Arm triangle",
+          "endsIn": "submitted",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Armbar",
+          "endsIn": "submitted",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "Gift wrap",
+          "endsIn": "back_control",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "mount_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Leg over escape",
+          "endsIn": "half_guard_bottom",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Elbow escape",
+          "endsIn": "half_guard_bottom",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "back_control",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Rear naked choke",
+          "endsIn": "submitted",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Arm bar",
+          "endsIn": "submitted",
+          "belt": "blue",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "back_bottom",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "Back to mat",
+          "endsIn": "side_control_top",
+          "belt": "brown",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "Hip heist",
+          "endsIn": "open_guard_top",
+          "belt": "purple",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "seatId": "leg_entanglements",
+      "moves": [
+        {
+          "rank": 1,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 2,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 3,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 4,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        },
+        {
+          "rank": 5,
+          "name": "",
+          "endsIn": "",
+          "belt": "",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

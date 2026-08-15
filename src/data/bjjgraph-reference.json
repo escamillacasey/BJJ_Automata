@@ -1,0 +1,6047 @@
+{
+  "meta": {
+    "title": "bjjgraph reference neighborhood",
+    "description": "1-hop reference layer around personal positions, converted from bjjgraph graph.json",
+    "sources": [
+      "https://github.com/diogoseca/bjjgraph",
+      "https://bjjgraph.org",
+      "release:2026-06-22T13:54:38.967283Z"
+    ],
+    "generatedFrom": "bjjgraph graph.json",
+    "upstreamMeta": {
+      "generated": "2026-06-22T13:54:38.967283Z",
+      "positionCount": 409,
+      "transitionCount": 1051,
+      "submissionCount": 372,
+      "principleCount": 59,
+      "systemCount": 47,
+      "unresolvedSystemMemberCount": 0
+    },
+    "personalToBjj": {
+      "standing": "standing-position",
+      "collar_tie": "clinch",
+      "russian_tie": "russian-cowboy",
+      "over_under": "clinch",
+      "front_headlock": "front-headlock/top",
+      "closed_guard_bottom": "closed-guard/bottom",
+      "closed_guard_top": "closed-guard/top",
+      "open_guard_bottom": "open-guard/bottom",
+      "open_guard_top": "open-guard/top",
+      "half_guard_bottom": "half-guard/bottom",
+      "half_guard_top": "half-guard/top",
+      "deep_half_bottom": "deep-half-guard/bottom",
+      "butterfly_bottom": "butterfly-guard/bottom",
+      "shin_to_shin": "shin-to-shin-guard/bottom",
+      "dogfight": "dogfight-position",
+      "side_control_top": "side-control/top",
+      "side_control_bottom": "side-control/bottom",
+      "knee_on_belly": "knee-on-belly/top",
+      "mount_top": "mount/top",
+      "high_mount": "high-mount/top",
+      "low_mount": "3-4-mount/top",
+      "gift_wrap": "gift-wrap/top",
+      "back_control": "back-control/top",
+      "crucifix": "crucifix/top",
+      "submitted": "game-over"
+    },
+    "generatedAt": "2026-07-13T01:23:03.780Z",
+    "edgeCapPerHub": 14
+  },
+  "positions": [
+    {
+      "id": "bjj:standing-position",
+      "label": "Standing Position",
+      "category": "standing",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "standing-position",
+      "personalAlias": "standing",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:standing-position"
+      ]
+    },
+    {
+      "id": "bjj:standing-position/top",
+      "label": "Standing Position Top",
+      "category": "standing",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "standing-position/top",
+      "personalAlias": "standing",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:standing-position/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:standing-position/bottom",
+      "label": "Standing Position Bottom",
+      "category": "standing",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "standing-position/bottom",
+      "personalAlias": "standing",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:standing-position/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:clinch",
+      "label": "Clinch",
+      "category": "clinch",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "clinch",
+      "personalAlias": "over_under",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:clinch"
+      ]
+    },
+    {
+      "id": "bjj:clinch/top",
+      "label": "Clinch Top",
+      "category": "clinch",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "clinch/top",
+      "personalAlias": "over_under",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:clinch/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:clinch/bottom",
+      "label": "Clinch Bottom",
+      "category": "clinch",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "clinch/bottom",
+      "personalAlias": "over_under",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:clinch/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:russian-cowboy",
+      "label": "Russian Cowboy",
+      "category": "clinch",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "russian-cowboy",
+      "personalAlias": "russian_tie",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:russian-cowboy"
+      ]
+    },
+    {
+      "id": "bjj:russian-cowboy/top",
+      "label": "Russian Cowboy Top",
+      "category": "clinch",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "russian-cowboy/top",
+      "personalAlias": "russian_tie",
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:russian-cowboy/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:russian-cowboy/bottom",
+      "label": "Russian Cowboy Bottom",
+      "category": "clinch",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "russian-cowboy/bottom",
+      "personalAlias": "russian_tie",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:russian-cowboy/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:front-headlock/top",
+      "label": "Front Headlock Top",
+      "category": "clinch",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "front-headlock/top",
+      "personalAlias": "front_headlock",
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:front-headlock/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:front-headlock",
+      "label": "Front Headlock",
+      "category": "clinch",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "front-headlock",
+      "personalAlias": "front_headlock",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:front-headlock"
+      ]
+    },
+    {
+      "id": "bjj:front-headlock/bottom",
+      "label": "Front Headlock Bottom",
+      "category": "clinch",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "front-headlock/bottom",
+      "personalAlias": "front_headlock",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:front-headlock/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:closed-guard/bottom",
+      "label": "Closed Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "closed-guard/bottom",
+      "personalAlias": "closed_guard_bottom",
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:closed-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:closed-guard",
+      "label": "Closed Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "closed-guard",
+      "personalAlias": "closed_guard_top",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:closed-guard"
+      ]
+    },
+    {
+      "id": "bjj:closed-guard/top",
+      "label": "Closed Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "closed-guard/top",
+      "personalAlias": "closed_guard_top",
+      "notes": "bjjgraph Defensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:closed-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:open-guard/bottom",
+      "label": "Open Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "open-guard/bottom",
+      "personalAlias": "open_guard_bottom",
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:open-guard",
+      "label": "Open Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "open-guard",
+      "personalAlias": "open_guard_top",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard"
+      ]
+    },
+    {
+      "id": "bjj:open-guard/top",
+      "label": "Open Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "open-guard/top",
+      "personalAlias": "open_guard_top",
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:half-guard/bottom",
+      "label": "Half Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "half-guard/bottom",
+      "personalAlias": "half_guard_bottom",
+      "notes": "bjjgraph Defensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:half-guard",
+      "label": "Half Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "half-guard",
+      "personalAlias": "half_guard_top",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard"
+      ]
+    },
+    {
+      "id": "bjj:half-guard/top",
+      "label": "Half Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "half-guard/top",
+      "personalAlias": "half_guard_top",
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:deep-half-guard/bottom",
+      "label": "Deep Half Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "deep-half-guard/bottom",
+      "personalAlias": "deep_half_bottom",
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:deep-half-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:deep-half-guard",
+      "label": "Deep Half Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "deep-half-guard",
+      "personalAlias": "deep_half_bottom",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:deep-half-guard"
+      ]
+    },
+    {
+      "id": "bjj:deep-half-guard/top",
+      "label": "Deep Half Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "deep-half-guard/top",
+      "personalAlias": "deep_half_bottom",
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:deep-half-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:butterfly-guard/bottom",
+      "label": "Butterfly Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "butterfly-guard/bottom",
+      "personalAlias": "butterfly_bottom",
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:butterfly-guard",
+      "label": "Butterfly Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "butterfly-guard",
+      "personalAlias": "butterfly_bottom",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-guard"
+      ]
+    },
+    {
+      "id": "bjj:butterfly-guard/top",
+      "label": "Butterfly Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "butterfly-guard/top",
+      "personalAlias": "butterfly_bottom",
+      "notes": "bjjgraph Defensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:shin-to-shin-guard/bottom",
+      "label": "Shin-to-Shin Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "shin-to-shin-guard/bottom",
+      "personalAlias": "shin_to_shin",
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shin-to-shin-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:shin-to-shin-guard",
+      "label": "Shin-to-Shin Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "shin-to-shin-guard",
+      "personalAlias": "shin_to_shin",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shin-to-shin-guard"
+      ]
+    },
+    {
+      "id": "bjj:shin-to-shin-guard/top",
+      "label": "Shin-to-Shin Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "shin-to-shin-guard/top",
+      "personalAlias": "shin_to_shin",
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shin-to-shin-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:dogfight-position",
+      "label": "Dogfight Position",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "dogfight-position",
+      "personalAlias": "dogfight",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:dogfight-position"
+      ]
+    },
+    {
+      "id": "bjj:dogfight-position/top",
+      "label": "Dogfight Position Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "dogfight-position/top",
+      "personalAlias": "dogfight",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:dogfight-position/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:dogfight-position/bottom",
+      "label": "Dogfight Position Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "dogfight-position/bottom",
+      "personalAlias": "dogfight",
+      "notes": "bjjgraph Neutral · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:dogfight-position/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:side-control/top",
+      "label": "Side Control Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "side-control/top",
+      "personalAlias": "side_control_top",
+      "notes": "bjjgraph Offensive/Controlling · points 3 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control/top"
+      ],
+      "pointValue": 3,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:side-control",
+      "label": "Side Control",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "side-control",
+      "personalAlias": "side_control_bottom",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control"
+      ]
+    },
+    {
+      "id": "bjj:side-control/bottom",
+      "label": "Side Control Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "side-control/bottom",
+      "personalAlias": "side_control_bottom",
+      "notes": "bjjgraph Defensive · points -3 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control/bottom"
+      ],
+      "pointValue": -3,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:knee-on-belly/top",
+      "label": "Knee on Belly Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "knee-on-belly/top",
+      "personalAlias": "knee_on_belly",
+      "notes": "bjjgraph Offensive/Controlling · points 2 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-on-belly/top"
+      ],
+      "pointValue": 2,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:knee-on-belly",
+      "label": "Knee on Belly",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "knee-on-belly",
+      "personalAlias": "knee_on_belly",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-on-belly"
+      ]
+    },
+    {
+      "id": "bjj:knee-on-belly/bottom",
+      "label": "Knee on Belly Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "knee-on-belly/bottom",
+      "personalAlias": "knee_on_belly",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-on-belly/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:mount/top",
+      "label": "Mount Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "mount/top",
+      "personalAlias": "mount_top",
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mount/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:mount",
+      "label": "Mount",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "mount",
+      "personalAlias": "mount_top",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mount"
+      ]
+    },
+    {
+      "id": "bjj:mount/bottom",
+      "label": "Mount Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "mount/bottom",
+      "personalAlias": "mount_top",
+      "notes": "bjjgraph Defensive · points -4 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mount/bottom"
+      ],
+      "pointValue": -4,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:high-mount/top",
+      "label": "High Mount Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "high-mount/top",
+      "personalAlias": "high_mount",
+      "notes": "bjjgraph Offensive · points 4 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:high-mount/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:high-mount",
+      "label": "High Mount",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "high-mount",
+      "personalAlias": "high_mount",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:high-mount"
+      ]
+    },
+    {
+      "id": "bjj:high-mount/bottom",
+      "label": "High Mount Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "high-mount/bottom",
+      "personalAlias": "high_mount",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:high-mount/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:3-4-mount/top",
+      "label": "3-4 Mount Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "3-4-mount/top",
+      "personalAlias": "low_mount",
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:3-4-mount/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:3-4-mount",
+      "label": "3-4 Mount",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "3-4-mount",
+      "personalAlias": "low_mount",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:3-4-mount"
+      ]
+    },
+    {
+      "id": "bjj:3-4-mount/bottom",
+      "label": "3-4 Mount Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "3-4-mount/bottom",
+      "personalAlias": "low_mount",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:3-4-mount/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:gift-wrap/top",
+      "label": "Gift Wrap Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "gift-wrap/top",
+      "personalAlias": "gift_wrap",
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:gift-wrap/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:gift-wrap",
+      "label": "Gift Wrap",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "gift-wrap",
+      "personalAlias": "gift_wrap",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:gift-wrap"
+      ]
+    },
+    {
+      "id": "bjj:gift-wrap/bottom",
+      "label": "Gift Wrap Bottom",
+      "category": "pin",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "gift-wrap/bottom",
+      "personalAlias": "gift_wrap",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:gift-wrap/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:back-control/top",
+      "label": "Back Control Top",
+      "category": "back",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "back-control/top",
+      "personalAlias": "back_control",
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:back-control",
+      "label": "Back Control",
+      "category": "back",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "back-control",
+      "personalAlias": "back_control",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control"
+      ]
+    },
+    {
+      "id": "bjj:back-control/bottom",
+      "label": "Back Control Bottom",
+      "category": "back",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "back-control/bottom",
+      "personalAlias": "back_control",
+      "notes": "bjjgraph Defensive · points -4 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control/bottom"
+      ],
+      "pointValue": -4,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:crucifix/top",
+      "label": "Crucifix Top",
+      "category": "back",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "crucifix/top",
+      "personalAlias": "crucifix",
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crucifix/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:crucifix",
+      "label": "Crucifix",
+      "category": "back",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "crucifix",
+      "personalAlias": "crucifix",
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crucifix"
+      ]
+    },
+    {
+      "id": "bjj:crucifix/bottom",
+      "label": "Crucifix Bottom",
+      "category": "back",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "crucifix/bottom",
+      "personalAlias": "crucifix",
+      "notes": "bjjgraph Defensive · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crucifix/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive"
+    },
+    {
+      "id": "bjj:game-over",
+      "label": "Game Over",
+      "category": "submission",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "game-over",
+      "personalAlias": "submitted",
+      "notes": "bjjgraph Terminal · points 0 · risk None",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:game-over"
+      ],
+      "pointValue": 0,
+      "positionType": "Terminal"
+    },
+    {
+      "id": "bjj:seated-guard/bottom",
+      "label": "Seated Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "seated-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:seated-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:seated-guard",
+      "label": "Seated Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "seated-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:seated-guard"
+      ]
+    },
+    {
+      "id": "bjj:combat-base/top",
+      "label": "Combat Base Top",
+      "category": "transition",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "combat-base/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Neutral · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:combat-base/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Neutral"
+    },
+    {
+      "id": "bjj:combat-base",
+      "label": "Combat Base",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "combat-base",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:combat-base"
+      ]
+    },
+    {
+      "id": "bjj:overhook-guard/bottom",
+      "label": "Overhook Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "overhook-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:overhook-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:overhook-guard",
+      "label": "Overhook Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "overhook-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:overhook-guard"
+      ]
+    },
+    {
+      "id": "bjj:collar-sleeve-guard/bottom",
+      "label": "Collar Sleeve Guard Bottom",
+      "category": "clinch",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "collar-sleeve-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:collar-sleeve-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:collar-sleeve-guard",
+      "label": "Collar Sleeve Guard",
+      "category": "clinch",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "collar-sleeve-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:collar-sleeve-guard"
+      ]
+    },
+    {
+      "id": "bjj:double-sleeve-guard/bottom",
+      "label": "Double Sleeve Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "double-sleeve-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-sleeve-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:double-sleeve-guard",
+      "label": "Double Sleeve Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "double-sleeve-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-sleeve-guard"
+      ]
+    },
+    {
+      "id": "bjj:feet-on-hips-guard/bottom",
+      "label": "Feet on Hips Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "feet-on-hips-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:feet-on-hips-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:feet-on-hips-guard",
+      "label": "Feet on Hips Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "feet-on-hips-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:feet-on-hips-guard"
+      ]
+    },
+    {
+      "id": "bjj:double-unders/top",
+      "label": "Double Unders Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "double-unders/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-unders/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:double-unders",
+      "label": "Double Unders",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "double-unders",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-unders"
+      ]
+    },
+    {
+      "id": "bjj:north-south/top",
+      "label": "North-South Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "north-south/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 3 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:north-south/top"
+      ],
+      "pointValue": 3,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:north-south",
+      "label": "North-South",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "north-south",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:north-south"
+      ]
+    },
+    {
+      "id": "bjj:kesa-gatame/top",
+      "label": "Kesa Gatame Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "kesa-gatame/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 3 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kesa-gatame/top"
+      ],
+      "pointValue": 3,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:kesa-gatame",
+      "label": "Kesa Gatame",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "kesa-gatame",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kesa-gatame"
+      ]
+    },
+    {
+      "id": "bjj:scarf-hold-position/top",
+      "label": "Scarf Hold Position Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "scarf-hold-position/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 3 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:scarf-hold-position/top"
+      ],
+      "pointValue": 3,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:scarf-hold-position",
+      "label": "Scarf Hold Position",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "scarf-hold-position",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:scarf-hold-position"
+      ]
+    },
+    {
+      "id": "bjj:shoulder-of-justice/top",
+      "label": "Shoulder of Justice Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "shoulder-of-justice/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 3 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shoulder-of-justice/top"
+      ],
+      "pointValue": 3,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:shoulder-of-justice",
+      "label": "Shoulder of Justice",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "shoulder-of-justice",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shoulder-of-justice"
+      ]
+    },
+    {
+      "id": "bjj:technical-mount/top",
+      "label": "Technical Mount Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "technical-mount/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:technical-mount/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:technical-mount",
+      "label": "Technical Mount",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "technical-mount",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:technical-mount"
+      ]
+    },
+    {
+      "id": "bjj:butterfly-hook-control/bottom",
+      "label": "Butterfly Hook Control Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "butterfly-hook-control/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-hook-control/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:butterfly-hook-control",
+      "label": "Butterfly Hook Control",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "butterfly-hook-control",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-hook-control"
+      ]
+    },
+    {
+      "id": "bjj:half-butterfly/top",
+      "label": "Half Butterfly Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "half-butterfly/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-butterfly/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:half-butterfly",
+      "label": "Half Butterfly",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "half-butterfly",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-butterfly"
+      ]
+    },
+    {
+      "id": "bjj:anaconda-control/top",
+      "label": "Anaconda Control Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "anaconda-control/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-control/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:anaconda-control",
+      "label": "Anaconda Control",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "anaconda-control",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-control"
+      ]
+    },
+    {
+      "id": "bjj:mounted-triangle/top",
+      "label": "Mounted Triangle Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "mounted-triangle/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Medium to High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mounted-triangle/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:mounted-triangle",
+      "label": "Mounted Triangle",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "mounted-triangle",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mounted-triangle"
+      ]
+    },
+    {
+      "id": "bjj:s-mount/top",
+      "label": "S Mount Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "s-mount/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:s-mount/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:s-mount",
+      "label": "S Mount",
+      "category": "pin",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "s-mount",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:s-mount"
+      ]
+    },
+    {
+      "id": "bjj:single-leg-x-guard/bottom",
+      "label": "Single Leg X-Guard Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "single-leg-x-guard/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:single-leg-x-guard/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive"
+    },
+    {
+      "id": "bjj:single-leg-x-guard",
+      "label": "Single Leg X-Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "single-leg-x-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:single-leg-x-guard"
+      ]
+    },
+    {
+      "id": "bjj:quarter-guard/top",
+      "label": "Quarter Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "quarter-guard/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:quarter-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:quarter-guard",
+      "label": "Quarter Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "quarter-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:quarter-guard"
+      ]
+    },
+    {
+      "id": "bjj:flattened-half-guard/top",
+      "label": "Flattened Half Guard Top",
+      "category": "guard",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "flattened-half-guard/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:flattened-half-guard/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:flattened-half-guard",
+      "label": "Flattened Half Guard",
+      "category": "guard",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "flattened-half-guard",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:flattened-half-guard"
+      ]
+    },
+    {
+      "id": "bjj:armbar-control/top",
+      "label": "Armbar Control Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "armbar-control/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-control/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:armbar-control",
+      "label": "Armbar Control",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "armbar-control",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-control"
+      ]
+    },
+    {
+      "id": "bjj:seat-belt-control-back/top",
+      "label": "Seat Belt Control Back Top",
+      "category": "back",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "seat-belt-control-back/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:seat-belt-control-back/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:seat-belt-control-back",
+      "label": "Seat Belt Control Back",
+      "category": "back",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "seat-belt-control-back",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:seat-belt-control-back"
+      ]
+    },
+    {
+      "id": "bjj:cross-body-ride/top",
+      "label": "Cross Body Ride Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "cross-body-ride/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 0 · risk Low to Medium",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:cross-body-ride/top"
+      ],
+      "pointValue": 0,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:cross-body-ride",
+      "label": "Cross Body Ride",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "cross-body-ride",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:cross-body-ride"
+      ]
+    },
+    {
+      "id": "bjj:harness/top",
+      "label": "Harness Top",
+      "category": "pin",
+      "role": "top",
+      "referenceOnly": true,
+      "bjjId": "harness/top",
+      "personalAlias": null,
+      "notes": "bjjgraph Offensive/Controlling · points 4 · risk Low",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:harness/top"
+      ],
+      "pointValue": 4,
+      "positionType": "Offensive/Controlling"
+    },
+    {
+      "id": "bjj:harness",
+      "label": "Harness",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "harness",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:harness"
+      ]
+    },
+    {
+      "id": "bjj:turtle/bottom",
+      "label": "Turtle Bottom",
+      "category": "guard",
+      "role": "bottom",
+      "referenceOnly": true,
+      "bjjId": "turtle/bottom",
+      "personalAlias": null,
+      "notes": "bjjgraph Defensive with offensive options · points 0 · risk High",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:turtle/bottom"
+      ],
+      "pointValue": 0,
+      "positionType": "Defensive with offensive options"
+    },
+    {
+      "id": "bjj:turtle",
+      "label": "Turtle",
+      "category": "transition",
+      "role": "either",
+      "referenceOnly": true,
+      "bjjId": "turtle",
+      "personalAlias": null,
+      "notes": "bjjgraph  · points — · risk —",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:turtle"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "ref-t:guard-pull",
+      "label": "Guard Pull",
+      "from": "standing",
+      "to": "closed_guard_bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guard-pull"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "closed-guard/bottom",
+      "sourceTechniqueId": "guard-pull"
+    },
+    {
+      "id": "ref-t:sprawl",
+      "label": "Sprawl",
+      "from": "standing",
+      "to": "front_headlock",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:sprawl"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "front-headlock/top",
+      "sourceTechniqueId": "sprawl"
+    },
+    {
+      "id": "ref-t:sprawl-defense",
+      "label": "Sprawl Defense",
+      "from": "standing",
+      "to": "front_headlock",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:sprawl-defense"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "front-headlock/top",
+      "sourceTechniqueId": "sprawl-defense"
+    },
+    {
+      "id": "ref-t:sitting-guard-pull",
+      "label": "Sitting Guard Pull",
+      "from": "standing",
+      "to": "bjj:seated-guard/bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:sitting-guard-pull"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "seated-guard/bottom",
+      "sourceTechniqueId": "sitting-guard-pull"
+    },
+    {
+      "id": "ref-t:osoto-gari",
+      "label": "Osoto Gari",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:osoto-gari"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "osoto-gari"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__standing-position",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "standing-position",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__standing-position/top",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__standing-position/bottom",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "standing-position/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__standing-position",
+      "label": "Kimura from Turtle",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "standing-position",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__standing-position/top",
+      "label": "Kimura from Turtle",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__standing-position/bottom",
+      "label": "Kimura from Turtle",
+      "from": "standing",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "standing-position/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-t:deashi-harai",
+      "label": "Deashi Harai",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:deashi-harai"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "deashi-harai"
+    },
+    {
+      "id": "ref-t:ouchi-gari",
+      "label": "Ouchi Gari",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:ouchi-gari"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "ouchi-gari"
+    },
+    {
+      "id": "ref-t:tai-otoshi",
+      "label": "Tai Otoshi",
+      "from": "standing",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:tai-otoshi"
+      ],
+      "bjjFrom": "standing-position/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "tai-otoshi"
+    },
+    {
+      "id": "ref-t:scissor-sweep",
+      "label": "Scissor Sweep",
+      "from": "closed_guard_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:scissor-sweep"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "scissor-sweep"
+    },
+    {
+      "id": "ref-t:posture-recovery",
+      "label": "Posture Recovery",
+      "from": "closed_guard_top",
+      "to": "bjj:combat-base/top",
+      "kind": "escape",
+      "referenceOnly": true,
+      "successRate": 75,
+      "notes": "bjjgraph reference · success 75%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:posture-recovery"
+      ],
+      "bjjFrom": "closed-guard/top",
+      "bjjTo": "combat-base/top",
+      "sourceTechniqueId": "posture-recovery"
+    },
+    {
+      "id": "ref-t:pendulum-sweep",
+      "label": "Pendulum Sweep",
+      "from": "closed_guard_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:pendulum-sweep"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "pendulum-sweep"
+    },
+    {
+      "id": "ref-t:arm-drag-sweep",
+      "label": "Arm Drag Sweep",
+      "from": "closed_guard_bottom",
+      "to": "back_control",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:arm-drag-sweep"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "arm-drag-sweep"
+    },
+    {
+      "id": "ref-t:closed-guard-to-overhook-guard",
+      "label": "Closed Guard to Overhook Guard",
+      "from": "closed_guard_bottom",
+      "to": "bjj:overhook-guard/bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:closed-guard-to-overhook-guard"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "overhook-guard/bottom",
+      "sourceTechniqueId": "closed-guard-to-overhook-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-closed-guard__closed-guard",
+      "label": "Triangle Choke from Closed Guard",
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-closed-guard"
+      ],
+      "bjjFrom": "closed-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-closed-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-closed-guard__closed-guard/top",
+      "label": "Triangle Choke from Closed Guard",
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-closed-guard"
+      ],
+      "bjjFrom": "closed-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-closed-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-closed-guard__closed-guard/bottom",
+      "label": "Triangle Choke from Closed Guard",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-closed-guard"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-closed-guard"
+    },
+    {
+      "id": "ref-t:stack-pass",
+      "label": "Stack Pass",
+      "from": "closed_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:stack-pass"
+      ],
+      "bjjFrom": "closed-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "stack-pass"
+    },
+    {
+      "id": "ref-t:flower-sweep",
+      "label": "Flower Sweep",
+      "from": "closed_guard_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:flower-sweep"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "flower-sweep"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__closed-guard",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "closed-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__closed-guard/top",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "closed-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__closed-guard/bottom",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "closed_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "closed-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__closed-guard",
+      "label": "Armbar from Guard",
+      "from": "closed_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "closed-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-t:grip-break",
+      "label": "Grip Break",
+      "from": "open_guard_bottom",
+      "to": "open_guard_bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 82,
+      "notes": "bjjgraph reference · success 82%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:grip-break"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "open-guard/bottom",
+      "sourceTechniqueId": "grip-break"
+    },
+    {
+      "id": "ref-t:double-under-pass",
+      "label": "Double Under Pass",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-under-pass"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "double-under-pass"
+    },
+    {
+      "id": "ref-t:leg-drag-pass",
+      "label": "Leg Drag Pass",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:leg-drag-pass"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "leg-drag-pass"
+    },
+    {
+      "id": "ref-t:long-step-pass",
+      "label": "Long Step Pass",
+      "from": "open_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:long-step-pass"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "long-step-pass"
+    },
+    {
+      "id": "ref-t:open-guard-to-collar-sleeve-guard",
+      "label": "Open Guard to Collar Sleeve Guard",
+      "from": "open_guard_bottom",
+      "to": "bjj:collar-sleeve-guard/bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard-to-collar-sleeve-guard"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "collar-sleeve-guard/bottom",
+      "sourceTechniqueId": "open-guard-to-collar-sleeve-guard"
+    },
+    {
+      "id": "ref-t:open-guard-to-double-sleeve-guard",
+      "label": "Open Guard to Double Sleeve Guard",
+      "from": "open_guard_bottom",
+      "to": "bjj:double-sleeve-guard/bottom",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard-to-double-sleeve-guard"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "double-sleeve-guard/bottom",
+      "sourceTechniqueId": "open-guard-to-double-sleeve-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__open-guard",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "open_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "open-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__open-guard/top",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "open_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-spider-guard__open-guard/bottom",
+      "label": "Triangle Choke from Spider Guard",
+      "from": "open_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-spider-guard"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-spider-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__open-guard",
+      "label": "Armbar from Guard",
+      "from": "open_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "open-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__open-guard/top",
+      "label": "Armbar from Guard",
+      "from": "open_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__open-guard/bottom",
+      "label": "Armbar from Guard",
+      "from": "open_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-t:open-guard-to-feet-on-hips-guard",
+      "label": "Open Guard to Feet on Hips Guard",
+      "from": "open_guard_bottom",
+      "to": "bjj:feet-on-hips-guard/bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard-to-feet-on-hips-guard"
+      ],
+      "bjjFrom": "open-guard/bottom",
+      "bjjTo": "feet-on-hips-guard/bottom",
+      "sourceTechniqueId": "open-guard-to-feet-on-hips-guard"
+    },
+    {
+      "id": "ref-t:open-guard-to-double-unders",
+      "label": "Open Guard to Double Unders",
+      "from": "open_guard_top",
+      "to": "bjj:double-unders/top",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:open-guard-to-double-unders"
+      ],
+      "bjjFrom": "open-guard/top",
+      "bjjTo": "double-unders/top",
+      "sourceTechniqueId": "open-guard-to-double-unders"
+    },
+    {
+      "id": "ref-t:side-control-to-north-south",
+      "label": "Side Control to North-South",
+      "from": "side_control_top",
+      "to": "bjj:north-south/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 78,
+      "notes": "bjjgraph reference · success 78%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control-to-north-south"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "north-south/top",
+      "sourceTechniqueId": "side-control-to-north-south"
+    },
+    {
+      "id": "ref-t:side-control-to-kesa-gatame",
+      "label": "Side Control to Kesa Gatame",
+      "from": "side_control_top",
+      "to": "bjj:kesa-gatame/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control-to-kesa-gatame"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "kesa-gatame/top",
+      "sourceTechniqueId": "side-control-to-kesa-gatame"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__side-control",
+      "label": "Kimura from Mount",
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "side-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__side-control/top",
+      "label": "Kimura from Mount",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__side-control/bottom",
+      "label": "Kimura from Mount",
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "side-control/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-t:side-control-to-scarf-hold-position",
+      "label": "Side Control to Scarf Hold Position",
+      "from": "side_control_top",
+      "to": "bjj:scarf-hold-position/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control-to-scarf-hold-position"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "scarf-hold-position/top",
+      "sourceTechniqueId": "side-control-to-scarf-hold-position"
+    },
+    {
+      "id": "ref-t:side-control-to-shoulder-of-justice",
+      "label": "Side Control to Shoulder of Justice",
+      "from": "side_control_top",
+      "to": "bjj:shoulder-of-justice/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control-to-shoulder-of-justice"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "shoulder-of-justice/top",
+      "sourceTechniqueId": "side-control-to-shoulder-of-justice"
+    },
+    {
+      "id": "ref-t:knee-on-belly",
+      "label": "Knee on Belly",
+      "from": "side_control_top",
+      "to": "knee_on_belly",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-on-belly"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "knee-on-belly/top",
+      "sourceTechniqueId": "knee-on-belly"
+    },
+    {
+      "id": "ref-t:side-control-to-mount",
+      "label": "Side Control to Mount",
+      "from": "side_control_top",
+      "to": "mount_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:side-control-to-mount"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "side-control-to-mount"
+    },
+    {
+      "id": "ref-t:arm-extraction",
+      "label": "Arm Extraction",
+      "from": "side_control_bottom",
+      "to": "half_guard_bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:arm-extraction"
+      ],
+      "bjjFrom": "side-control/bottom",
+      "bjjTo": "half-guard/bottom",
+      "sourceTechniqueId": "arm-extraction"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__side-control",
+      "label": "Armbar from Mount",
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "side-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__side-control/top",
+      "label": "Armbar from Mount",
+      "from": "side_control_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "side-control/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__side-control/bottom",
+      "label": "Armbar from Mount",
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "side-control/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-side-control__side-control",
+      "label": "Americana from Side Control",
+      "from": "side_control_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-side-control"
+      ],
+      "bjjFrom": "side-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-side-control"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__gift-wrap",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__gift-wrap/top",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__gift-wrap/bottom",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-t:gift-wrap-to-technical-mount",
+      "label": "Gift Wrap to Technical Mount",
+      "from": "gift_wrap",
+      "to": "bjj:technical-mount/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:gift-wrap-to-technical-mount"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "technical-mount/top",
+      "sourceTechniqueId": "gift-wrap-to-technical-mount"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__gift-wrap",
+      "label": "Choke from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__gift-wrap/top",
+      "label": "Choke from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__gift-wrap/bottom",
+      "label": "Choke from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:kimura-from-gift-wrap__gift-wrap",
+      "label": "Kimura from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:kimura-from-gift-wrap__gift-wrap/top",
+      "label": "Kimura from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:kimura-from-gift-wrap__gift-wrap/bottom",
+      "label": "Kimura from Gift Wrap",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-gift-wrap"
+      ],
+      "bjjFrom": "gift-wrap/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:armbar-from-crucifix__gift-wrap",
+      "label": "Armbar from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-crucifix"
+    },
+    {
+      "id": "ref-s:armbar-from-crucifix__gift-wrap/top",
+      "label": "Armbar from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-crucifix"
+    },
+    {
+      "id": "ref-s:armbar-from-crucifix__gift-wrap/bottom",
+      "label": "Armbar from Crucifix",
+      "from": "gift_wrap",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-crucifix"
+      ],
+      "bjjFrom": "gift-wrap/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-crucifix"
+    },
+    {
+      "id": "ref-t:gift-wrap-maintenance",
+      "label": "Gift Wrap Maintenance",
+      "from": "gift_wrap",
+      "to": "gift_wrap",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:gift-wrap-maintenance"
+      ],
+      "bjjFrom": "gift-wrap/top",
+      "bjjTo": "gift-wrap/top",
+      "sourceTechniqueId": "gift-wrap-maintenance"
+    },
+    {
+      "id": "ref-t:butterfly-smash",
+      "label": "Butterfly Smash",
+      "from": "butterfly_bottom",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-smash"
+      ],
+      "bjjFrom": "butterfly-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "butterfly-smash"
+    },
+    {
+      "id": "ref-t:hook-sweep",
+      "label": "Hook Sweep",
+      "from": "butterfly_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:hook-sweep"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "hook-sweep"
+    },
+    {
+      "id": "ref-t:waiter-sweep",
+      "label": "Waiter Sweep",
+      "from": "butterfly_bottom",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:waiter-sweep"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "waiter-sweep"
+    },
+    {
+      "id": "ref-t:butterfly-guard-to-butterfly-hook-control",
+      "label": "Butterfly Guard to Butterfly Hook Control",
+      "from": "butterfly_bottom",
+      "to": "bjj:butterfly-hook-control/bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-guard-to-butterfly-hook-control"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "butterfly-hook-control/bottom",
+      "sourceTechniqueId": "butterfly-guard-to-butterfly-hook-control"
+    },
+    {
+      "id": "ref-t:butterfly-guard-to-half-butterfly",
+      "label": "Butterfly Guard to Half Butterfly",
+      "from": "butterfly_bottom",
+      "to": "bjj:half-butterfly/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-guard-to-half-butterfly"
+      ],
+      "bjjFrom": "butterfly-guard/top",
+      "bjjTo": "half-butterfly/top",
+      "sourceTechniqueId": "butterfly-guard-to-half-butterfly"
+    },
+    {
+      "id": "ref-t:butterfly-sweep",
+      "label": "Butterfly Sweep",
+      "from": "butterfly_bottom",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:butterfly-sweep"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "butterfly-sweep"
+    },
+    {
+      "id": "ref-s:kimura-from-butterfly-guard__butterfly-guard",
+      "label": "Kimura from Butterfly Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-butterfly-guard"
+      ],
+      "bjjFrom": "butterfly-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-butterfly-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-butterfly-guard__butterfly-guard/top",
+      "label": "Kimura from Butterfly Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-butterfly-guard"
+      ],
+      "bjjFrom": "butterfly-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-butterfly-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-butterfly-guard__butterfly-guard/bottom",
+      "label": "Kimura from Butterfly Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-butterfly-guard"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-butterfly-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__butterfly-guard",
+      "label": "Armbar from Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "butterfly-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__butterfly-guard/top",
+      "label": "Armbar from Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "butterfly-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-s:armbar-from-guard__butterfly-guard/bottom",
+      "label": "Armbar from Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-guard"
+      ],
+      "bjjFrom": "butterfly-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-guard"
+    },
+    {
+      "id": "ref-s:guillotine-choke-from-butterfly-guard__butterfly-guard",
+      "label": "Guillotine Choke from Butterfly Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guillotine-choke-from-butterfly-guard"
+      ],
+      "bjjFrom": "butterfly-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "guillotine-choke-from-butterfly-guard"
+    },
+    {
+      "id": "ref-s:guillotine-choke-from-butterfly-guard__butterfly-guard/top",
+      "label": "Guillotine Choke from Butterfly Guard",
+      "from": "butterfly_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guillotine-choke-from-butterfly-guard"
+      ],
+      "bjjFrom": "butterfly-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "guillotine-choke-from-butterfly-guard"
+    },
+    {
+      "id": "ref-t:mount-control",
+      "label": "Mount Control",
+      "from": "mount_top",
+      "to": "mount_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 78,
+      "notes": "bjjgraph reference · success 78%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mount-control"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "mount-control"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__mount",
+      "label": "Kimura from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__mount/top",
+      "label": "Kimura from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__mount/bottom",
+      "label": "Kimura from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__mount",
+      "label": "Armbar from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__mount/top",
+      "label": "Armbar from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__mount/bottom",
+      "label": "Armbar from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__mount",
+      "label": "Americana from High Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__mount/top",
+      "label": "Americana from High Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__mount/bottom",
+      "label": "Americana from High Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__mount",
+      "label": "Americana from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__mount/top",
+      "label": "Americana from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__mount/bottom",
+      "label": "Americana from Mount",
+      "from": "mount_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-t:mount-to-3-4-mount",
+      "label": "Mount to 3-4 Mount",
+      "from": "mount_top",
+      "to": "low_mount",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:mount-to-3-4-mount"
+      ],
+      "bjjFrom": "mount/top",
+      "bjjTo": "3-4-mount/top",
+      "sourceTechniqueId": "mount-to-3-4-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__high-mount",
+      "label": "Kimura from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "high-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__high-mount/top",
+      "label": "Kimura from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "high-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__high-mount/bottom",
+      "label": "Kimura from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "high-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__high-mount",
+      "label": "Armbar from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "high-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__high-mount/top",
+      "label": "Armbar from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "high-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__high-mount/bottom",
+      "label": "Armbar from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "high-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__high-mount",
+      "label": "Americana from High Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "high-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__high-mount/top",
+      "label": "Americana from High Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "high-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-high-mount__high-mount/bottom",
+      "label": "Americana from High Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-high-mount"
+      ],
+      "bjjFrom": "high-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-high-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__high-mount",
+      "label": "Americana from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "high-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__high-mount/top",
+      "label": "Americana from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "high-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__high-mount/bottom",
+      "label": "Americana from Mount",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "high-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-mounted-triangle__high-mount",
+      "label": "Triangle Choke from Mounted Triangle",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-mounted-triangle"
+      ],
+      "bjjFrom": "high-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-mounted-triangle"
+    },
+    {
+      "id": "ref-s:triangle-choke-from-mounted-triangle__high-mount/top",
+      "label": "Triangle Choke from Mounted Triangle",
+      "from": "high_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-choke-from-mounted-triangle"
+      ],
+      "bjjFrom": "high-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "triangle-choke-from-mounted-triangle"
+    },
+    {
+      "id": "ref-t:front-headlock-to-back",
+      "label": "Front Headlock to Back",
+      "from": "front_headlock",
+      "to": "back_control",
+      "kind": "back_take",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:front-headlock-to-back"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "front-headlock-to-back"
+    },
+    {
+      "id": "ref-t:anaconda-setup",
+      "label": "Anaconda Setup",
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-setup"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "anaconda-control/top",
+      "sourceTechniqueId": "anaconda-setup"
+    },
+    {
+      "id": "ref-t:anaconda-choke",
+      "label": "Anaconda Choke",
+      "from": "front_headlock",
+      "to": "bjj:anaconda-control/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "anaconda-control/top",
+      "sourceTechniqueId": "anaconda-choke"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__front-headlock",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "front-headlock",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__front-headlock/top",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__front-headlock/bottom",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "front-headlock/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:kimura-from-front-headlock__front-headlock",
+      "label": "Kimura from Front Headlock",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-front-headlock"
+      ],
+      "bjjFrom": "front-headlock",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-front-headlock"
+    },
+    {
+      "id": "ref-s:kimura-from-front-headlock__front-headlock/top",
+      "label": "Kimura from Front Headlock",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-front-headlock"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-front-headlock"
+    },
+    {
+      "id": "ref-s:kimura-from-front-headlock__front-headlock/bottom",
+      "label": "Kimura from Front Headlock",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-front-headlock"
+      ],
+      "bjjFrom": "front-headlock/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-front-headlock"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__front-headlock",
+      "label": "Kimura from Turtle",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "front-headlock",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__front-headlock/top",
+      "label": "Kimura from Turtle",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-s:kimura-from-turtle__front-headlock/bottom",
+      "label": "Kimura from Turtle",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-turtle"
+      ],
+      "bjjFrom": "front-headlock/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-turtle"
+    },
+    {
+      "id": "ref-s:darce-choke-from-overhook-control__front-headlock",
+      "label": "Darce Choke from Overhook Control",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:darce-choke-from-overhook-control"
+      ],
+      "bjjFrom": "front-headlock",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "darce-choke-from-overhook-control"
+    },
+    {
+      "id": "ref-s:darce-choke-from-overhook-control__front-headlock/top",
+      "label": "Darce Choke from Overhook Control",
+      "from": "front_headlock",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:darce-choke-from-overhook-control"
+      ],
+      "bjjFrom": "front-headlock/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "darce-choke-from-overhook-control"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__3-4-mount",
+      "label": "Kimura from Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "3-4-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__3-4-mount/top",
+      "label": "Kimura from Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__3-4-mount/bottom",
+      "label": "Kimura from Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "3-4-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:cross-collar-choke-from-3-4-mount__3-4-mount",
+      "label": "Cross Collar Choke from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 58,
+      "notes": "bjjgraph reference · success 58%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:cross-collar-choke-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "cross-collar-choke-from-3-4-mount"
+    },
+    {
+      "id": "ref-s:cross-collar-choke-from-3-4-mount__3-4-mount/top",
+      "label": "Cross Collar Choke from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 58,
+      "notes": "bjjgraph reference · success 58%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:cross-collar-choke-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "cross-collar-choke-from-3-4-mount"
+    },
+    {
+      "id": "ref-s:cross-collar-choke-from-3-4-mount__3-4-mount/bottom",
+      "label": "Cross Collar Choke from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 58,
+      "notes": "bjjgraph reference · success 58%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:cross-collar-choke-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "cross-collar-choke-from-3-4-mount"
+    },
+    {
+      "id": "ref-t:triangle-from-mount",
+      "label": "Triangle from Mount",
+      "from": "low_mount",
+      "to": "bjj:mounted-triangle/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:triangle-from-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "mounted-triangle/top",
+      "sourceTechniqueId": "triangle-from-mount"
+    },
+    {
+      "id": "ref-t:3-4-mount-to-s-mount",
+      "label": "3-4 Mount to S Mount",
+      "from": "low_mount",
+      "to": "bjj:s-mount/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:3-4-mount-to-s-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "s-mount/top",
+      "sourceTechniqueId": "3-4-mount-to-s-mount"
+    },
+    {
+      "id": "ref-t:3-4-mount-to-technical-mount",
+      "label": "3-4 Mount to Technical Mount",
+      "from": "low_mount",
+      "to": "bjj:technical-mount/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:3-4-mount-to-technical-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "technical-mount/top",
+      "sourceTechniqueId": "3-4-mount-to-technical-mount"
+    },
+    {
+      "id": "ref-s:americana-from-3-4-mount__3-4-mount",
+      "label": "Americana from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-3-4-mount"
+    },
+    {
+      "id": "ref-s:americana-from-3-4-mount__3-4-mount/top",
+      "label": "Americana from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-3-4-mount"
+    },
+    {
+      "id": "ref-s:americana-from-3-4-mount__3-4-mount/bottom",
+      "label": "Americana from 3-4 Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-3-4-mount"
+      ],
+      "bjjFrom": "3-4-mount/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-3-4-mount"
+    },
+    {
+      "id": "ref-s:americana-from-technical-mount__3-4-mount",
+      "label": "Americana from Technical Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-technical-mount"
+      ],
+      "bjjFrom": "3-4-mount",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-technical-mount"
+    },
+    {
+      "id": "ref-s:americana-from-technical-mount__3-4-mount/top",
+      "label": "Americana from Technical Mount",
+      "from": "low_mount",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-technical-mount"
+      ],
+      "bjjFrom": "3-4-mount/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-technical-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__deep-half-guard",
+      "label": "Kimura from Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__deep-half-guard/top",
+      "label": "Kimura from Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__deep-half-guard/bottom",
+      "label": "Kimura from Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__deep-half-guard",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__deep-half-guard/top",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__deep-half-guard/bottom",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-s:suloev-stretch__deep-half-guard",
+      "label": "Suloev Stretch",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:suloev-stretch"
+      ],
+      "bjjFrom": "deep-half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "suloev-stretch"
+    },
+    {
+      "id": "ref-s:suloev-stretch__deep-half-guard/top",
+      "label": "Suloev Stretch",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:suloev-stretch"
+      ],
+      "bjjFrom": "deep-half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "suloev-stretch"
+    },
+    {
+      "id": "ref-s:suloev-stretch__deep-half-guard/bottom",
+      "label": "Suloev Stretch",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:suloev-stretch"
+      ],
+      "bjjFrom": "deep-half-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "suloev-stretch"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-truck__deep-half-guard",
+      "label": "Calf Slicer from Truck",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-truck"
+      ],
+      "bjjFrom": "deep-half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-truck"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-truck__deep-half-guard/top",
+      "label": "Calf Slicer from Truck",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-truck"
+      ],
+      "bjjFrom": "deep-half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-truck"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-truck__deep-half-guard/bottom",
+      "label": "Calf Slicer from Truck",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-truck"
+      ],
+      "bjjFrom": "deep-half-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-truck"
+    },
+    {
+      "id": "ref-s:suloev-stretch-from-half-guard__deep-half-guard",
+      "label": "Suloev Stretch from Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:suloev-stretch-from-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "suloev-stretch-from-half-guard"
+    },
+    {
+      "id": "ref-s:suloev-stretch-from-half-guard__deep-half-guard/top",
+      "label": "Suloev Stretch from Half Guard",
+      "from": "deep_half_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:suloev-stretch-from-half-guard"
+      ],
+      "bjjFrom": "deep-half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "suloev-stretch-from-half-guard"
+    },
+    {
+      "id": "ref-t:knee-through",
+      "label": "Knee Through",
+      "from": "shin_to_shin",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-through"
+      ],
+      "bjjFrom": "shin-to-shin-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "knee-through"
+    },
+    {
+      "id": "ref-t:shin-to-shin-to-single-leg-x",
+      "label": "Shin-to-Shin to Single Leg X",
+      "from": "shin_to_shin",
+      "to": "bjj:single-leg-x-guard/bottom",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shin-to-shin-to-single-leg-x"
+      ],
+      "bjjFrom": "shin-to-shin-guard/bottom",
+      "bjjTo": "single-leg-x-guard/bottom",
+      "sourceTechniqueId": "shin-to-shin-to-single-leg-x"
+    },
+    {
+      "id": "ref-t:pressure-from-shin-to-shin",
+      "label": "Pressure from Shin-to-Shin",
+      "from": "shin_to_shin",
+      "to": "half_guard_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:pressure-from-shin-to-shin"
+      ],
+      "bjjFrom": "shin-to-shin-guard/top",
+      "bjjTo": "half-guard/top",
+      "sourceTechniqueId": "pressure-from-shin-to-shin"
+    },
+    {
+      "id": "ref-t:shin-to-shin-sweep",
+      "label": "Shin-to-Shin Sweep",
+      "from": "shin_to_shin",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 50,
+      "notes": "bjjgraph reference · success 50%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:shin-to-shin-sweep"
+      ],
+      "bjjFrom": "shin-to-shin-guard/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "shin-to-shin-sweep"
+    },
+    {
+      "id": "ref-t:pass-shin-to-shin-guard",
+      "label": "Pass Shin-to-Shin Guard",
+      "from": "shin_to_shin",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 40,
+      "notes": "bjjgraph reference · success 40%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:pass-shin-to-shin-guard"
+      ],
+      "bjjFrom": "shin-to-shin-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "pass-shin-to-shin-guard"
+    },
+    {
+      "id": "ref-t:half-guard-to-back-take",
+      "label": "Half Guard to Back Take",
+      "from": "half_guard_bottom",
+      "to": "back_control",
+      "kind": "back_take",
+      "referenceOnly": true,
+      "successRate": 78,
+      "notes": "bjjgraph reference · success 78%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard-to-back-take"
+      ],
+      "bjjFrom": "half-guard/bottom",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "half-guard-to-back-take"
+    },
+    {
+      "id": "ref-t:over-under-pass",
+      "label": "Over-Under Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:over-under-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "over-under-pass"
+    },
+    {
+      "id": "ref-t:half-guard-pass",
+      "label": "Half Guard Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "half-guard-pass"
+    },
+    {
+      "id": "ref-t:half-guard-to-quarter-guard",
+      "label": "Half Guard to Quarter Guard",
+      "from": "half_guard_top",
+      "to": "bjj:quarter-guard/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard-to-quarter-guard"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "quarter-guard/top",
+      "sourceTechniqueId": "half-guard-to-quarter-guard"
+    },
+    {
+      "id": "ref-t:knee-slice-from-half",
+      "label": "Knee Slice from Half",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-slice-from-half"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "knee-slice-from-half"
+    },
+    {
+      "id": "ref-t:body-lock-pass",
+      "label": "Body Lock Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:body-lock-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "body-lock-pass"
+    },
+    {
+      "id": "ref-t:knee-slice-pass",
+      "label": "Knee Slice Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:knee-slice-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "knee-slice-pass"
+    },
+    {
+      "id": "ref-s:americana-from-kimura-trap__half-guard",
+      "label": "Americana from Kimura Trap",
+      "from": "half_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-kimura-trap"
+      ],
+      "bjjFrom": "half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-kimura-trap"
+    },
+    {
+      "id": "ref-s:americana-from-kimura-trap__half-guard/top",
+      "label": "Americana from Kimura Trap",
+      "from": "half_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-kimura-trap"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-kimura-trap"
+    },
+    {
+      "id": "ref-s:americana-from-kimura-trap__half-guard/bottom",
+      "label": "Americana from Kimura Trap",
+      "from": "half_guard_bottom",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-kimura-trap"
+      ],
+      "bjjFrom": "half-guard/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-kimura-trap"
+    },
+    {
+      "id": "ref-t:crossface-pass",
+      "label": "Crossface Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crossface-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "crossface-pass"
+    },
+    {
+      "id": "ref-t:x-pass",
+      "label": "X Pass",
+      "from": "half_guard_top",
+      "to": "side_control_top",
+      "kind": "pass",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:x-pass"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "x-pass"
+    },
+    {
+      "id": "ref-t:half-guard-to-flattened-half-guard",
+      "label": "Half Guard to Flattened Half Guard",
+      "from": "half_guard_top",
+      "to": "bjj:flattened-half-guard/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:half-guard-to-flattened-half-guard"
+      ],
+      "bjjFrom": "half-guard/top",
+      "bjjTo": "flattened-half-guard/top",
+      "sourceTechniqueId": "half-guard-to-flattened-half-guard"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__half-guard",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "half_guard_top",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "half-guard",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__knee-on-belly",
+      "label": "Kimura from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__knee-on-belly/top",
+      "label": "Kimura from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-mount__knee-on-belly/bottom",
+      "label": "Kimura from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 72,
+      "notes": "bjjgraph reference · success 72%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__knee-on-belly",
+      "label": "Armbar from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__knee-on-belly/top",
+      "label": "Armbar from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:armbar-from-mount__knee-on-belly/bottom",
+      "label": "Armbar from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "armbar-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-side-control__knee-on-belly",
+      "label": "Americana from Side Control",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-side-control"
+      ],
+      "bjjFrom": "knee-on-belly",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-side-control"
+    },
+    {
+      "id": "ref-s:americana-from-side-control__knee-on-belly/top",
+      "label": "Americana from Side Control",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-side-control"
+      ],
+      "bjjFrom": "knee-on-belly/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-side-control"
+    },
+    {
+      "id": "ref-s:americana-from-side-control__knee-on-belly/bottom",
+      "label": "Americana from Side Control",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-side-control"
+      ],
+      "bjjFrom": "knee-on-belly/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-side-control"
+    },
+    {
+      "id": "ref-s:americana-from-mount__knee-on-belly",
+      "label": "Americana from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__knee-on-belly/top",
+      "label": "Americana from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:americana-from-mount__knee-on-belly/bottom",
+      "label": "Americana from Mount",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 68,
+      "notes": "bjjgraph reference · success 68%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:americana-from-mount"
+      ],
+      "bjjFrom": "knee-on-belly/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "americana-from-mount"
+    },
+    {
+      "id": "ref-s:kimura-from-side-control__knee-on-belly",
+      "label": "Kimura from Side Control",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-side-control"
+      ],
+      "bjjFrom": "knee-on-belly",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-side-control"
+    },
+    {
+      "id": "ref-s:kimura-from-side-control__knee-on-belly/top",
+      "label": "Kimura from Side Control",
+      "from": "knee_on_belly",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-side-control"
+      ],
+      "bjjFrom": "knee-on-belly/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-side-control"
+    },
+    {
+      "id": "ref-t:double-leg-finish",
+      "label": "Double Leg Finish",
+      "from": "over_under",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 82,
+      "notes": "bjjgraph reference · success 82%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:double-leg-finish"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "double-leg-finish"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__clinch",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "clinch",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__clinch/top",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:anaconda-choke-from-anaconda-control__clinch/bottom",
+      "label": "Anaconda Choke from Anaconda Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:anaconda-choke-from-anaconda-control"
+      ],
+      "bjjFrom": "clinch/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "anaconda-choke-from-anaconda-control"
+    },
+    {
+      "id": "ref-s:kimura-from-overhook-control__clinch",
+      "label": "Kimura from Overhook Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-overhook-control"
+      ],
+      "bjjFrom": "clinch",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-overhook-control"
+    },
+    {
+      "id": "ref-s:kimura-from-overhook-control__clinch/top",
+      "label": "Kimura from Overhook Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-overhook-control"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-overhook-control"
+    },
+    {
+      "id": "ref-s:kimura-from-overhook-control__clinch/bottom",
+      "label": "Kimura from Overhook Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-overhook-control"
+      ],
+      "bjjFrom": "clinch/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-overhook-control"
+    },
+    {
+      "id": "ref-s:guillotine-choke-from-guillotine-control__clinch",
+      "label": "Guillotine Choke from Guillotine Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guillotine-choke-from-guillotine-control"
+      ],
+      "bjjFrom": "clinch",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "guillotine-choke-from-guillotine-control"
+    },
+    {
+      "id": "ref-s:guillotine-choke-from-guillotine-control__clinch/top",
+      "label": "Guillotine Choke from Guillotine Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guillotine-choke-from-guillotine-control"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "guillotine-choke-from-guillotine-control"
+    },
+    {
+      "id": "ref-s:guillotine-choke-from-guillotine-control__clinch/bottom",
+      "label": "Guillotine Choke from Guillotine Control",
+      "from": "over_under",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:guillotine-choke-from-guillotine-control"
+      ],
+      "bjjFrom": "clinch/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "guillotine-choke-from-guillotine-control"
+    },
+    {
+      "id": "ref-t:high-crotch",
+      "label": "High Crotch",
+      "from": "over_under",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:high-crotch"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "high-crotch"
+    },
+    {
+      "id": "ref-t:single-leg-takedown",
+      "label": "Single Leg Takedown",
+      "from": "over_under",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:single-leg-takedown"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "single-leg-takedown"
+    },
+    {
+      "id": "ref-t:firemans-carry",
+      "label": "Fireman's Carry",
+      "from": "over_under",
+      "to": "side_control_top",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:firemans-carry"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "firemans-carry"
+    },
+    {
+      "id": "ref-t:snap-down-to-front-headlock",
+      "label": "Snap Down to Front Headlock",
+      "from": "over_under",
+      "to": "front_headlock",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 60,
+      "notes": "bjjgraph reference · success 60%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:snap-down-to-front-headlock"
+      ],
+      "bjjFrom": "clinch/top",
+      "bjjTo": "front-headlock/top",
+      "sourceTechniqueId": "snap-down-to-front-headlock"
+    },
+    {
+      "id": "ref-t:crucifix-maintenance",
+      "label": "Crucifix Maintenance",
+      "from": "crucifix",
+      "to": "crucifix",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crucifix-maintenance"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "crucifix/top",
+      "sourceTechniqueId": "crucifix-maintenance"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-mounted-crucifix__crucifix",
+      "label": "Rear Naked Choke from Mounted Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-mounted-crucifix"
+      ],
+      "bjjFrom": "crucifix",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-mounted-crucifix"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-mounted-crucifix__crucifix/top",
+      "label": "Rear Naked Choke from Mounted Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-mounted-crucifix"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-mounted-crucifix"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-mounted-crucifix__crucifix/bottom",
+      "label": "Rear Naked Choke from Mounted Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-mounted-crucifix"
+      ],
+      "bjjFrom": "crucifix/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-mounted-crucifix"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-crucifix__crucifix",
+      "label": "Rear Naked Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-crucifix__crucifix/top",
+      "label": "Rear Naked Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-crucifix__crucifix/bottom",
+      "label": "Rear Naked Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-crucifix"
+    },
+    {
+      "id": "ref-t:armbar-from-crucifix",
+      "label": "Armbar from Crucifix",
+      "from": "crucifix",
+      "to": "bjj:armbar-control/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:armbar-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "armbar-control/top",
+      "sourceTechniqueId": "armbar-from-crucifix"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__crucifix",
+      "label": "Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__crucifix/top",
+      "label": "Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:choke-from-crucifix__crucifix/bottom",
+      "label": "Choke from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:choke-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "choke-from-crucifix"
+    },
+    {
+      "id": "ref-s:kimura-from-crucifix__crucifix",
+      "label": "Kimura from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-crucifix"
+      ],
+      "bjjFrom": "crucifix",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-crucifix"
+    },
+    {
+      "id": "ref-s:kimura-from-crucifix__crucifix/top",
+      "label": "Kimura from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-crucifix"
+    },
+    {
+      "id": "ref-s:kimura-from-crucifix__crucifix/bottom",
+      "label": "Kimura from Crucifix",
+      "from": "crucifix",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-crucifix"
+      ],
+      "bjjFrom": "crucifix/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-crucifix"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__dogfight-position",
+      "label": "Kimura from Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "dogfight-position",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__dogfight-position/top",
+      "label": "Kimura from Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "dogfight-position/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:kimura-from-half-guard__dogfight-position/bottom",
+      "label": "Kimura from Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:kimura-from-half-guard"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "kimura-from-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__dogfight-position",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "dogfight-position",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__dogfight-position/top",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "dogfight-position/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-s:electric-chair-from-deep-half-guard__dogfight-position/bottom",
+      "label": "Electric Chair from Deep Half Guard",
+      "from": "dogfight",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:electric-chair-from-deep-half-guard"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "electric-chair-from-deep-half-guard"
+    },
+    {
+      "id": "ref-t:re-pull-half-guard-from-dogfight",
+      "label": "Re-pull Half Guard from Dogfight",
+      "from": "dogfight",
+      "to": "half_guard_bottom",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:re-pull-half-guard-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "half-guard/bottom",
+      "sourceTechniqueId": "re-pull-half-guard-from-dogfight"
+    },
+    {
+      "id": "ref-t:re-flatten-from-dogfight",
+      "label": "Re-flatten from Dogfight",
+      "from": "dogfight",
+      "to": "half_guard_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:re-flatten-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/top",
+      "bjjTo": "half-guard/top",
+      "sourceTechniqueId": "re-flatten-from-dogfight"
+    },
+    {
+      "id": "ref-t:forward-drive-sweep-from-dogfight",
+      "label": "Forward Drive Sweep from Dogfight",
+      "from": "dogfight",
+      "to": "mount_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:forward-drive-sweep-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "mount/top",
+      "sourceTechniqueId": "forward-drive-sweep-from-dogfight"
+    },
+    {
+      "id": "ref-t:crossface-from-dogfight",
+      "label": "Crossface from Dogfight",
+      "from": "dogfight",
+      "to": "side_control_top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:crossface-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/top",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "crossface-from-dogfight"
+    },
+    {
+      "id": "ref-t:dogfight-sweep",
+      "label": "Dogfight Sweep",
+      "from": "dogfight",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:dogfight-sweep"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "dogfight-sweep"
+    },
+    {
+      "id": "ref-t:underhook-sweep-from-dogfight",
+      "label": "Underhook Sweep from Dogfight",
+      "from": "dogfight",
+      "to": "side_control_top",
+      "kind": "sweep",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:underhook-sweep-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/bottom",
+      "bjjTo": "side-control/top",
+      "sourceTechniqueId": "underhook-sweep-from-dogfight"
+    },
+    {
+      "id": "ref-t:snap-down-from-dogfight",
+      "label": "Snap Down from Dogfight",
+      "from": "dogfight",
+      "to": "front_headlock",
+      "kind": "takedown",
+      "referenceOnly": true,
+      "successRate": 45,
+      "notes": "bjjgraph reference · success 45%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:snap-down-from-dogfight"
+      ],
+      "bjjFrom": "dogfight-position/top",
+      "bjjTo": "front-headlock/top",
+      "sourceTechniqueId": "snap-down-from-dogfight"
+    },
+    {
+      "id": "ref-t:back-control-to-seat-belt-control-back",
+      "label": "Back Control to Seat Belt Control Back",
+      "from": "back_control",
+      "to": "bjj:seat-belt-control-back/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control-to-seat-belt-control-back"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "seat-belt-control-back/top",
+      "sourceTechniqueId": "back-control-to-seat-belt-control-back"
+    },
+    {
+      "id": "ref-t:back-control-maintenance",
+      "label": "Back Control Maintenance",
+      "from": "back_control",
+      "to": "back_control",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 70,
+      "notes": "bjjgraph reference · success 70%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control-maintenance"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "back-control-maintenance"
+    },
+    {
+      "id": "ref-t:restore-back-control",
+      "label": "Restore Back Control",
+      "from": "back_control",
+      "to": "back_control",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:restore-back-control"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "restore-back-control"
+    },
+    {
+      "id": "ref-t:back-control-to-cross-body-ride",
+      "label": "Back Control to Cross Body Ride",
+      "from": "back_control",
+      "to": "bjj:cross-body-ride/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:back-control-to-cross-body-ride"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "cross-body-ride/top",
+      "sourceTechniqueId": "back-control-to-cross-body-ride"
+    },
+    {
+      "id": "ref-t:rear-naked-choke-setup",
+      "label": "Rear Naked Choke Setup",
+      "from": "back_control",
+      "to": "bjj:harness/top",
+      "kind": "transition",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-setup"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "harness/top",
+      "sourceTechniqueId": "rear-naked-choke-setup"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__back-control",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "back-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__back-control/top",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-gift-wrap__back-control/bottom",
+      "label": "Rear Naked Choke from Gift Wrap",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-gift-wrap"
+      ],
+      "bjjFrom": "back-control/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-gift-wrap"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-seat-belt-control-back__back-control",
+      "label": "Rear Naked Choke from Seat Belt Control Back",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-seat-belt-control-back"
+      ],
+      "bjjFrom": "back-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-seat-belt-control-back"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-seat-belt-control-back__back-control/top",
+      "label": "Rear Naked Choke from Seat Belt Control Back",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-seat-belt-control-back"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-seat-belt-control-back"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-seat-belt-control-back__back-control/bottom",
+      "label": "Rear Naked Choke from Seat Belt Control Back",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-seat-belt-control-back"
+      ],
+      "bjjFrom": "back-control/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-seat-belt-control-back"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-back-control__back-control",
+      "label": "Rear Naked Choke from Back Control",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-back-control"
+      ],
+      "bjjFrom": "back-control",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-back-control"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-back-control__back-control/top",
+      "label": "Rear Naked Choke from Back Control",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-back-control"
+      ],
+      "bjjFrom": "back-control/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-back-control"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-back-control__back-control/bottom",
+      "label": "Rear Naked Choke from Back Control",
+      "from": "back_control",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-back-control"
+      ],
+      "bjjFrom": "back-control/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-back-control"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-russian-cowboy__russian-cowboy",
+      "label": "Rear Naked Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-russian-cowboy__russian-cowboy/top",
+      "label": "Rear Naked Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:rear-naked-choke-from-russian-cowboy__russian-cowboy/bottom",
+      "label": "Rear Naked Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 65,
+      "notes": "bjjgraph reference · success 65%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:rear-naked-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "rear-naked-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:bow-and-arrow-choke-from-russian-cowboy__russian-cowboy",
+      "label": "Bow and Arrow Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:bow-and-arrow-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "bow-and-arrow-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:bow-and-arrow-choke-from-russian-cowboy__russian-cowboy/top",
+      "label": "Bow and Arrow Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:bow-and-arrow-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "bow-and-arrow-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:bow-and-arrow-choke-from-russian-cowboy__russian-cowboy/bottom",
+      "label": "Bow and Arrow Choke from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 62,
+      "notes": "bjjgraph reference · success 62%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:bow-and-arrow-choke-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "bow-and-arrow-choke-from-russian-cowboy"
+    },
+    {
+      "id": "ref-t:russian-cowboy-to-back-control",
+      "label": "Russian Cowboy to Back Control",
+      "from": "russian_tie",
+      "to": "back_control",
+      "kind": "back_take",
+      "referenceOnly": true,
+      "successRate": 55,
+      "notes": "bjjgraph reference · success 55%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:russian-cowboy-to-back-control"
+      ],
+      "bjjFrom": "russian-cowboy/top",
+      "bjjTo": "back-control/top",
+      "sourceTechniqueId": "russian-cowboy-to-back-control"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-russian-cowboy__russian-cowboy",
+      "label": "Calf Slicer from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 50,
+      "notes": "bjjgraph reference · success 50%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-russian-cowboy__russian-cowboy/top",
+      "label": "Calf Slicer from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 50,
+      "notes": "bjjgraph reference · success 50%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:calf-slicer-from-russian-cowboy__russian-cowboy/bottom",
+      "label": "Calf Slicer from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 50,
+      "notes": "bjjgraph reference · success 50%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:calf-slicer-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/bottom",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "calf-slicer-from-russian-cowboy"
+    },
+    {
+      "id": "ref-t:roll-escape-from-russian-cowboy",
+      "label": "Roll Escape from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "bjj:turtle/bottom",
+      "kind": "escape",
+      "referenceOnly": true,
+      "successRate": 40,
+      "notes": "bjjgraph reference · success 40%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:roll-escape-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/bottom",
+      "bjjTo": "turtle/bottom",
+      "sourceTechniqueId": "roll-escape-from-russian-cowboy"
+    },
+    {
+      "id": "ref-t:hip-escape-from-russian-cowboy",
+      "label": "Hip Escape from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "half_guard_bottom",
+      "kind": "escape",
+      "referenceOnly": true,
+      "successRate": 40,
+      "notes": "bjjgraph reference · success 40%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:hip-escape-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/bottom",
+      "bjjTo": "half-guard/bottom",
+      "sourceTechniqueId": "hip-escape-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:twister-from-russian-cowboy__russian-cowboy",
+      "label": "Twister from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 40,
+      "notes": "bjjgraph reference · success 40%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:twister-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "twister-from-russian-cowboy"
+    },
+    {
+      "id": "ref-s:twister-from-russian-cowboy__russian-cowboy/top",
+      "label": "Twister from Russian Cowboy",
+      "from": "russian_tie",
+      "to": "submitted",
+      "kind": "submission",
+      "referenceOnly": true,
+      "successRate": 40,
+      "notes": "bjjgraph reference · success 40%",
+      "sources": [
+        "https://github.com/diogoseca/bjjgraph",
+        "bjjgraph:twister-from-russian-cowboy"
+      ],
+      "bjjFrom": "russian-cowboy/top",
+      "bjjTo": "game-over",
+      "sourceTechniqueId": "twister-from-russian-cowboy"
+    }
+  ],
+  "journalMentions": []
+}
