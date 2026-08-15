@@ -2,7 +2,9 @@
 
 A-game worksheet → flowchart → finish-path analysis. Model your jiu-jitsu as a finite automaton (positions = states, techniques = transitions) and see strongest chains, limiting factors, and dead ends.
 
-**Live (GitHub Pages):** after deploy — `https://escamillacasey.github.io/BJJ_Automata/`
+**Live (GitHub Pages):** https://escamillacasey.github.io/BJJ_Automata/
+
+Repo is **public** (required for GitHub Pages on free accounts).
 
 ## For testers
 
