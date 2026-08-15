@@ -20,7 +20,7 @@ Data is stored for coaching review (Supabase). Do not put secrets in the sheet.
 ```bash
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 npm install
-cp .env.example .env.local   # add Supabase URL + anon key
+cp .env.example .env.local   # add Supabase URL + publishable key
 npm run dev
 ```
 
@@ -30,7 +30,7 @@ Without `.env.local`, the app still runs and autosaves in **localStorage** only.
 
 1. Repo secrets (Settings → Secrets and variables → Actions):
    - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
+   - `VITE_SUPABASE_PUBLISHABLE_KEY` (Publishable key from Supabase API Keys)
 2. Enable Pages: Settings → Pages → Source = **GitHub Actions**.
 3. Push to `main` (or run the **Deploy GitHub Pages** workflow).
 4. Site: `https://<user>.github.io/BJJ_Automata/`
@@ -40,9 +40,15 @@ CI sets `VITE_BASE_PATH=/BJJ_Automata/` so asset URLs resolve on the project sit
 ## Supabase setup (one time)
 
 1. Create a free project at [supabase.com](https://supabase.com).
-2. Project Settings → API: copy **Project URL** and **anon public** key into `.env.local` and GitHub Actions secrets.
-3. SQL Editor → run [`supabase/schema.sql`](supabase/schema.sql).
-4. Confirm Table Editor shows `worksheets`.
+2. SQL Editor → run [`supabase/schema.sql`](supabase/schema.sql).
+3. **Project Settings → API Keys** (or API):
+   - **Project URL** → `VITE_SUPABASE_URL`
+   - **Publishable** key (`sb_publishable_...`) → `VITE_SUPABASE_PUBLISHABLE_KEY`
+   - Do **not** put the **Secret** key in the frontend or GitHub Pages secrets (it bypasses RLS).
+4. Add those two values as GitHub Actions secrets and (optionally) to `.env.local`.
+5. Re-run **Deploy GitHub Pages** so the live build includes the keys.
+
+Confirm Table Editor shows `worksheets`.
 
 Identity key: `(athlete_name, athlete_email)`. Empty email is allowed; same name + email upserts the latest payload.
 
