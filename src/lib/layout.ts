@@ -2,12 +2,12 @@ import type { Edge, Node } from '@xyflow/react'
 import type { GameGraph, GraphAnalysis, Position, PositionCategory } from './types'
 import { categoryColor } from './analysis'
 
-const NODE_W = 176
-const NODE_H = 72
-const COL_GAP = 96
-const ROW_GAP = 22
-const HEADER_H = 36
-const BAND_GAP = 56
+const NODE_W = 200
+const NODE_H = 84
+const COL_GAP = 100
+const ROW_GAP = 26
+const HEADER_H = 40
+const BAND_GAP = 60
 
 /** Positional hierarchy: left → right toward the finish. */
 const RANK: Record<PositionCategory, number> = {
@@ -164,7 +164,7 @@ export function layoutGraph(
       draggable: false,
       selectable: false,
       connectable: false,
-      style: { opacity: 0.5, width: 100 },
+      style: { opacity: 0.5, width: 120 },
     })
   }
   const anyLower = [...partitioned.values()].some((b) => b.lower.length > 0)
@@ -177,7 +177,7 @@ export function layoutGraph(
       draggable: false,
       selectable: false,
       connectable: false,
-      style: { opacity: 0.5, width: 100 },
+      style: { opacity: 0.5, width: 120 },
     })
   }
 
@@ -237,17 +237,24 @@ export function layoutGraph(
             : w >= 4
               ? 'var(--edge-strong)'
               : 'var(--edge)',
-        strokeWidth: isRef ? 1 : weighted ? 0.8 + w * 0.55 : w >= 4 ? 2.2 : 1.5,
+        strokeWidth: isRef
+          ? 1.5
+          : weighted
+            ? 1.6 + w * 0.7
+            : w >= 4
+              ? 3.2
+              : 2.2,
         strokeDasharray: isRef ? '5 4' : undefined,
-        opacity: isRef ? 0.2 : weighted ? 0.55 + w * 0.08 : 0.85,
+        opacity: isRef ? 0.25 : weighted ? 0.7 + w * 0.06 : 0.92,
       },
       labelStyle: {
-        fill: 'var(--chalk-dim)',
-        fontSize: 10,
+        fill: 'var(--chalk)',
+        fontSize: 13,
+        fontWeight: 600,
         fontFamily: 'var(--font-mono)',
       },
-      labelBgStyle: { fill: 'var(--mat)', fillOpacity: 0.92 },
-      labelBgPadding: [4, 6] as [number, number],
+      labelBgStyle: { fill: 'var(--mat)', fillOpacity: 0.94 },
+      labelBgPadding: [6, 8] as [number, number],
       data: { transition: t, weight: w, moveLabel: t.label },
     }
   })

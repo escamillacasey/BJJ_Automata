@@ -127,7 +127,7 @@ function DiagramInner({
                 ? Math.max(baseOpacity, 0.95)
                 : baseOpacity,
             strokeWidth: onHighlightPath
-              ? Math.max((e.style?.strokeWidth as number) ?? 1.5, 2.6)
+              ? Math.max((e.style?.strokeWidth as number) ?? 2.2, 4)
               : e.style?.strokeWidth,
           },
         }

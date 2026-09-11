@@ -613,24 +613,25 @@ a {
 }
 
 .phase-node {
-  width: 176px;
+  width: 200px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.82rem;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--amber);
-  opacity: 0.85;
-  padding: 0.25rem 0;
+  opacity: 0.9;
+  padding: 0.3rem 0;
   border-bottom: 1px solid rgba(212, 160, 23, 0.35);
   pointer-events: none;
 }
 
 .pos-node {
-  width: 176px;
-  padding: 0.55rem 0.65rem 0.5rem;
+  width: 200px;
+  padding: 0.65rem 0.75rem 0.6rem;
   background: linear-gradient(160deg, #22281f, #171b15);
   border: 1px solid rgba(232, 228, 217, 0.14);
-  border-left: 3px solid var(--node-accent, var(--amber));
+  border-left: 4px solid var(--node-accent, var(--amber));
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
@@ -664,16 +665,18 @@ a {
 
 .pos-node__cat {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.7rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--chalk-dim);
 }
 
 .pos-node__label {
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 1.05;
   letter-spacing: 0.02em;
 }
@@ -681,9 +684,10 @@ a {
 .pos-node__meta {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 500;
   color: var(--chalk-dim);
 }
 
@@ -696,10 +700,11 @@ a {
 
 .flag {
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.1rem 0.3rem;
+  padding: 0.12rem 0.35rem;
   border: 1px solid currentColor;
 }
 
