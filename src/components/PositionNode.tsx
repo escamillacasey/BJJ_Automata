@@ -76,3 +76,4 @@ export function PhaseNode({ data }: NodeProps) {
   const { label } = data as { label: string }
   return <div className="phase-node">{label}</div>
 }
+

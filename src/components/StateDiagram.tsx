@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Background,
   Controls,
@@ -32,6 +32,34 @@ type Props = {
   edgeWeights?: Record<string, number>
 }
 
+function shouldShowLabel(
+  e: Edge,
+  opts: {
+    highlightIds: Set<string>
+    selectedId: string | null
+    hoveredEdgeId: string | null
+  },
+): boolean {
+  const weight = (e.data as { weight?: number } | undefined)?.weight ?? 0
+  const moveLabel = (e.data as { moveLabel?: string } | undefined)?.moveLabel
+  if (!moveLabel) return false
+
+  // Always label brown/black chains — those are the A-game spine
+  if (weight >= 4) return true
+  if (opts.hoveredEdgeId === e.id) return true
+  if (opts.selectedId && (e.source === opts.selectedId || e.target === opts.selectedId)) {
+    return true
+  }
+  if (
+    opts.highlightIds.size > 0 &&
+    opts.highlightIds.has(e.source) &&
+    opts.highlightIds.has(e.target)
+  ) {
+    return true
+  }
+  return false
+}
+
 function DiagramInner({
   graph,
   analysis,
@@ -42,6 +70,7 @@ function DiagramInner({
   edgeWeights,
 }: Props) {
   const { fitView } = useReactFlow()
+  const [hoveredEdgeId, setHoveredEdgeId] = useState<string | null>(null)
   const laidOut = useMemo(
     () => layoutGraph(graph, analysis, { weighted, edgeWeights }),
     [graph, analysis, weighted, edgeWeights],
@@ -72,26 +101,53 @@ function DiagramInner({
     setEdges(
       laidOut.edges.map((e) => {
         const baseOpacity = (e.style?.opacity as number | undefined) ?? 1
+        const onHighlightPath =
+          hi.size > 0 && hi.has(e.source) && hi.has(e.target)
         const dimmed =
           hi.size > 0 &&
-          !hi.has(e.source) &&
-          !hi.has(e.target) &&
+          !onHighlightPath &&
           e.source !== selectedId &&
           e.target !== selectedId
+        const showLabel = shouldShowLabel(e, {
+          highlightIds: hi,
+          selectedId,
+          hoveredEdgeId,
+        })
+        const moveLabel = (e.data as { moveLabel?: string } | undefined)
+          ?.moveLabel
+
         return {
           ...e,
+          label: showLabel ? moveLabel : undefined,
           style: {
             ...e.style,
-            opacity: dimmed ? 0.05 : baseOpacity,
+            opacity: dimmed
+              ? 0.06
+              : onHighlightPath
+                ? Math.max(baseOpacity, 0.95)
+                : baseOpacity,
+            strokeWidth: onHighlightPath
+              ? Math.max((e.style?.strokeWidth as number) ?? 1.5, 2.6)
+              : e.style?.strokeWidth,
           },
         }
       }),
     )
-    // Refit after hierarchy changes (personal ↔ reference, category filter)
+  }, [
+    laidOut,
+    selectedId,
+    highlightIds,
+    hoveredEdgeId,
+    setNodes,
+    setEdges,
+  ])
+
+  // Refit only when the graph geometry changes — not on hover/selection
+  useEffect(() => {
     requestAnimationFrame(() => {
-      fitView({ padding: 0.15, duration: 280 })
+      fitView({ padding: 0.18, duration: 280 })
     })
-  }, [laidOut, selectedId, highlightIds, setNodes, setEdges, fitView])
+  }, [laidOut, fitView])
 
   return (
     <ReactFlow
@@ -101,7 +157,7 @@ function DiagramInner({
       onEdgesChange={onEdgesChange}
       nodeTypes={nodeTypes}
       fitView
-      fitViewOptions={{ padding: 0.15 }}
+      fitViewOptions={{ padding: 0.18 }}
       minZoom={0.2}
       maxZoom={1.6}
       nodesDraggable
@@ -110,6 +166,8 @@ function DiagramInner({
         onSelect(node.id)
       }}
       onPaneClick={() => onSelect(null)}
+      onEdgeMouseEnter={(_, edge) => setHoveredEdgeId(edge.id)}
+      onEdgeMouseLeave={() => setHoveredEdgeId(null)}
       proOptions={{ hideAttribution: true }}
       defaultEdgeOptions={{ type: 'smoothstep' }}
     >

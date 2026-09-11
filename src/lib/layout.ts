@@ -4,9 +4,10 @@ import { categoryColor } from './analysis'
 
 const NODE_W = 176
 const NODE_H = 72
-const COL_GAP = 72
-const ROW_GAP = 18
+const COL_GAP = 96
+const ROW_GAP = 22
 const HEADER_H = 36
+const BAND_GAP = 56
 
 /** Positional hierarchy: left → right toward the finish. */
 const RANK: Record<PositionCategory, number> = {
@@ -35,8 +36,12 @@ function rankOf(p: Position): number {
   return RANK[p.category] ?? 3
 }
 
-function sortInLane(a: Position, b: Position): number {
-  // Personal nodes first, then reference; alphabetical within group
+/** Upper band = top / attacking / neutral / either; lower = bottom. */
+function isLowerBand(p: Position): boolean {
+  return p.role === 'bottom'
+}
+
+function sortInBand(a: Position, b: Position): number {
   const ar = a.referenceOnly ? 1 : 0
   const br = b.referenceOnly ? 1 : 0
   if (ar !== br) return ar - br
@@ -61,9 +66,46 @@ function defaultMetrics(p: Position) {
   }
 }
 
+function beltWeight(t: { proficiency?: string | null }): number {
+  if (t.proficiency === 'black') return 5
+  if (t.proficiency === 'brown') return 4
+  if (t.proficiency === 'purple') return 3
+  if (t.proficiency === 'blue') return 2
+  if (t.proficiency === 'white') return 1
+  return 2
+}
+
+function beltStroke(w: number) {
+  if (w >= 5) return '#e8e4d9'
+  if (w >= 4) return '#6b4226'
+  if (w >= 3) return '#8b6aa8'
+  if (w >= 2) return '#3b6ea8'
+  return '#7a7a72'
+}
+
 /**
- * Organized swimlane layout: columns follow BJJ hierarchy,
- * rows stack personal nodes above reference neighbors.
+ * Seats with no moves in or out clutter the board — drop them.
+ * Always keep Submission as the finish sink.
+ */
+export function pruneEmptySeats(graph: GameGraph): GameGraph {
+  const connected = new Set<string>()
+  for (const t of graph.transitions) {
+    connected.add(t.from)
+    connected.add(t.to)
+  }
+  const positions = graph.positions.filter(
+    (p) => p.id === 'submitted' || connected.has(p.id),
+  )
+  const ids = new Set(positions.map((p) => p.id))
+  const transitions = graph.transitions.filter(
+    (t) => ids.has(t.from) && ids.has(t.to),
+  )
+  return { ...graph, positions, transitions }
+}
+
+/**
+ * Swimlane layout: columns = hierarchy, Top band above Bottom band.
+ * Edge labels are stored on `data` — visibility is decided at render time.
  */
 export function layoutGraph(
   graph: GameGraph,
@@ -75,20 +117,33 @@ export function layoutGraph(
 ): { nodes: Node[]; edges: Edge[] } {
   const weighted = opts?.weighted ?? false
   const edgeWeights = opts?.edgeWeights ?? {}
+  const pruned = pruneEmptySeats(graph)
 
   const lanes = new Map<number, Position[]>()
-  for (const p of graph.positions) {
-    // Hide unused seats with no edges when graph is worksheet-sized? Keep all agreed seats.
+  for (const p of pruned.positions) {
     const r = rankOf(p)
     if (!lanes.has(r)) lanes.set(r, [])
     lanes.get(r)!.push(p)
   }
-  for (const list of lanes.values()) list.sort(sortInLane)
+
+  let maxUpper = 0
+  const partitioned = new Map<
+    number,
+    { upper: Position[]; lower: Position[] }
+  >()
+  for (const [rank, list] of lanes) {
+    const upper = list.filter((p) => !isLowerBand(p)).sort(sortInBand)
+    const lower = list.filter((p) => isLowerBand(p)).sort(sortInBand)
+    partitioned.set(rank, { upper, lower })
+    maxUpper = Math.max(maxUpper, upper.length)
+  }
 
   const colWidth = NODE_W + COL_GAP
+  const upperBandH = maxUpper * (NODE_H + ROW_GAP)
+  const lowerStartY = HEADER_H + 12 + upperBandH + (maxUpper > 0 ? BAND_GAP : 0)
   const nodes: Node[] = []
 
-  for (const rank of [...lanes.keys()].sort((a, b) => a - b)) {
+  for (const rank of [...partitioned.keys()].sort((a, b) => a - b)) {
     nodes.push({
       id: `__phase-${rank}`,
       type: 'phase',
@@ -100,8 +155,34 @@ export function layoutGraph(
     })
   }
 
-  for (const [rank, list] of lanes) {
-    list.forEach((p, i) => {
+  if (maxUpper > 0) {
+    nodes.push({
+      id: '__band-top',
+      type: 'phase',
+      position: { x: -132, y: HEADER_H + 12 },
+      data: { label: 'Top' },
+      draggable: false,
+      selectable: false,
+      connectable: false,
+      style: { opacity: 0.5, width: 100 },
+    })
+  }
+  const anyLower = [...partitioned.values()].some((b) => b.lower.length > 0)
+  if (anyLower) {
+    nodes.push({
+      id: '__band-bottom',
+      type: 'phase',
+      position: { x: -132, y: lowerStartY },
+      data: { label: 'Bottom' },
+      draggable: false,
+      selectable: false,
+      connectable: false,
+      style: { opacity: 0.5, width: 100 },
+    })
+  }
+
+  for (const [rank, { upper, lower }] of partitioned) {
+    upper.forEach((p, i) => {
       const metrics = analysis.nodes[p.id] ?? defaultMetrics(p)
       nodes.push({
         id: p.id,
@@ -117,33 +198,27 @@ export function layoutGraph(
         },
       })
     })
+    lower.forEach((p, i) => {
+      const metrics = analysis.nodes[p.id] ?? defaultMetrics(p)
+      nodes.push({
+        id: p.id,
+        type: 'position',
+        position: {
+          x: rank * colWidth,
+          y: lowerStartY + i * (NODE_H + ROW_GAP),
+        },
+        data: {
+          position: p,
+          metrics,
+          accent: categoryColor(p.category),
+        },
+      })
+    })
   }
 
-  const showLabels = graph.transitions.length <= 60
-
-  const beltStroke = (w: number) => {
-    if (w >= 5) return '#e8e4d9'
-    if (w >= 4) return '#6b4226'
-    if (w >= 3) return '#8b6aa8'
-    if (w >= 2) return '#3b6ea8'
-    return '#7a7a72'
-  }
-
-  const edges: Edge[] = graph.transitions.map((t) => {
+  const edges: Edge[] = pruned.transitions.map((t) => {
     const isRef = Boolean(t.referenceOnly)
-    const w =
-      edgeWeights[t.id] ??
-      (t.proficiency === 'black'
-        ? 5
-        : t.proficiency === 'brown'
-          ? 4
-          : t.proficiency === 'purple'
-            ? 3
-            : t.proficiency === 'blue'
-              ? 2
-              : t.proficiency === 'white'
-                ? 1
-                : 2)
+    const w = edgeWeights[t.id] ?? beltWeight(t)
 
     return {
       id: t.id,
@@ -151,7 +226,7 @@ export function layoutGraph(
       target: t.to,
       sourceHandle: 'out',
       targetHandle: 'in',
-      label: showLabels && !isRef ? t.label : undefined,
+      label: undefined,
       type: 'smoothstep',
       animated: !isRef && w >= 4,
       style: {
@@ -168,11 +243,12 @@ export function layoutGraph(
       },
       labelStyle: {
         fill: 'var(--chalk-dim)',
-        fontSize: 9,
+        fontSize: 10,
         fontFamily: 'var(--font-mono)',
       },
-      labelBgStyle: { fill: 'var(--mat)', fillOpacity: 0.9 },
-      data: { transition: t, weight: w },
+      labelBgStyle: { fill: 'var(--mat)', fillOpacity: 0.92 },
+      labelBgPadding: [4, 6] as [number, number],
+      data: { transition: t, weight: w, moveLabel: t.label },
     }
   })
 
