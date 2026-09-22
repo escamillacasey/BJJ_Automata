@@ -10,11 +10,12 @@ import {
 } from '../lib/worksheet'
 import { countFilledMoves } from '../lib/worksheetToGraph'
 import {
+  canAutosave,
   cloudAvailable,
   fetchCloudWorksheet,
+  isValidPin,
   loadLocalWorksheet,
   saveLocalWorksheet,
-  shouldPreferCloud,
   syncStatusLabel,
   upsertCloudWorksheet,
   type SyncStatus,
@@ -30,73 +31,34 @@ const SYNC_DEBOUNCE_MS = 800
 
 export function WorksheetForm({ onGenerate }: Props) {
   const [form, setForm] = useState<WorksheetResponse>(loadLocalWorksheet)
-  const [syncStatus, setSyncStatus] = useState<SyncStatus>(() =>
-    cloudAvailable()
-      ? form.athleteName.trim()
-        ? 'synced'
-        : 'need_name'
-      : 'local_only',
-  )
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>(() => {
+    if (!cloudAvailable()) return 'local_only'
+    if (!form.athleteName.trim()) return 'need_credentials'
+    if (!isValidPin(form.pin ?? '')) return 'need_pin'
+    return 'synced'
+  })
+  const [loading, setLoading] = useState(false)
   const filled = useMemo(() => countFilledMoves(form), [form])
-  const cloudFetchDone = useRef(false)
   const skipNextUpsert = useRef(false)
 
-  // Instant local cache
+  // Instant local cache (hard-reload safety for the in-progress sheet only)
   useEffect(() => {
     saveLocalWorksheet(form)
     localStorage.setItem(LOCAL_SAVED_AT_KEY, String(Date.now()))
   }, [form])
 
-  // On mount: try restore denser/newer cloud copy for this name+email
-  useEffect(() => {
-    if (!cloudAvailable() || cloudFetchDone.current) return
-    cloudFetchDone.current = true
-    const name = form.athleteName.trim()
-    if (!name) {
-      setSyncStatus('need_name')
-      return
-    }
-
-    let cancelled = false
-    ;(async () => {
-      try {
-        const cloud = await fetchCloudWorksheet(
-          form.athleteName,
-          form.athleteEmail ?? '',
-        )
-        if (cancelled || !cloud) return
-        const localSavedAt = Number(localStorage.getItem(LOCAL_SAVED_AT_KEY))
-        if (
-          shouldPreferCloud(
-            form,
-            cloud.form,
-            cloud.updatedAt,
-            Number.isFinite(localSavedAt) ? localSavedAt : null,
-          )
-        ) {
-          skipNextUpsert.current = true
-          setForm(cloud.form)
-          setSyncStatus('restored')
-        }
-      } catch {
-        if (!cancelled) setSyncStatus('error')
-      }
-    })()
-
-    return () => {
-      cancelled = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount restore only
-  }, [])
-
-  // Debounced cloud upsert when name is present
+  // Autosave only — never auto-load from cloud
   useEffect(() => {
     if (!cloudAvailable()) {
       setSyncStatus('local_only')
       return
     }
     if (!form.athleteName.trim()) {
-      setSyncStatus('need_name')
+      setSyncStatus('need_credentials')
+      return
+    }
+    if (!isValidPin(form.pin ?? '')) {
+      setSyncStatus('need_pin')
       return
     }
     if (skipNextUpsert.current) {
@@ -113,43 +75,6 @@ export function WorksheetForm({ onGenerate }: Props) {
 
     return () => window.clearTimeout(handle)
   }, [form])
-
-  // Re-fetch when name/email identity changes (cross-device resume)
-  const identityKey = `${form.athleteName.trim()}|${(form.athleteEmail ?? '').trim().toLowerCase()}`
-  const prevIdentity = useRef(identityKey)
-  useEffect(() => {
-    if (!cloudAvailable()) return
-    if (prevIdentity.current === identityKey) return
-    prevIdentity.current = identityKey
-    const name = form.athleteName.trim()
-    if (!name) {
-      setSyncStatus('need_name')
-      return
-    }
-
-    let cancelled = false
-    ;(async () => {
-      try {
-        const cloud = await fetchCloudWorksheet(
-          form.athleteName,
-          form.athleteEmail ?? '',
-        )
-        if (cancelled || !cloud) return
-        if (countFilledMoves(cloud.form) > countFilledMoves(form)) {
-          skipNextUpsert.current = true
-          setForm(cloud.form)
-          setSyncStatus('restored')
-        }
-      } catch {
-        if (!cancelled) setSyncStatus('error')
-      }
-    })()
-
-    return () => {
-      cancelled = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- identity change only
-  }, [identityKey])
 
   const updateMeta = (patch: Partial<WorksheetResponse>) => {
     setForm((f) => ({ ...f, ...patch }))
@@ -175,19 +100,65 @@ export function WorksheetForm({ onGenerate }: Props) {
     }))
   }
 
-  const loadDemoSeed = () => {
+  const loadFromCloud = async () => {
+    if (!cloudAvailable()) {
+      setSyncStatus('local_only')
+      return
+    }
+    if (!form.athleteName.trim() || !isValidPin(form.pin ?? '')) {
+      setSyncStatus(
+        !form.athleteName.trim() ? 'need_credentials' : 'need_pin',
+      )
+      return
+    }
     if (
+      filled > 0 &&
       !confirm(
-        'Load the demo Prototype 1 answers? Your current sheet in this browser will be replaced (cloud will update after sync).',
+        'Load will replace the answers on this page with the saved cloud sheet for this name + PIN. Continue?',
       )
     ) {
       return
     }
-    setForm(normalizeWorksheet(caseySeed))
+
+    setLoading(true)
+    try {
+      const cloud = await fetchCloudWorksheet(
+        form.athleteName,
+        form.athleteEmail ?? '',
+        form.pin ?? '',
+      )
+      if (!cloud) {
+        setSyncStatus('not_found')
+        return
+      }
+      skipNextUpsert.current = true
+      setForm(cloud.form)
+      setSyncStatus('loaded')
+    } catch {
+      setSyncStatus('error')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const loadDemoSeed = () => {
+    if (
+      !confirm(
+        'Load the demo Prototype 1 answers? Your current sheet in this browser will be replaced.',
+      )
+    ) {
+      return
+    }
+    setForm((f) => ({
+      ...normalizeWorksheet(caseySeed),
+      athleteName: f.athleteName,
+      athleteEmail: f.athleteEmail,
+      pin: f.pin,
+    }))
   }
 
   const downloadJson = () => {
-    const blob = new Blob([JSON.stringify(form, null, 2)], {
+    const blob = new Blob([JSON.stringify(cloudSafeDownload(form), null, 2)], {
       type: 'application/json',
     })
     const url = URL.createObjectURL(blob)
@@ -199,9 +170,32 @@ export function WorksheetForm({ onGenerate }: Props) {
   }
 
   const clearForm = () => {
-    if (!confirm('Clear this worksheet?')) return
-    setForm(emptyWorksheet(form.athleteName, form.athleteEmail ?? ''))
+    if (!confirm('Clear move answers? Name, email, and PIN are kept.')) return
+    setForm(
+      emptyWorksheet(
+        form.athleteName,
+        form.athleteEmail ?? '',
+        form.pin ?? '',
+      ),
+    )
   }
+
+  const newSheet = () => {
+    if (
+      filled > 0 &&
+      !confirm('Start a blank sheet? Unsaved answers on this page will be cleared.')
+    ) {
+      return
+    }
+    setForm(emptyWorksheet())
+    setSyncStatus(cloudAvailable() ? 'need_credentials' : 'local_only')
+  }
+
+  const canLoad =
+    cloudAvailable() &&
+    Boolean(form.athleteName.trim()) &&
+    isValidPin(form.pin ?? '') &&
+    !loading
 
   return (
     <section className="worksheet">
@@ -210,9 +204,9 @@ export function WorksheetForm({ onGenerate }: Props) {
           <p className="eyebrow">Prototype · A-game intake</p>
           <h2>Game plan worksheet</h2>
           <p>
-            List your top moves per seat with a <strong>belt weight</strong>,
-            then generate the flowchart. Enter your name (and optional email)
-            so progress syncs and hard reloads keep your work.
+            New sheets start blank. Autosave writes your current answers when
+            name + PIN are set. Use <strong>Load</strong> only when you want to
+            pull a previous cloud sheet — it never loads by itself.
           </p>
         </div>
         <div className="worksheet__status">
@@ -231,7 +225,8 @@ export function WorksheetForm({ onGenerate }: Props) {
           <span>Athlete</span>
           <input
             value={form.athleteName}
-            placeholder="Your name (required to sync)"
+            placeholder="Your name"
+            autoComplete="name"
             onChange={(e) => updateMeta({ athleteName: e.target.value })}
           />
         </label>
@@ -241,7 +236,25 @@ export function WorksheetForm({ onGenerate }: Props) {
             type="email"
             value={form.athleteEmail ?? ''}
             placeholder="you@example.com"
+            autoComplete="email"
             onChange={(e) => updateMeta({ athleteEmail: e.target.value })}
+          />
+        </label>
+        <label>
+          <span>PIN (4–6 digits)</span>
+          <input
+            type="password"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            maxLength={6}
+            value={form.pin ?? ''}
+            placeholder="••••"
+            autoComplete="off"
+            onChange={(e) =>
+              updateMeta({
+                pin: e.target.value.replace(/\D/g, '').slice(0, 6),
+              })
+            }
           />
         </label>
         <label>
@@ -271,6 +284,17 @@ export function WorksheetForm({ onGenerate }: Props) {
         >
           Generate flowchart
         </button>
+        <button
+          type="button"
+          className="ghost ghost--emphasis"
+          disabled={!canLoad}
+          onClick={() => void loadFromCloud()}
+        >
+          {loading ? 'Loading…' : 'Load saved sheet'}
+        </button>
+        <button type="button" className="ghost" onClick={newSheet}>
+          New sheet
+        </button>
         <button type="button" className="ghost" onClick={downloadJson}>
           Download JSON
         </button>
@@ -278,9 +302,16 @@ export function WorksheetForm({ onGenerate }: Props) {
           Load demo answers
         </button>
         <button type="button" className="ghost" onClick={clearForm}>
-          Clear
+          Clear moves
         </button>
       </div>
+
+      {!canAutosave(form) && cloudAvailable() && (
+        <p className="worksheet__hint muted">
+          Autosave needs a name and a 4–6 digit PIN. Load uses the same pair —
+          it will not pull someone else’s sheet without their PIN.
+        </p>
+      )}
 
       <div className="worksheet__seats">
         {WORKSHEET_SEATS.map((seat) => {
@@ -395,4 +426,9 @@ export function WorksheetForm({ onGenerate }: Props) {
       </div>
     </section>
   )
+}
+
+function cloudSafeDownload(form: WorksheetResponse) {
+  const { pin: _pin, ...rest } = form
+  return rest
 }

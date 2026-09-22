@@ -154,8 +154,10 @@ export type WorksheetSeatAnswers = {
 
 export type WorksheetResponse = {
   athleteName: string
-  /** Optional; with name forms the cloud identity key. */
+  /** Optional; with name + PIN forms the cloud identity key. */
   athleteEmail: string
+  /** 4–6 digit PIN — kept locally; only a hash is sent to the cloud. */
+  pin: string
   date: string
   notes: string
   seats: WorksheetSeatAnswers[]
@@ -174,10 +176,12 @@ export function emptyMove(rank: number): WorksheetMove {
 export function emptyWorksheet(
   athleteName = '',
   athleteEmail = '',
+  pin = '',
 ): WorksheetResponse {
   return {
     athleteName,
     athleteEmail,
+    pin,
     date: new Date().toISOString().slice(0, 10),
     notes: '',
     seats: WORKSHEET_SEATS.map((seat) => ({
@@ -202,6 +206,8 @@ export function normalizeWorksheet(raw: unknown): WorksheetResponse {
     athleteName: data.athleteName ?? '',
     athleteEmail:
       typeof data.athleteEmail === 'string' ? data.athleteEmail : '',
+    pin:
+      typeof data.pin === 'string' && /^\d{0,6}$/.test(data.pin) ? data.pin : '',
     date: data.date ?? base.date,
     notes: data.notes ?? '',
     seats: WORKSHEET_SEATS.map((seat) => {

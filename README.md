@@ -9,11 +9,12 @@ Repo is **public** (required for GitHub Pages on free accounts).
 ## For testers
 
 1. Open the Pages URL.
-2. Enter **your name** (required) and optional **email** so the sheet syncs to the cloud.
-3. Fill top moves per seat + belt weight → **Generate flowchart**.
-4. Hard reload is safe: the browser cache keeps your work; cloud restores it on another device if you use the same name + email.
+2. Enter **your name**, optional **email**, and a **4–6 digit PIN**.
+3. Fill top moves per seat + belt weight — the sheet **autosaves** once name + PIN are set.
+4. Later (or on another device): enter the same name + PIN → click **Load saved sheet** (nothing loads automatically).
+5. Hard reload keeps the in-progress browser copy; cloud Load is always intentional.
 
-Data is stored for coaching review (Supabase). Do not put secrets in the sheet.
+PIN is hashed in the browser before sync. Do not reuse a bank PIN.
 
 ## Local development
 
@@ -48,15 +49,15 @@ CI sets `VITE_BASE_PATH=/BJJ_Automata/` so asset URLs resolve on the project sit
 4. Add those two values as GitHub Actions secrets and (optionally) to `.env.local`.
 5. Re-run **Deploy GitHub Pages** so the live build includes the keys.
 
-Confirm Table Editor shows `worksheets`.
+Confirm Table Editor shows `worksheets` with a `pin_hash` column.
 
-Identity key: `(athlete_name, athlete_email)`. Empty email is allowed; same name + email upserts the latest payload.
+Identity key: `(athlete_name, athlete_email, pin_hash)`. Autosave upserts that row; **Load** is the only way to pull it back into the form.
 
 Browse / export all tester sheets in the Supabase dashboard (Table Editor → `worksheets`).
 
 ### Security note
 
-v1 uses open anon RLS (select/insert/update) for a small trusted tester group. Add Auth and stricter policies before a public launch.
+PIN is a light gate (4–6 digits, hashed client-side) so one tester cannot casually Load another’s sheet by name alone. The publishable key + open anon RLS still allow API-level reads — fine for a small trusted group, not a public lockbox. Add Auth and stricter policies before a wide launch.
 
 ## Analysis (flowchart view)
 
