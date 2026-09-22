@@ -27,6 +27,8 @@ import {
   type SyncStatus,
 } from '../lib/worksheetStore'
 import caseySeed from '../data/worksheet-casey.json'
+import recoveryPrimary from '../data/recovery/casey-primary-44.json'
+import recoveryPrototype from '../data/recovery/casey-prototype-48.json'
 
 type Props = {
   onGenerate: (response: WorksheetResponse) => void
@@ -226,6 +228,24 @@ export function WorksheetForm({ onGenerate }: Props) {
     }))
   }
 
+  const loadRecovery = (which: 'primary' | 'prototype') => {
+    const raw = which === 'primary' ? recoveryPrimary : recoveryPrototype
+    const label = which === 'primary' ? 'Primary (44 moves)' : 'Prototype 1 (48 moves)'
+    if (
+      !confirm(
+        `Load recovered ${label} into this page? Then click Create or Load if you want cloud sync for that identity.`,
+      )
+    ) {
+      return
+    }
+    skipNextUpsert.current = true
+    setBound(false)
+    boundKeyRef.current = ''
+    clearCloudBind()
+    setForm(normalizeWorksheet(raw))
+    setSyncStatus(cloudAvailable() ? 'unbound' : 'local_only')
+  }
+
   const downloadJson = () => {
     const { pin: _pin, ...rest } = form
     const blob = new Blob([JSON.stringify(rest, null, 2)], {
@@ -384,6 +404,20 @@ export function WorksheetForm({ onGenerate }: Props) {
         </button>
         <button type="button" className="ghost" onClick={loadDemoSeed}>
           Load demo answers
+        </button>
+        <button
+          type="button"
+          className="ghost"
+          onClick={() => loadRecovery('prototype')}
+        >
+          Recover Prototype (48)
+        </button>
+        <button
+          type="button"
+          className="ghost"
+          onClick={() => loadRecovery('primary')}
+        >
+          Recover Primary (44)
         </button>
         <button type="button" className="ghost" onClick={clearForm}>
           Clear moves

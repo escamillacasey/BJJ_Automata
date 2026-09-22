@@ -64,4 +64,7 @@ create policy "anon_insert" on worksheets
 create policy "anon_update" on worksheets
   for update to anon using (true) with check (true);
 
+create policy "anon_delete" on worksheets
+  for delete to anon using (true);
+
 -- Rows with empty pin_hash are legacy / unusable for Load — clear or re-save with a PIN.

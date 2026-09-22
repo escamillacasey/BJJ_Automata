@@ -136,15 +136,41 @@ export async function fetchCloudWorksheet(
   if (!name) return null
 
   const pinHash = await hashPin(pin)
-  const { data, error } = await sb
-    .from('worksheets')
-    .select('payload, updated_at, filled_moves')
-    .eq('athlete_name', name)
-    .eq('athlete_email', email)
-    .eq('pin_hash', pinHash)
-    .maybeSingle()
 
-  if (error) throw error
+  // Prefer the densest matching row. Try hashed PIN first, then legacy plaintext pin_hash.
+  const pickBest = async (pinValue: string) => {
+    const { data, error } = await sb
+      .from('worksheets')
+      .select('payload, updated_at, filled_moves')
+      .eq('athlete_name', name)
+      .eq('athlete_email', email)
+      .eq('pin_hash', pinValue)
+      .order('filled_moves', { ascending: false })
+      .limit(1)
+      .maybeSingle()
+    if (error) throw error
+    return data
+  }
+
+  let data = await pickBest(pinHash)
+  if (!data?.payload) {
+    data = await pickBest(pin) // legacy rows that stored the PIN itself
+  }
+  // Legacy blank-pin rows (pre-PIN) — only if email+name match and pin was never set
+  if (!data?.payload && pin) {
+    const { data: blank, error } = await sb
+      .from('worksheets')
+      .select('payload, updated_at, filled_moves')
+      .eq('athlete_name', name)
+      .eq('athlete_email', email)
+      .or('pin_hash.is.null,pin_hash.eq.')
+      .order('filled_moves', { ascending: false })
+      .limit(1)
+      .maybeSingle()
+    if (error) throw error
+    data = blank
+  }
+
   if (!data?.payload) return null
 
   const form = normalizeWorksheet(data.payload)
@@ -176,6 +202,7 @@ export async function createCloudWorksheet(
 
   const existing = await fetchCloudWorksheet(athleteName, athleteEmail, pin)
   if (existing) return 'exists'
+
 
   const pinHash = await hashPin(pin)
   const payload = cloudPayload({ ...form, athleteName, athleteEmail })

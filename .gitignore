@@ -27,3 +27,6 @@ dist-ssr
 src/data/raw/
 src/data/raw/graph-sample.json
 
+
+# Local recovery scratch
+tmp-recovery/
