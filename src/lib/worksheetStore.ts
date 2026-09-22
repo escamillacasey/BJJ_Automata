@@ -8,16 +8,26 @@ import { countFilledMoves } from './worksheetToGraph'
 
 export type SyncStatus =
   | 'local_only'
+  | 'unbound'
   | 'need_credentials'
   | 'need_pin'
   | 'saving'
   | 'synced'
+  | 'created'
   | 'loaded'
+  | 'exists'
   | 'not_found'
+  | 'identity_changed'
   | 'error'
   | 'offline'
 
-/** App-side salt — PIN is hashed before it leaves the browser. */
+export type CloudBind = {
+  athleteName: string
+  athleteEmail: string
+  pin: string
+}
+
+const BIND_KEY = 'bjj-automata-cloud-bind-v1'
 const PIN_SALT = 'bjj-automata-pin-v1'
 
 export function isValidPin(pin: string): boolean {
@@ -37,6 +47,50 @@ export function normalizeIdentity(name: string, email: string) {
     athleteName: name.trim(),
     athleteEmail: email.trim().toLowerCase(),
   }
+}
+
+export function identityKey(form: Pick<WorksheetResponse, 'athleteName' | 'athleteEmail' | 'pin'>) {
+  const { athleteName, athleteEmail } = normalizeIdentity(
+    form.athleteName,
+    form.athleteEmail ?? '',
+  )
+  return `${athleteName}|${athleteEmail}|${form.pin ?? ''}`
+}
+
+export function sameBind(a: CloudBind, form: WorksheetResponse): boolean {
+  return identityKey(a) === identityKey(form)
+}
+
+export function loadCloudBind(): CloudBind | null {
+  try {
+    const raw = localStorage.getItem(BIND_KEY)
+    if (!raw) return null
+    const data = JSON.parse(raw) as Partial<CloudBind>
+    if (
+      typeof data.athleteName === 'string' &&
+      typeof data.athleteEmail === 'string' &&
+      typeof data.pin === 'string' &&
+      data.athleteName.trim() &&
+      isValidPin(data.pin)
+    ) {
+      return {
+        athleteName: data.athleteName.trim(),
+        athleteEmail: data.athleteEmail.trim().toLowerCase(),
+        pin: data.pin,
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  return null
+}
+
+export function saveCloudBind(bind: CloudBind) {
+  localStorage.setItem(BIND_KEY, JSON.stringify(bind))
+}
+
+export function clearCloudBind() {
+  localStorage.removeItem(BIND_KEY)
 }
 
 /** Payload stored in DB — never includes the PIN. */
@@ -70,7 +124,7 @@ export async function fetchCloudWorksheet(
   athleteName: string,
   athleteEmail: string,
   pin: string,
-): Promise<{ form: WorksheetResponse; updatedAt: string } | null> {
+): Promise<{ form: WorksheetResponse; updatedAt: string; filledMoves: number } | null> {
   const sb = getSupabase()
   if (!sb) return null
   if (!isValidPin(pin)) throw new Error('invalid_pin')
@@ -94,13 +148,56 @@ export async function fetchCloudWorksheet(
   if (!data?.payload) return null
 
   const form = normalizeWorksheet(data.payload)
-  // Restore the PIN into local form so autosave keeps working after Load
   form.pin = pin
   form.athleteName = name
   form.athleteEmail = email
-  return { form, updatedAt: data.updated_at as string }
+  return {
+    form,
+    updatedAt: data.updated_at as string,
+    filledMoves: Number(data.filled_moves) || countFilledMoves(form),
+  }
 }
 
+/** Create a brand-new cloud row. Fails if that identity already exists. */
+export async function createCloudWorksheet(
+  form: WorksheetResponse,
+): Promise<'created' | 'exists'> {
+  const sb = getSupabase()
+  if (!sb) throw new Error('no_cloud')
+
+  const pin = form.pin ?? ''
+  if (!isValidPin(pin)) throw new Error('invalid_pin')
+
+  const { athleteName, athleteEmail } = normalizeIdentity(
+    form.athleteName,
+    form.athleteEmail ?? '',
+  )
+  if (!athleteName) throw new Error('need_name')
+
+  const existing = await fetchCloudWorksheet(athleteName, athleteEmail, pin)
+  if (existing) return 'exists'
+
+  const pinHash = await hashPin(pin)
+  const payload = cloudPayload({ ...form, athleteName, athleteEmail })
+
+  const { error } = await sb.from('worksheets').insert({
+    athlete_name: athleteName,
+    athlete_email: athleteEmail,
+    pin_hash: pinHash,
+    payload,
+    filled_moves: countFilledMoves(payload),
+    updated_at: new Date().toISOString(),
+  })
+
+  if (error) {
+    // Unique race → treat as exists
+    if (error.code === '23505') return 'exists'
+    throw error
+  }
+  return 'created'
+}
+
+/** Update the already-bound cloud row only (upsert on that identity). */
 export async function upsertCloudWorksheet(
   form: WorksheetResponse,
 ): Promise<void> {
@@ -138,7 +235,7 @@ export function cloudAvailable(): boolean {
   return isSupabaseConfigured()
 }
 
-export function canAutosave(form: WorksheetResponse): boolean {
+export function credentialsReady(form: WorksheetResponse): boolean {
   return Boolean(form.athleteName.trim()) && isValidPin(form.pin ?? '')
 }
 
@@ -146,18 +243,26 @@ export function syncStatusLabel(status: SyncStatus): string {
   switch (status) {
     case 'local_only':
       return 'Saved in this browser (cloud not configured)'
+    case 'unbound':
+      return 'Browser only — Create or Load to use the cloud'
     case 'need_credentials':
-      return 'Enter name + PIN to autosave'
+      return 'Enter name + PIN, then Create or Load'
     case 'need_pin':
       return 'PIN must be 4–6 digits'
     case 'saving':
       return 'Autosaving…'
     case 'synced':
       return 'Autosaved to cloud'
+    case 'created':
+      return 'Cloud sheet created — autosave on'
     case 'loaded':
-      return 'Loaded from cloud'
+      return 'Loaded — autosave on'
+    case 'exists':
+      return 'That name + PIN already has a sheet — use Load'
     case 'not_found':
-      return 'No sheet for that name + PIN'
+      return 'No sheet for that name + PIN — use Create'
+    case 'identity_changed':
+      return 'Name/PIN changed — Create or Load again to cloud-save'
     case 'error':
       return 'Cloud sync failed — still saved in this browser'
     case 'offline':

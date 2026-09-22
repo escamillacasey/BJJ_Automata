@@ -10,12 +10,18 @@ import {
 } from '../lib/worksheet'
 import { countFilledMoves } from '../lib/worksheetToGraph'
 import {
-  canAutosave,
+  clearCloudBind,
   cloudAvailable,
+  createCloudWorksheet,
+  credentialsReady,
   fetchCloudWorksheet,
+  identityKey,
   isValidPin,
+  loadCloudBind,
   loadLocalWorksheet,
+  saveCloudBind,
   saveLocalWorksheet,
+  sameBind,
   syncStatusLabel,
   upsertCloudWorksheet,
   type SyncStatus,
@@ -27,40 +33,58 @@ type Props = {
 }
 
 const LOCAL_SAVED_AT_KEY = 'bjj-automata-worksheet-saved-at'
-const SYNC_DEBOUNCE_MS = 800
+const SYNC_DEBOUNCE_MS = 900
+
+function initialBound(form: WorksheetResponse): boolean {
+  if (!cloudAvailable() || !credentialsReady(form)) return false
+  const bind = loadCloudBind()
+  return Boolean(bind && sameBind(bind, form))
+}
+
+function initialStatus(form: WorksheetResponse, bound: boolean): SyncStatus {
+  if (!cloudAvailable()) return 'local_only'
+  if (!form.athleteName.trim()) return 'need_credentials'
+  if (!isValidPin(form.pin ?? '')) return 'need_pin'
+  if (!bound) return 'unbound'
+  return 'synced'
+}
 
 export function WorksheetForm({ onGenerate }: Props) {
   const [form, setForm] = useState<WorksheetResponse>(loadLocalWorksheet)
-  const [syncStatus, setSyncStatus] = useState<SyncStatus>(() => {
-    if (!cloudAvailable()) return 'local_only'
-    if (!form.athleteName.trim()) return 'need_credentials'
-    if (!isValidPin(form.pin ?? '')) return 'need_pin'
-    return 'synced'
-  })
-  const [loading, setLoading] = useState(false)
+  const [bound, setBound] = useState(() => initialBound(form))
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>(() =>
+    initialStatus(form, initialBound(form)),
+  )
+  const [busy, setBusy] = useState(false)
   const filled = useMemo(() => countFilledMoves(form), [form])
   const skipNextUpsert = useRef(false)
+  const boundKeyRef = useRef(bound ? identityKey(form) : '')
 
-  // Instant local cache (hard-reload safety for the in-progress sheet only)
+  // Instant local cache only (never touches cloud by itself)
   useEffect(() => {
     saveLocalWorksheet(form)
     localStorage.setItem(LOCAL_SAVED_AT_KEY, String(Date.now()))
   }, [form])
 
-  // Autosave only — never auto-load from cloud
+  // If name / email / PIN drift from the bound identity, stop cloud writes
+  useEffect(() => {
+    if (!bound) return
+    if (identityKey(form) === boundKeyRef.current) return
+    setBound(false)
+    boundKeyRef.current = ''
+    clearCloudBind()
+    setSyncStatus('identity_changed')
+  }, [form, bound])
+
+  // Autosave only while bound to a Create/Load session
   useEffect(() => {
     if (!cloudAvailable()) {
       setSyncStatus('local_only')
       return
     }
-    if (!form.athleteName.trim()) {
-      setSyncStatus('need_credentials')
-      return
-    }
-    if (!isValidPin(form.pin ?? '')) {
-      setSyncStatus('need_pin')
-      return
-    }
+    if (!bound) return
+    if (!credentialsReady(form)) return
+    if (identityKey(form) !== boundKeyRef.current) return
     if (skipNextUpsert.current) {
       skipNextUpsert.current = false
       return
@@ -74,7 +98,18 @@ export function WorksheetForm({ onGenerate }: Props) {
     }, SYNC_DEBOUNCE_MS)
 
     return () => window.clearTimeout(handle)
-  }, [form])
+  }, [form, bound])
+
+  const bindSession = (next: WorksheetResponse) => {
+    const bind = {
+      athleteName: next.athleteName.trim(),
+      athleteEmail: (next.athleteEmail ?? '').trim().toLowerCase(),
+      pin: next.pin ?? '',
+    }
+    saveCloudBind(bind)
+    boundKeyRef.current = identityKey(bind)
+    setBound(true)
+  }
 
   const updateMeta = (patch: Partial<WorksheetResponse>) => {
     setForm((f) => ({ ...f, ...patch }))
@@ -100,27 +135,60 @@ export function WorksheetForm({ onGenerate }: Props) {
     }))
   }
 
+  const createSheet = async () => {
+    if (!cloudAvailable()) {
+      setSyncStatus('local_only')
+      return
+    }
+    if (!form.athleteName.trim()) {
+      setSyncStatus('need_credentials')
+      return
+    }
+    if (!isValidPin(form.pin ?? '')) {
+      setSyncStatus('need_pin')
+      return
+    }
+
+    setBusy(true)
+    try {
+      const result = await createCloudWorksheet(form)
+      if (result === 'exists') {
+        setSyncStatus('exists')
+        return
+      }
+      bindSession(form)
+      skipNextUpsert.current = true
+      setSyncStatus('created')
+    } catch {
+      setSyncStatus('error')
+    } finally {
+      setBusy(false)
+    }
+  }
+
   const loadFromCloud = async () => {
     if (!cloudAvailable()) {
       setSyncStatus('local_only')
       return
     }
-    if (!form.athleteName.trim() || !isValidPin(form.pin ?? '')) {
-      setSyncStatus(
-        !form.athleteName.trim() ? 'need_credentials' : 'need_pin',
-      )
+    if (!form.athleteName.trim()) {
+      setSyncStatus('need_credentials')
+      return
+    }
+    if (!isValidPin(form.pin ?? '')) {
+      setSyncStatus('need_pin')
       return
     }
     if (
       filled > 0 &&
       !confirm(
-        'Load will replace the answers on this page with the saved cloud sheet for this name + PIN. Continue?',
+        'Load will replace everything on this page with the cloud sheet. Your current answers will be discarded unless already saved under another name + PIN. Continue?',
       )
     ) {
       return
     }
 
-    setLoading(true)
+    setBusy(true)
     try {
       const cloud = await fetchCloudWorksheet(
         form.athleteName,
@@ -133,18 +201,19 @@ export function WorksheetForm({ onGenerate }: Props) {
       }
       skipNextUpsert.current = true
       setForm(cloud.form)
+      bindSession(cloud.form)
       setSyncStatus('loaded')
     } catch {
       setSyncStatus('error')
     } finally {
-      setLoading(false)
+      setBusy(false)
     }
   }
 
   const loadDemoSeed = () => {
     if (
       !confirm(
-        'Load the demo Prototype 1 answers? Your current sheet in this browser will be replaced.',
+        'Load demo answers into this page? Cloud is not touched until you Create or are already bound and autosave runs.',
       )
     ) {
       return
@@ -158,7 +227,8 @@ export function WorksheetForm({ onGenerate }: Props) {
   }
 
   const downloadJson = () => {
-    const blob = new Blob([JSON.stringify(cloudSafeDownload(form), null, 2)], {
+    const { pin: _pin, ...rest } = form
+    const blob = new Blob([JSON.stringify(rest, null, 2)], {
       type: 'application/json',
     })
     const url = URL.createObjectURL(blob)
@@ -170,7 +240,7 @@ export function WorksheetForm({ onGenerate }: Props) {
   }
 
   const clearForm = () => {
-    if (!confirm('Clear move answers? Name, email, and PIN are kept.')) return
+    if (!confirm('Clear move answers? Name, email, and PIN stay.')) return
     setForm(
       emptyWorksheet(
         form.athleteName,
@@ -183,19 +253,20 @@ export function WorksheetForm({ onGenerate }: Props) {
   const newSheet = () => {
     if (
       filled > 0 &&
-      !confirm('Start a blank sheet? Unsaved answers on this page will be cleared.')
+      !confirm(
+        'Start a blank sheet? This clears the page and turns off cloud autosave until you Create or Load again.',
+      )
     ) {
       return
     }
+    clearCloudBind()
+    boundKeyRef.current = ''
+    setBound(false)
     setForm(emptyWorksheet())
     setSyncStatus(cloudAvailable() ? 'need_credentials' : 'local_only')
   }
 
-  const canLoad =
-    cloudAvailable() &&
-    Boolean(form.athleteName.trim()) &&
-    isValidPin(form.pin ?? '') &&
-    !loading
+  const credsOk = credentialsReady(form)
 
   return (
     <section className="worksheet">
@@ -204,9 +275,9 @@ export function WorksheetForm({ onGenerate }: Props) {
           <p className="eyebrow">Prototype · A-game intake</p>
           <h2>Game plan worksheet</h2>
           <p>
-            New sheets start blank. Autosave writes your current answers when
-            name + PIN are set. Use <strong>Load</strong> only when you want to
-            pull a previous cloud sheet — it never loads by itself.
+            Cloud never writes until you <strong>Create</strong> a new sheet or{' '}
+            <strong>Load</strong> an existing one. After that, edits autosave to
+            that name + PIN only. Changing name/PIN pauses cloud save.
           </p>
         </div>
         <div className="worksheet__status">
@@ -217,6 +288,11 @@ export function WorksheetForm({ onGenerate }: Props) {
           <p className={`sync-status sync-status--${syncStatus}`}>
             {syncStatusLabel(syncStatus)}
           </p>
+          {bound && (
+            <p className="sync-status sync-status--bound">
+              Bound · cloud autosave on
+            </p>
+          )}
         </div>
       </header>
 
@@ -287,10 +363,18 @@ export function WorksheetForm({ onGenerate }: Props) {
         <button
           type="button"
           className="ghost ghost--emphasis"
-          disabled={!canLoad}
+          disabled={!credsOk || busy}
+          onClick={() => void createSheet()}
+        >
+          {busy ? 'Working…' : 'Create cloud sheet'}
+        </button>
+        <button
+          type="button"
+          className="ghost ghost--emphasis"
+          disabled={!credsOk || busy}
           onClick={() => void loadFromCloud()}
         >
-          {loading ? 'Loading…' : 'Load saved sheet'}
+          {busy ? 'Working…' : 'Load saved sheet'}
         </button>
         <button type="button" className="ghost" onClick={newSheet}>
           New sheet
@@ -306,12 +390,11 @@ export function WorksheetForm({ onGenerate }: Props) {
         </button>
       </div>
 
-      {!canAutosave(form) && cloudAvailable() && (
-        <p className="worksheet__hint muted">
-          Autosave needs a name and a 4–6 digit PIN. Load uses the same pair —
-          it will not pull someone else’s sheet without their PIN.
-        </p>
-      )}
+      <p className="worksheet__hint muted">
+        <strong>Create</strong> fails if that name + PIN already exists (use
+        Load). <strong>Load</strong> never runs by itself. Browser cache still
+        keeps this page across refresh; cloud only updates after Create/Load.
+      </p>
 
       <div className="worksheet__seats">
         {WORKSHEET_SEATS.map((seat) => {
@@ -426,9 +509,4 @@ export function WorksheetForm({ onGenerate }: Props) {
       </div>
     </section>
   )
-}
-
-function cloudSafeDownload(form: WorksheetResponse) {
-  const { pin: _pin, ...rest } = form
-  return rest
 }

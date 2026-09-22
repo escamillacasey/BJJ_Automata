@@ -424,7 +424,9 @@ a {
 
 .sync-status--synced,
 .sync-status--restored,
-.sync-status--loaded {
+.sync-status--loaded,
+.sync-status--created,
+.sync-status--bound {
   color: var(--strength, #2f6b4f);
 }
 
@@ -433,13 +435,16 @@ a {
 }
 
 .sync-status--error,
-.sync-status--not_found {
+.sync-status--not_found,
+.sync-status--exists {
   color: var(--hole, #a33b2c);
 }
 
 .sync-status--need_name,
 .sync-status--need_credentials,
-.sync-status--need_pin {
+.sync-status--need_pin,
+.sync-status--unbound,
+.sync-status--identity_changed {
   color: var(--accent, #8a6a2f);
 }
 

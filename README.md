@@ -9,10 +9,10 @@ Repo is **public** (required for GitHub Pages on free accounts).
 ## For testers
 
 1. Open the Pages URL.
-2. Enter **your name**, optional **email**, and a **4–6 digit PIN**.
-3. Fill top moves per seat + belt weight — the sheet **autosaves** once name + PIN are set.
-4. Later (or on another device): enter the same name + PIN → click **Load saved sheet** (nothing loads automatically).
-5. Hard reload keeps the in-progress browser copy; cloud Load is always intentional.
+2. Enter **name**, optional **email**, and a **4–6 digit PIN**.
+3. Click **Create cloud sheet** (new) or **Load saved sheet** (returning). Cloud does nothing until then.
+4. After Create/Load, edits **autosave** to that name + PIN only. Changing name/PIN pauses cloud save until you Create/Load again.
+5. Browser cache still keeps the page across refresh; it will not overwrite someone else’s cloud sheet just by typing their name.
 
 PIN is hashed in the browser before sync. Do not reuse a bank PIN.
 
@@ -51,7 +51,7 @@ CI sets `VITE_BASE_PATH=/BJJ_Automata/` so asset URLs resolve on the project sit
 
 Confirm Table Editor shows `worksheets` with a `pin_hash` column.
 
-Identity key: `(athlete_name, athlete_email, pin_hash)`. Autosave upserts that row; **Load** is the only way to pull it back into the form.
+Identity key: `(athlete_name, athlete_email, pin_hash)`. **Create** inserts a new row (refuses if it exists). **Load** is the only way to pull a row into the form. Autosave runs only after a successful Create/Load bind.
 
 Browse / export all tester sheets in the Supabase dashboard (Table Editor → `worksheets`).
 
