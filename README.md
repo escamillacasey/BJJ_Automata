@@ -32,6 +32,7 @@ Without `.env.local`, the app still runs and autosaves in **localStorage** only.
 1. Repo secrets (Settings → Secrets and variables → Actions):
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_PUBLISHABLE_KEY` (Publishable key from Supabase API Keys)
+   - `VITE_ADMIN_PASSWORD` (shared coach password for the Admin tab)
 2. Enable Pages: Settings → Pages → Source = **GitHub Actions**.
 3. Push to `main` (or run the **Deploy GitHub Pages** workflow).
 4. Site: `https://<user>.github.io/BJJ_Automata/`
@@ -58,6 +59,16 @@ Browse / export all tester sheets in the Supabase dashboard (Table Editor → `w
 ### Security note
 
 PIN is a light gate (4–6 digits, hashed client-side) so one tester cannot casually Load another’s sheet by name alone. The publishable key + open anon RLS still allow API-level reads — fine for a small trusted group, not a public lockbox. Add Auth and stricter policies before a wide launch.
+
+## Admin (coach)
+
+Toolbar → **Admin**. Unlocks with `VITE_ADMIN_PASSWORD` (session lasts for the tab).
+
+- Dropdown of every cloud sheet (including blank-PIN / empty rows)
+- Submissions list + full gameplan table
+- Best-path summary and **Open flowchart** for that athlete
+
+Shared password is the achievable gate on static GitHub Pages. GitHub/Gmail OAuth would need Supabase Auth + redirect setup — we can add that later if you want.
 
 ## Analysis (flowchart view)
 

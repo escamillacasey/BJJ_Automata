@@ -5,6 +5,7 @@ import { analyzeFinishGraph } from './lib/finishAnalysis'
 import { StateDiagram } from './components/StateDiagram'
 import { FinishInsights } from './components/FinishInsights'
 import { WorksheetForm } from './components/WorksheetForm'
+import { AdminPanel } from './components/AdminPanel'
 import {
   countFilledMoves,
   worksheetToGraph,
@@ -12,7 +13,7 @@ import {
 import type { WorksheetResponse } from './lib/worksheet'
 import './App.css'
 
-type View = 'worksheet' | 'diagram'
+type View = 'worksheet' | 'diagram' | 'admin'
 
 export default function App() {
   const [graph, setGraph] = useState<GameGraph | null>(null)
@@ -62,6 +63,11 @@ export default function App() {
     setView('diagram')
   }
 
+  const mainClass =
+    view === 'worksheet' || view === 'admin'
+      ? 'main main--worksheet'
+      : 'main'
+
   return (
     <div className="app">
       <header className="hero">
@@ -100,6 +106,13 @@ export default function App() {
           >
             Flowchart
           </button>
+          <button
+            type="button"
+            className={view === 'admin' ? 'is-active' : ''}
+            onClick={() => setView('admin')}
+          >
+            Admin
+          </button>
         </div>
         {view === 'diagram' && graph && (
           <div className="toolbar__filters">
@@ -127,9 +140,11 @@ export default function App() {
         )}
       </nav>
 
-      <main className={view === 'worksheet' ? 'main main--worksheet' : 'main'}>
+      <main className={mainClass}>
         {view === 'worksheet' ? (
           <WorksheetForm onGenerate={onGenerateWorksheet} />
+        ) : view === 'admin' ? (
+          <AdminPanel onOpenFlowchart={onGenerateWorksheet} />
         ) : filtered && analysis ? (
           <>
             <StateDiagram

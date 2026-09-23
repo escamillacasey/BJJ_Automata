@@ -5,6 +5,7 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_PUBLISHABLE_KEY?: string
   /** @deprecated Prefer VITE_SUPABASE_PUBLISHABLE_KEY */
   readonly VITE_SUPABASE_ANON_KEY?: string
+  readonly VITE_ADMIN_PASSWORD?: string
   readonly VITE_BASE_PATH?: string
 }
 
