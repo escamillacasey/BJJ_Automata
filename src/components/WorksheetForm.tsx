@@ -95,7 +95,16 @@ export function WorksheetForm({ onGenerate }: Props) {
       } catch (e) {
         if (!cancelled) {
           setSyncStatus('error')
-          setAuthError(e instanceof Error ? e.message : 'Could not load sheet')
+          const msg =
+            e instanceof Error
+              ? e.message
+              : typeof e === 'object' &&
+                  e &&
+                  'message' in e &&
+                  typeof (e as { message: unknown }).message === 'string'
+                ? (e as { message: string }).message
+                : 'Could not load sheet'
+          setAuthError(msg)
         }
       } finally {
         if (!cancelled) setBusy(false)

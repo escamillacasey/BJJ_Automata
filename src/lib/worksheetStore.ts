@@ -64,7 +64,7 @@ export async function fetchSheetByUserId(
     .eq('user_id', userId)
     .maybeSingle()
 
-  if (error) throw error
+  if (error) throw new Error(error.message)
   if (!data?.payload) return null
 
   const form = normalizeWorksheet(data.payload)
@@ -131,7 +131,7 @@ async function insertUserSheet(
     updated_at: new Date().toISOString(),
   })
 
-  if (error) throw error
+  if (error) throw new Error(error.message)
 }
 
 export async function upsertUserSheet(
@@ -167,7 +167,7 @@ export async function upsertUserSheet(
     })
     .eq('user_id', user.id)
 
-  if (error) throw error
+  if (error) throw new Error(error.message)
 }
 
 export function syncStatusLabel(status: SyncStatus): string {

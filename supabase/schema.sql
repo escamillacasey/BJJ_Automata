@@ -75,3 +75,21 @@ alter table worksheets
 create unique index if not exists worksheets_user_id_uidx
   on worksheets (user_id)
   where user_id is not null;
+
+-- Signed-in Google users hit `authenticated`, not `anon`
+drop policy if exists "authenticated_select" on worksheets;
+drop policy if exists "authenticated_insert" on worksheets;
+drop policy if exists "authenticated_update" on worksheets;
+drop policy if exists "authenticated_delete" on worksheets;
+
+create policy "authenticated_select" on worksheets
+  for select to authenticated using (true);
+
+create policy "authenticated_insert" on worksheets
+  for insert to authenticated with check (true);
+
+create policy "authenticated_update" on worksheets
+  for update to authenticated using (true) with check (true);
+
+create policy "authenticated_delete" on worksheets
+  for delete to authenticated using (true);
