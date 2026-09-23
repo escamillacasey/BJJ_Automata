@@ -81,8 +81,8 @@ export async function fetchSheetByUserId(
 }
 
 /**
- * Load the signed-in user's sheet, or create an empty one linked to their Google account.
- * Prefers cloud over local when cloud has moves; otherwise seeds from local draft.
+ * Load the signed-in user's sheet, or create one linked to their Google account.
+ * On first login, claims the fullest existing cloud row with the same email (PIN-era sheets).
  */
 export async function loadOrCreateUserSheet(
   user: User,
@@ -91,6 +91,11 @@ export async function loadOrCreateUserSheet(
   const existing = await fetchSheetByUserId(user.id)
   if (existing) {
     return { form: existing.form, status: 'loaded' }
+  }
+
+  const claimed = await claimSheetByEmail(user)
+  if (claimed) {
+    return { form: claimed, status: 'loaded' }
   }
 
   const name = displayNameFromUser(user)
@@ -104,6 +109,48 @@ export async function loadOrCreateUserSheet(
 
   await insertUserSheet(user, seed)
   return { form: seed, status: 'created' }
+}
+
+/** Link the best unmatched cloud row for this Gmail to the auth user. */
+async function claimSheetByEmail(
+  user: User,
+): Promise<WorksheetResponse | null> {
+  const sb = getSupabase()
+  if (!sb) return null
+  const email = emailFromUser(user)
+  if (!email) return null
+
+  const { data, error } = await sb
+    .from('worksheets')
+    .select('id, payload, athlete_name, athlete_email, filled_moves')
+    .eq('athlete_email', email)
+    .is('user_id', null)
+    .order('filled_moves', { ascending: false })
+    .limit(1)
+
+  if (error) throw new Error(error.message)
+  const row = data?.[0]
+  if (!row) return null
+
+  const { error: updateError } = await sb
+    .from('worksheets')
+    .update({
+      user_id: user.id,
+      athlete_email: email,
+      pin_hash: GOOGLE_PIN_SENTINEL,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', row.id)
+    .is('user_id', null)
+
+  if (updateError) throw new Error(updateError.message)
+
+  const form = normalizeWorksheet(row.payload)
+  form.athleteName =
+    (row.athlete_name as string) || form.athleteName || displayNameFromUser(user)
+  form.athleteEmail = email
+  form.pin = ''
+  return form
 }
 
 async function insertUserSheet(
