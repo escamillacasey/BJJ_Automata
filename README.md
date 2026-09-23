@@ -4,14 +4,16 @@ A-game worksheet → flowchart → finish-path analysis. Model your jiu-jitsu as
 
 **Live (GitHub Pages):** https://escamillacasey.github.io/BJJ_Automata/
 
-Repo is **public** (required for GitHub Pages on free accounts).
+## Beta testers (friends)
 
-## For testers
+1. Open the live URL.
+2. **Sign in with Google** (use the Gmail you were invited with if the OAuth app is in Testing mode).
+3. Fill top moves per seat + belt weight — it **autosaves**.
+4. Open **Flowchart** for best path / weak links.
+5. Avoid **New sheet** unless you intend to wipe your cloud save.
+6. Ignore **Admin** — that’s coach-only.
 
-1. Open the Pages URL.
-2. Click **Sign in with Google**.
-3. Fill top moves per seat + belt weight — the sheet **autosaves** to your Google account.
-4. On another device, sign in with the same Google account to restore.
+Sheets are a trusted-gym notebook, not a private vault (the site key can read all rows). Don’t put secrets in notes.
 
 ## Local development
 
@@ -26,38 +28,24 @@ Without `.env.local`, the app still runs and autosaves in **localStorage** only.
 
 ## Deploy (GitHub Pages)
 
-1. Repo secrets (Settings → Secrets and variables → Actions):
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_PUBLISHABLE_KEY`
-   - `VITE_ADMIN_PASSWORD`
-2. Enable Pages: Settings → Pages → Source = **GitHub Actions**.
-3. Push to `main` (or run **Deploy GitHub Pages**).
-4. Site: `https://<user>.github.io/BJJ_Automata/`
+1. Repo secrets: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, `VITE_ADMIN_PASSWORD`
+2. Pages → Source = **GitHub Actions**
+3. Push to `main`
 
 ## Supabase + Google Auth (one time)
 
-1. SQL Editor → run [`supabase/schema.sql`](supabase/schema.sql) (or at least [`supabase/google-auth.sql`](supabase/google-auth.sql) for `user_id`).
-2. **Authentication → Providers → Google**: enable and paste Client ID + Client Secret from Google Cloud.
-3. Google Cloud Console → APIs & Services → Credentials → OAuth 2.0 Client:
-   - Application type: Web
-   - Authorized JavaScript origins:
-     - `http://127.0.0.1:5173`
-     - `https://escamillacasey.github.io`
-   - Authorized redirect URIs:
-     - `https://<project-ref>.supabase.co/auth/v1/callback`
-4. Supabase → Authentication → URL configuration:
-   - Site URL: `https://escamillacasey.github.io/BJJ_Automata/`
-   - Redirect URLs: include `https://escamillacasey.github.io/BJJ_Automata/**` and `http://127.0.0.1:5173/**`
+1. SQL Editor → [`supabase/schema.sql`](supabase/schema.sql), then [`supabase/google-auth.sql`](supabase/google-auth.sql)
+2. Before sharing: run [`supabase/beta-harden.sql`](supabase/beta-harden.sql) (blocks anonymous writes)
+3. Auth → Providers → **Google** + Client ID/Secret from Google Cloud
+4. Google OAuth client redirect: `https://<project-ref>.supabase.co/auth/v1/callback`
+5. Auth → URL configuration Site URL = Pages URL; Redirect URLs include that path `/**`
+6. Google Cloud consent screen → **Testing** → add tester Gmail addresses
 
-Each Google account maps to one worksheet row via `user_id`.
+Each Google account maps to one worksheet via `user_id`.
 
 ## Admin (coach)
 
-Toolbar → **Admin**. Unlock with `VITE_ADMIN_PASSWORD`.
-
-- Dropdown of every cloud sheet
-- Submissions + full gameplan
-- **Open flowchart** for that athlete
+Toolbar → **Admin**. Unlock with `VITE_ADMIN_PASSWORD` (light gate — password is in the client build). Don’t share it with testers.
 
 ## Analysis (flowchart view)
 

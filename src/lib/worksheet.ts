@@ -154,9 +154,9 @@ export type WorksheetSeatAnswers = {
 
 export type WorksheetResponse = {
   athleteName: string
-  /** Optional; with name + PIN forms the cloud identity key. */
+  /** Optional display / legacy field; cloud identity is Google user_id. */
   athleteEmail: string
-  /** 4–6 digit PIN — kept locally; only a hash is sent to the cloud. */
+  /** Unused locally after Google Auth (kept for worksheet JSON shape). */
   pin: string
   date: string
   notes: string

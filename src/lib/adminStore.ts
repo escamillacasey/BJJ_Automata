@@ -95,17 +95,20 @@ export function listSubmissions(form: WorksheetResponse): ListedMove[] {
   )
 }
 
+export function sheetAuthLabel(pinHash: string): string {
+  if (pinHash === 'google-oauth') return 'Google'
+  if (!pinHash) return 'legacy'
+  if (pinHash.length > 12) return 'legacy PIN'
+  return `legacy (${pinHash})`
+}
+
 export function sheetOptionLabel(row: AdminSheetRow): string {
   const email = row.athleteEmail || '(no email)'
-  const pin = row.pinHash
-    ? row.pinHash.length > 12
-      ? 'PIN set'
-      : `PIN ${row.pinHash}`
-    : 'no PIN'
+  const auth = sheetAuthLabel(row.pinHash)
   const when = row.updatedAt
     ? new Date(row.updatedAt).toLocaleString()
     : 'unknown'
-  return `${row.athleteName || '(unnamed)'} · ${email} · ${row.filledMoves} moves · ${pin} · ${when}`
+  return `${row.athleteName || '(unnamed)'} · ${email} · ${row.filledMoves} moves · ${auth} · ${when}`
 }
 
 export async function fetchAllAdminSheets(): Promise<AdminSheetRow[]> {

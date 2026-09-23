@@ -131,8 +131,8 @@ export function AdminPanel({ onOpenFlowchart }: Props) {
           <p className="eyebrow">Coach view</p>
           <h2>All sheets</h2>
           <p className="muted">
-            Includes blank-PIN and empty rows. Pick a user to review gameplan and
-            finishes.
+            All cloud sheets (Google + any leftover rows). Pick one to review
+            gameplan and finishes.
           </p>
         </div>
         <div className="admin__header-actions">
@@ -207,13 +207,15 @@ export function AdminPanel({ onOpenFlowchart }: Props) {
               <dd>{selected.athleteEmail || '—'}</dd>
             </div>
             <div>
-              <dt>PIN status</dt>
+              <dt>Auth</dt>
               <dd>
-                {selected.pinHash
-                  ? selected.pinHash.length > 12
-                    ? 'Hashed PIN on file'
-                    : `Legacy/plaintext marker: ${selected.pinHash}`
-                  : 'Blank PIN (legacy — Load UI cannot open; admin can)'}
+                {selected.pinHash === 'google-oauth'
+                  ? 'Google account'
+                  : selected.pinHash
+                    ? selected.pinHash.length > 12
+                      ? 'Legacy PIN row'
+                      : `Legacy marker: ${selected.pinHash}`
+                    : 'Unlinked / legacy'}
               </dd>
             </div>
             <div>

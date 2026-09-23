@@ -207,11 +207,14 @@ export function WorksheetForm({ onGenerate }: Props) {
   }
 
   const newSheet = () => {
-    if (
-      filled > 0 &&
-      !confirm(
-        'Clear this page to a blank sheet? If you are signed in, the next autosave will overwrite your cloud sheet.',
+    if (signedIn) {
+      const ok = confirm(
+        'New sheet will blank this page and overwrite your cloud save on the next autosave. Cancel unless you mean to start over.',
       )
+      if (!ok) return
+    } else if (
+      filled > 0 &&
+      !confirm('Clear this page to a blank sheet?')
     ) {
       return
     }
@@ -231,8 +234,9 @@ export function WorksheetForm({ onGenerate }: Props) {
           <p className="eyebrow">A-game intake</p>
           <h2>Game plan worksheet</h2>
           <p>
-            Sign in with Google to save your sheet to the cloud. Edits autosave
-            while you are signed in.
+            {signedIn
+              ? 'Your sheet autosaves to this Google account. Use Flowchart when you want path analysis.'
+              : 'Sign in with Google first, then fill seats — edits autosave to your account.'}
           </p>
         </div>
         <div className="worksheet__status">
