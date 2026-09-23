@@ -1,34 +1,31 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import type { Session } from '@supabase/supabase-js'
 import type { BeltRank } from '../lib/types'
 import {
   BELT_CHOICES,
   WORKSHEET_SEATS,
   emptyWorksheet,
-  normalizeWorksheet,
   type WorksheetMove,
   type WorksheetResponse,
 } from '../lib/worksheet'
 import { countFilledMoves } from '../lib/worksheetToGraph'
 import {
-  clearCloudBind,
+  authAvailable,
+  displayNameFromUser,
+  emailFromUser,
+  signInWithGoogle,
+  signOut,
+  subscribeAuth,
+} from '../lib/auth'
+import {
   cloudAvailable,
-  createCloudWorksheet,
-  credentialsReady,
-  fetchCloudWorksheet,
-  identityKey,
-  isValidPin,
-  loadCloudBind,
   loadLocalWorksheet,
-  saveCloudBind,
+  loadOrCreateUserSheet,
   saveLocalWorksheet,
-  sameBind,
   syncStatusLabel,
-  upsertCloudWorksheet,
+  upsertUserSheet,
   type SyncStatus,
 } from '../lib/worksheetStore'
-import caseySeed from '../data/worksheet-casey.json'
-import recoveryPrimary from '../data/recovery/casey-primary-44.json'
-import recoveryPrototype from '../data/recovery/casey-prototype-48.json'
 
 type Props = {
   onGenerate: (response: WorksheetResponse) => void
@@ -37,56 +34,89 @@ type Props = {
 const LOCAL_SAVED_AT_KEY = 'bjj-automata-worksheet-saved-at'
 const SYNC_DEBOUNCE_MS = 900
 
-function initialBound(form: WorksheetResponse): boolean {
-  if (!cloudAvailable() || !credentialsReady(form)) return false
-  const bind = loadCloudBind()
-  return Boolean(bind && sameBind(bind, form))
-}
-
-function initialStatus(form: WorksheetResponse, bound: boolean): SyncStatus {
-  if (!cloudAvailable()) return 'local_only'
-  if (!form.athleteName.trim()) return 'need_credentials'
-  if (!isValidPin(form.pin ?? '')) return 'need_pin'
-  if (!bound) return 'unbound'
-  return 'synced'
-}
-
 export function WorksheetForm({ onGenerate }: Props) {
   const [form, setForm] = useState<WorksheetResponse>(loadLocalWorksheet)
-  const [bound, setBound] = useState(() => initialBound(form))
+  const [session, setSession] = useState<Session | null>(null)
+  const [authReady, setAuthReady] = useState(!authAvailable())
   const [syncStatus, setSyncStatus] = useState<SyncStatus>(() =>
-    initialStatus(form, initialBound(form)),
+    cloudAvailable() ? 'signed_out' : 'local_only',
   )
   const [busy, setBusy] = useState(false)
+  const [authError, setAuthError] = useState('')
   const filled = useMemo(() => countFilledMoves(form), [form])
   const skipNextUpsert = useRef(false)
-  const boundKeyRef = useRef(bound ? identityKey(form) : '')
+  const bootstrappedUser = useRef<string | null>(null)
 
-  // Instant local cache only (never touches cloud by itself)
+  const user = session?.user ?? null
+  const signedIn = Boolean(user)
+
+  useEffect(() => {
+    if (!authAvailable()) {
+      setAuthReady(true)
+      return
+    }
+    return subscribeAuth((next) => {
+      setSession(next)
+      setAuthReady(true)
+    })
+  }, [])
+
+  // Instant local cache
   useEffect(() => {
     saveLocalWorksheet(form)
     localStorage.setItem(LOCAL_SAVED_AT_KEY, String(Date.now()))
   }, [form])
 
-  // If name / email / PIN drift from the bound identity, stop cloud writes
-  useEffect(() => {
-    if (!bound) return
-    if (identityKey(form) === boundKeyRef.current) return
-    setBound(false)
-    boundKeyRef.current = ''
-    clearCloudBind()
-    setSyncStatus('identity_changed')
-  }, [form, bound])
-
-  // Autosave only while bound to a Create/Load session
+  // On sign-in: load or create the user's cloud sheet once per user id
   useEffect(() => {
     if (!cloudAvailable()) {
       setSyncStatus('local_only')
       return
     }
-    if (!bound) return
-    if (!credentialsReady(form)) return
-    if (identityKey(form) !== boundKeyRef.current) return
+    if (!authReady) return
+    if (!user) {
+      bootstrappedUser.current = null
+      setSyncStatus('signed_out')
+      return
+    }
+    if (bootstrappedUser.current === user.id) return
+
+    let cancelled = false
+    setBusy(true)
+    ;(async () => {
+      try {
+        const result = await loadOrCreateUserSheet(user, form)
+        if (cancelled) return
+        bootstrappedUser.current = user.id
+        skipNextUpsert.current = true
+        setForm(result.form)
+        setSyncStatus(result.status)
+        setAuthError('')
+      } catch (e) {
+        if (!cancelled) {
+          setSyncStatus('error')
+          setAuthError(e instanceof Error ? e.message : 'Could not load sheet')
+        }
+      } finally {
+        if (!cancelled) setBusy(false)
+      }
+    })()
+
+    return () => {
+      cancelled = true
+    }
+    // intentionally only when user identity changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id, authReady])
+
+  // Autosave while signed in
+  useEffect(() => {
+    if (!cloudAvailable()) {
+      setSyncStatus('local_only')
+      return
+    }
+    if (!user) return
+    if (bootstrappedUser.current !== user.id) return
     if (skipNextUpsert.current) {
       skipNextUpsert.current = false
       return
@@ -94,24 +124,13 @@ export function WorksheetForm({ onGenerate }: Props) {
 
     setSyncStatus('saving')
     const handle = window.setTimeout(() => {
-      upsertCloudWorksheet(form)
+      upsertUserSheet(user, form)
         .then(() => setSyncStatus('synced'))
         .catch(() => setSyncStatus('error'))
     }, SYNC_DEBOUNCE_MS)
 
     return () => window.clearTimeout(handle)
-  }, [form, bound])
-
-  const bindSession = (next: WorksheetResponse) => {
-    const bind = {
-      athleteName: next.athleteName.trim(),
-      athleteEmail: (next.athleteEmail ?? '').trim().toLowerCase(),
-      pin: next.pin ?? '',
-    }
-    saveCloudBind(bind)
-    boundKeyRef.current = identityKey(bind)
-    setBound(true)
-  }
+  }, [form, user])
 
   const updateMeta = (patch: Partial<WorksheetResponse>) => {
     setForm((f) => ({ ...f, ...patch }))
@@ -137,113 +156,21 @@ export function WorksheetForm({ onGenerate }: Props) {
     }))
   }
 
-  const createSheet = async () => {
-    if (!cloudAvailable()) {
-      setSyncStatus('local_only')
-      return
-    }
-    if (!form.athleteName.trim()) {
-      setSyncStatus('need_credentials')
-      return
-    }
-    if (!isValidPin(form.pin ?? '')) {
-      setSyncStatus('need_pin')
-      return
-    }
-
+  const onGoogleSignIn = async () => {
+    setAuthError('')
     setBusy(true)
-    try {
-      const result = await createCloudWorksheet(form)
-      if (result === 'exists') {
-        setSyncStatus('exists')
-        return
-      }
-      bindSession(form)
-      skipNextUpsert.current = true
-      setSyncStatus('created')
-    } catch {
-      setSyncStatus('error')
-    } finally {
+    const { error } = await signInWithGoogle()
+    if (error) {
+      setAuthError(error)
       setBusy(false)
     }
+    // On success the browser redirects to Google
   }
 
-  const loadFromCloud = async () => {
-    if (!cloudAvailable()) {
-      setSyncStatus('local_only')
-      return
-    }
-    if (!form.athleteName.trim()) {
-      setSyncStatus('need_credentials')
-      return
-    }
-    if (!isValidPin(form.pin ?? '')) {
-      setSyncStatus('need_pin')
-      return
-    }
-    if (
-      filled > 0 &&
-      !confirm(
-        'Load will replace everything on this page with the cloud sheet. Your current answers will be discarded unless already saved under another name + PIN. Continue?',
-      )
-    ) {
-      return
-    }
-
-    setBusy(true)
-    try {
-      const cloud = await fetchCloudWorksheet(
-        form.athleteName,
-        form.athleteEmail ?? '',
-        form.pin ?? '',
-      )
-      if (!cloud) {
-        setSyncStatus('not_found')
-        return
-      }
-      skipNextUpsert.current = true
-      setForm(cloud.form)
-      bindSession(cloud.form)
-      setSyncStatus('loaded')
-    } catch {
-      setSyncStatus('error')
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  const loadDemoSeed = () => {
-    if (
-      !confirm(
-        'Load demo answers into this page? Cloud is not touched until you Create or are already bound and autosave runs.',
-      )
-    ) {
-      return
-    }
-    setForm((f) => ({
-      ...normalizeWorksheet(caseySeed),
-      athleteName: f.athleteName,
-      athleteEmail: f.athleteEmail,
-      pin: f.pin,
-    }))
-  }
-
-  const loadRecovery = (which: 'primary' | 'prototype') => {
-    const raw = which === 'primary' ? recoveryPrimary : recoveryPrototype
-    const label = which === 'primary' ? 'Primary (44 moves)' : 'Prototype 1 (48 moves)'
-    if (
-      !confirm(
-        `Load recovered ${label} into this page? Then click Create or Load if you want cloud sync for that identity.`,
-      )
-    ) {
-      return
-    }
-    skipNextUpsert.current = true
-    setBound(false)
-    boundKeyRef.current = ''
-    clearCloudBind()
-    setForm(normalizeWorksheet(raw))
-    setSyncStatus(cloudAvailable() ? 'unbound' : 'local_only')
+  const onSignOut = async () => {
+    await signOut()
+    bootstrappedUser.current = null
+    setSyncStatus(cloudAvailable() ? 'signed_out' : 'local_only')
   }
 
   const downloadJson = () => {
@@ -260,12 +187,12 @@ export function WorksheetForm({ onGenerate }: Props) {
   }
 
   const clearForm = () => {
-    if (!confirm('Clear move answers? Name, email, and PIN stay.')) return
+    if (!confirm('Clear move answers? Your signed-in account stays.')) return
     setForm(
       emptyWorksheet(
         form.athleteName,
         form.athleteEmail ?? '',
-        form.pin ?? '',
+        '',
       ),
     )
   }
@@ -274,30 +201,29 @@ export function WorksheetForm({ onGenerate }: Props) {
     if (
       filled > 0 &&
       !confirm(
-        'Start a blank sheet? This clears the page and turns off cloud autosave until you Create or Load again.',
+        'Clear this page to a blank sheet? If you are signed in, the next autosave will overwrite your cloud sheet.',
       )
     ) {
       return
     }
-    clearCloudBind()
-    boundKeyRef.current = ''
-    setBound(false)
-    setForm(emptyWorksheet())
-    setSyncStatus(cloudAvailable() ? 'need_credentials' : 'local_only')
+    setForm(
+      emptyWorksheet(
+        user ? displayNameFromUser(user) : '',
+        user ? emailFromUser(user) : '',
+        '',
+      ),
+    )
   }
-
-  const credsOk = credentialsReady(form)
 
   return (
     <section className="worksheet">
       <header className="worksheet__hero">
         <div>
-          <p className="eyebrow">Prototype · A-game intake</p>
+          <p className="eyebrow">A-game intake</p>
           <h2>Game plan worksheet</h2>
           <p>
-            Cloud never writes until you <strong>Create</strong> a new sheet or{' '}
-            <strong>Load</strong> an existing one. After that, edits autosave to
-            that name + PIN only. Changing name/PIN pauses cloud save.
+            Sign in with Google to save your sheet to the cloud. Edits autosave
+            while you are signed in.
           </p>
         </div>
         <div className="worksheet__status">
@@ -308,13 +234,46 @@ export function WorksheetForm({ onGenerate }: Props) {
           <p className={`sync-status sync-status--${syncStatus}`}>
             {syncStatusLabel(syncStatus)}
           </p>
-          {bound && (
+          {signedIn && user && (
             <p className="sync-status sync-status--bound">
-              Bound · cloud autosave on
+              {emailFromUser(user)}
             </p>
           )}
         </div>
       </header>
+
+      <div className="worksheet__auth">
+        {signedIn && user ? (
+          <>
+            <p className="muted">
+              Signed in as <strong>{displayNameFromUser(user)}</strong>
+            </p>
+            <button
+              type="button"
+              className="ghost"
+              disabled={busy}
+              onClick={() => void onSignOut()}
+            >
+              Sign out
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              className="cta"
+              disabled={busy || !cloudAvailable()}
+              onClick={() => void onGoogleSignIn()}
+            >
+              {busy ? 'Redirecting…' : 'Sign in with Google'}
+            </button>
+            {!cloudAvailable() && (
+              <p className="muted">Cloud is not configured in this build.</p>
+            )}
+          </>
+        )}
+        {authError && <p className="admin__error">{authError}</p>}
+      </div>
 
       <div className="worksheet__meta">
         <label>
@@ -327,30 +286,13 @@ export function WorksheetForm({ onGenerate }: Props) {
           />
         </label>
         <label>
-          <span>Email (optional)</span>
+          <span>Email</span>
           <input
             type="email"
             value={form.athleteEmail ?? ''}
-            placeholder="you@example.com"
-            autoComplete="email"
+            placeholder="From Google when signed in"
+            readOnly={signedIn}
             onChange={(e) => updateMeta({ athleteEmail: e.target.value })}
-          />
-        </label>
-        <label>
-          <span>PIN (4–6 digits)</span>
-          <input
-            type="password"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            maxLength={6}
-            value={form.pin ?? ''}
-            placeholder="••••"
-            autoComplete="off"
-            onChange={(e) =>
-              updateMeta({
-                pin: e.target.value.replace(/\D/g, '').slice(0, 6),
-              })
-            }
           />
         </label>
         <label>
@@ -380,55 +322,23 @@ export function WorksheetForm({ onGenerate }: Props) {
         >
           Generate flowchart
         </button>
-        <button
-          type="button"
-          className="ghost ghost--emphasis"
-          disabled={!credsOk || busy}
-          onClick={() => void createSheet()}
-        >
-          {busy ? 'Working…' : 'Create cloud sheet'}
-        </button>
-        <button
-          type="button"
-          className="ghost ghost--emphasis"
-          disabled={!credsOk || busy}
-          onClick={() => void loadFromCloud()}
-        >
-          {busy ? 'Working…' : 'Load saved sheet'}
-        </button>
         <button type="button" className="ghost" onClick={newSheet}>
           New sheet
         </button>
         <button type="button" className="ghost" onClick={downloadJson}>
           Download JSON
         </button>
-        <button type="button" className="ghost" onClick={loadDemoSeed}>
-          Load demo answers
-        </button>
-        <button
-          type="button"
-          className="ghost"
-          onClick={() => loadRecovery('prototype')}
-        >
-          Recover Prototype (48)
-        </button>
-        <button
-          type="button"
-          className="ghost"
-          onClick={() => loadRecovery('primary')}
-        >
-          Recover Primary (44)
-        </button>
         <button type="button" className="ghost" onClick={clearForm}>
           Clear moves
         </button>
       </div>
 
-      <p className="worksheet__hint muted">
-        <strong>Create</strong> fails if that name + PIN already exists (use
-        Load). <strong>Load</strong> never runs by itself. Browser cache still
-        keeps this page across refresh; cloud only updates after Create/Load.
-      </p>
+      {!signedIn && cloudAvailable() && (
+        <p className="worksheet__hint muted">
+          You can fill the worksheet offline in this browser. Sign in with
+          Google when you want cloud save / restore on another device.
+        </p>
+      )}
 
       <div className="worksheet__seats">
         {WORKSHEET_SEATS.map((seat) => {

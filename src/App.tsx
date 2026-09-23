@@ -173,9 +173,8 @@ export default function App() {
 
       <footer className="footer">
         <p>
-          Finish check uses <strong>reachability to Submission</strong> (BFS) and{' '}
-          <strong>strongest A-game chains</strong> (Dijkstra on belt weights).
-          bjjgraph reference layer removed from this prototype path.
+          Analysis finds strongest finish chains (highest minimum belt) and
+          coaching limiters — weak links, funnels, and missing bridges.
         </p>
       </footer>
     </div>

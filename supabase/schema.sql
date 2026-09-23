@@ -54,6 +54,7 @@ alter table worksheets enable row level security;
 drop policy if exists "anon_select" on worksheets;
 drop policy if exists "anon_insert" on worksheets;
 drop policy if exists "anon_update" on worksheets;
+drop policy if exists "anon_delete" on worksheets;
 
 create policy "anon_select" on worksheets
   for select to anon using (true);
@@ -67,4 +68,10 @@ create policy "anon_update" on worksheets
 create policy "anon_delete" on worksheets
   for delete to anon using (true);
 
--- Rows with empty pin_hash are legacy / unusable for Load — clear or re-save with a PIN.
+-- Google Auth: one sheet per auth user (see also google-auth.sql)
+alter table worksheets
+  add column if not exists user_id uuid;
+
+create unique index if not exists worksheets_user_id_uidx
+  on worksheets (user_id)
+  where user_id is not null;

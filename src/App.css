@@ -519,9 +519,30 @@ a {
   color: var(--amber);
 }
 
-.worksheet__hint {
-  margin: -0.5rem 0 1rem;
-  max-width: 42rem;
+.worksheet__auth {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.worksheet__auth .ghost {
+  appearance: none;
+  cursor: pointer;
+  border: 1px solid rgba(232, 228, 217, 0.28);
+  background: rgba(232, 228, 217, 0.06);
+  color: var(--chalk);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.9rem;
+}
+
+.sync-status--signed_out {
+  color: var(--accent, #8a6a2f);
 }
 
 .worksheet__actions--footer {
