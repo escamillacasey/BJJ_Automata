@@ -1,0 +1,70 @@
+/** GWU No-Gi Fall Open 2026, pulled from the public SmoothComp results. */
+export const gwuNoGi2026 = {
+  source: 'smoothcomp',
+  eventId: '31977',
+  name: 'GWU No-Gi Fall Open 2026',
+  startDate: '2026-10-03',
+  url: 'https://smoothcomp.com/en/event/31977/results',
+  keywords: 'Navy Jiu Jitsu, Naval Academy, USNA',
+  /** Wins-losses counted from public brackets. Byes are left out. */
+  records: {
+    'Aimar Ng Pons': '0-2',
+    'Allison Tepper': '1-1',
+    'Bella Burgan': '2-0',
+    'Brendan Stevens': '0-2',
+    'Brody Brunner': '3-1',
+    'Cameron Fuller': '2-0',
+    'Carter Plowman': '2-2',
+    'CcChase Faamausili': '1-2',
+    'Landen Cummings-Frankmore': '4-2',
+    'Pedro Castellon': '1-2',
+    'Robert Brandmeir': '0-2',
+    'TaMarques McNeal': '4-1',
+    'Tommy Frazier': '4-0',
+    'Trevor Johnson': '2-2',
+    'Tristan Rucker': '1-3',
+    'Victor Cole Parrish': '1-1',
+  },
+  eventResults: [
+    ['Male No-Gi / Beginner (White Belt) / Adult / 145 lbs', [['Victor Cole Parrish', 'Navy Jiu Jitsu', 2]]],
+    ['Male No-Gi / Beginner (White Belt) / Adult / 170 lbs', [
+      ['Tommy Frazier', 'Navy Jiu Jitsu', 1],
+      ['Carter Plowman', 'United States Naval Academy', 7],
+      ['Trevor Johnson', 'United States Naval Academy', 7],
+      ['Tristan Rucker', 'Navy Jiu Jitsu', 9],
+    ]],
+    ['Male No-Gi / Beginner (White Belt) / Adult / 185 lbs', [['CcChase Faamausili', 'Navy Jiu Jitsu', 9]]],
+    ['Male No-Gi / Beginner (White Belt) / Adult / 215 lbs', [['Cameron Fuller', 'Navy Jiu Jitsu', 1]]],
+    ['Male No-Gi / Beginner (White Belt) / Adult / 230+ lbs', [['TaMarques McNeal', 'Navy Jiu Jitsu', 1]]],
+    ['Male No-Gi / Intermediate (Blue Belt) / Adult / 170 lbs', [['Pedro Castellon', 'Navy Jiu Jitsu', 2]]],
+    ['Male No-Gi / Intermediate (Blue Belt) / Adult / 185 lbs', [
+      ['Brendan Stevens', 'Navy Jiu Jitsu', 2],
+      ['Aimar Ng Pons', 'Navy Jiu Jitsu', 3],
+    ]],
+    ['Male No-Gi / Intermediate (Blue Belt) / Adult / 200 lbs', [
+      ['Landen Cummings-Frankmore', 'Navy Jiu Jitsu', 2],
+      ['Robert Brandmeir', 'Navy Jiu Jitsu', 5],
+    ]],
+    ['Male Absolute No-Gi / Beginner (White Belt) / Adult / Open Weight', [
+      ['Brody Brunner', 'Navy Jiu Jitsu', 1],
+      ['TaMarques McNeal', 'Navy Jiu Jitsu', 2],
+    ]],
+    ['Male Absolute No-Gi / Intermediate (Blue Belt) / Adult / Open Weight', [
+      ['Landen Cummings-Frankmore', 'Navy Jiu Jitsu', 2],
+      ['Brendan Stevens', 'Navy Jiu Jitsu', 5],
+      ['Aimar Ng Pons', 'Navy Jiu Jitsu', 5],
+      ['Brody Brunner', 'Navy Jiu Jitsu', 5],
+      ['Pedro Castellon', 'Navy Jiu Jitsu', 9],
+    ]],
+    ['Female No-Gi / Beginner (White Belt) / Adult / 125 lbs', [['Allison Tepper', 'Navy Jiu Jitsu', 2]]],
+    ['Female Absolute No-Gi / Advanced (Purple/Brown/Black Belt) / Adult / Open weight', [['Bella Burgan', 'Navy Jiu Jitsu', 1]]],
+  ].map(([division, rows]) => ({
+    group: { name: division },
+    top3: (rows as Array<[string, string, number]>).map(([name, club, placement]) => ({
+      placement,
+      club: { name: club },
+      target: { fullname: name },
+    })),
+    after3: [],
+  })),
+} as const

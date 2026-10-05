@@ -6,6 +6,7 @@ import { StateDiagram } from './components/StateDiagram'
 import { FinishInsights } from './components/FinishInsights'
 import { WorksheetForm } from './components/WorksheetForm'
 import { AdminPanel } from './components/AdminPanel'
+import { CoachLog } from './components/CoachLog'
 import {
   countFilledMoves,
   worksheetToGraph,
@@ -13,7 +14,7 @@ import {
 import type { WorksheetResponse } from './lib/worksheet'
 import './App.css'
 
-type View = 'worksheet' | 'diagram' | 'admin'
+type View = 'worksheet' | 'diagram' | 'admin' | 'coach'
 
 export default function App() {
   const [graph, setGraph] = useState<GameGraph | null>(null)
@@ -64,21 +65,32 @@ export default function App() {
   }
 
   const mainClass =
-    view === 'worksheet' || view === 'admin'
+    view === 'worksheet' || view === 'admin' || view === 'coach'
       ? 'main main--worksheet'
       : 'main'
 
   return (
     <div className="app">
-      <header className="hero">
+      <header className={view === 'coach' ? 'hero hero--solo' : 'hero'}>
         <div className="hero__brand">
-          <p className="eyebrow">A-game automata · finish-oriented</p>
+          <p className="eyebrow">
+            {view === 'coach'
+              ? 'Navy Jiu-Jitsu · Navy Junior Wrestlers'
+              : 'A-game automata · finish-oriented'}
+          </p>
           <h1>BJJ Automata</h1>
           <p className="hero__lede">
-            Worksheet seats only. Every position should flow toward Submission.
-            {graph ? ` Loaded: ${sourceLabel}.` : ' Fill the worksheet to begin.'}
+            {view === 'coach' ? (
+              'After each event, log what to maintain.'
+            ) : (
+              <>
+                Worksheet seats only. Every position should flow toward Submission.
+                {graph ? ` Loaded: ${sourceLabel}.` : ' Fill the worksheet to begin.'}
+              </>
+            )}
           </p>
         </div>
+        {view !== 'coach' && (
         <div className="hero__stats" aria-label="Graph statistics">
           {stats.map((s) => (
             <div key={s.label} className="stat">
@@ -87,6 +99,7 @@ export default function App() {
             </div>
           ))}
         </div>
+        )}
       </header>
 
       <nav className="toolbar" aria-label="Views and filters">
@@ -112,6 +125,13 @@ export default function App() {
             onClick={() => setView('admin')}
           >
             Admin
+          </button>
+          <button
+            type="button"
+            className={view === 'coach' ? 'is-active' : ''}
+            onClick={() => setView('coach')}
+          >
+            Coach log
           </button>
         </div>
         {view === 'diagram' && graph && (
@@ -141,7 +161,9 @@ export default function App() {
       </nav>
 
       <main className={mainClass}>
-        {view === 'worksheet' ? (
+        {view === 'coach' ? (
+          <CoachLog />
+        ) : view === 'worksheet' ? (
           <WorksheetForm onGenerate={onGenerateWorksheet} />
         ) : view === 'admin' ? (
           <AdminPanel onOpenFlowchart={onGenerateWorksheet} />
@@ -173,8 +195,9 @@ export default function App() {
 
       <footer className="footer">
         <p>
-          Analysis finds strongest finish chains (highest minimum belt) and
-          coaching limiters — weak links, funnels, and missing bridges.
+          {view === 'coach'
+            ? 'Sign in with Google on the coach log to save notes to the team database. Video files stay on this device.'
+            : 'Analysis finds strongest finish chains (highest minimum belt) and coaching limiters — weak links, funnels, and missing bridges.'}
         </p>
       </footer>
     </div>
