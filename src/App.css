@@ -1814,11 +1814,138 @@ a {
   }
 }
 
+.coach-summary {
+  display: grid;
+  gap: 1rem;
+  background: rgba(22, 26, 20, 0.72);
+  border: 1px solid rgba(232, 228, 217, 0.08);
+  padding: 1rem;
+}
+
+.coach-summary__tools {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.coach-summary__tools p,
+.coach-summary__sheet header p {
+  margin: 0.35rem 0 0;
+  color: var(--chalk-dim);
+}
+
+.coach-summary label {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 40rem;
+}
+
+.coach-summary label span,
+.coach-summary__sheet p span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.coach-summary__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.coach-summary__sheet header h3 {
+  color: var(--amber);
+}
+
+.coach-summary__sheet ul {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.coach-summary__sheet li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 0.8rem;
+  background: var(--mat);
+  border: 1px solid rgba(232, 228, 217, 0.1);
+}
+
+.coach-summary__sheet strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.coach-summary__sheet li > span,
+.coach-summary__sheet em {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+}
+
+.coach-summary__sheet em {
+  color: var(--amber);
+}
+
+.coach-summary__result,
+.coach-summary__sheet li p {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.coach-summary__result {
+  color: var(--chalk-dim);
+}
+
 @media (max-width: 800px) {
   .coach__layout,
   .coach-standing,
   .coach-form__meta,
   .coach-form__media {
     grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  body.is-printing-summary .hero,
+  body.is-printing-summary .toolbar,
+  body.is-printing-summary .footer,
+  body.is-printing-summary .coach__header,
+  body.is-printing-summary .coach__squads,
+  body.is-printing-summary .coach__hint,
+  body.is-printing-summary .coach__status,
+  body.is-printing-summary .coach__error,
+  body.is-printing-summary .coach__layout,
+  body.is-printing-summary .coach-summary__tools {
+    display: none !important;
+  }
+
+  body.is-printing-summary,
+  body.is-printing-summary .app,
+  body.is-printing-summary .main,
+  body.is-printing-summary .coach,
+  body.is-printing-summary .coach-summary,
+  body.is-printing-summary .coach-summary__sheet,
+  body.is-printing-summary .coach-summary__sheet li {
+    background: #fff;
+    color: #111;
+    border: 0;
+    box-shadow: none;
+  }
+
+  body.is-printing-summary .coach-summary__sheet strong,
+  body.is-printing-summary .coach-summary__sheet em,
+  body.is-printing-summary .coach-summary__sheet span {
+    color: #111;
   }
 }

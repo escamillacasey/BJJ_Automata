@@ -42,6 +42,7 @@ import {
   syncCoachLog,
 } from '../lib/coachCloud'
 import { importSmoothcompPayload, resultLine, resultSummary } from '../lib/eventResults'
+import { EventSummary } from './EventSummary'
 
 type NoteDraft = {
   maintain: string
@@ -87,6 +88,7 @@ export function CoachLog() {
   const [kindFilter, setKindFilter] = useState<'all' | EntryKind>('all')
   const [error, setError] = useState('')
   const [status, setStatus] = useState('')
+  const [showSummary, setShowSummary] = useState(false)
   const [saving, setSaving] = useState(false)
   const [user, setUser] = useState<User | null>(null)
   const [authBusy, setAuthBusy] = useState(false)
@@ -485,6 +487,13 @@ export function CoachLog() {
               {authBusy ? 'Redirecting…' : 'Sign in with Google'}
             </button>
           )}
+          <button
+            type="button"
+            className={showSummary ? 'ghost ghost--emphasis' : 'ghost'}
+            onClick={() => setShowSummary((open) => !open)}
+          >
+            Event summary
+          </button>
           <button type="button" className="ghost" onClick={exportLog}>
             Export backup
           </button>
@@ -545,6 +554,8 @@ export function CoachLog() {
           {error}
         </p>
       )}
+
+      {showSummary && <EventSummary log={data} onStatus={setStatus} />}
 
       <div className="coach__layout">
         <aside className="coach__roster">
