@@ -29,6 +29,34 @@ export const SQUADS = [
 export type SquadId = (typeof SQUADS)[number]['id']
 export type EntryKind = 'competition' | 'practice'
 
+export const JUNIOR_GROUPS = [
+  {
+    id: 'k2',
+    name: 'K-2',
+    placeholder: 'Stance, hand fight, shot to a front headlock',
+  },
+  {
+    id: 'grades-3-8',
+    name: '3-8',
+    placeholder: 'Single-leg finish, stand-up from the bottom',
+  },
+  {
+    id: 'advanced',
+    name: 'Advanced',
+    placeholder: 'Chain wrestling into a cradle, then live',
+  },
+] as const
+
+export type JuniorGroupId = (typeof JUNIOR_GROUPS)[number]['id']
+
+/** One practice day for Navy Junior Wrestling. Each group keeps its own note. */
+export type JuniorPractice = {
+  id: string
+  date: string
+  groups: Partial<Record<JuniorGroupId, string>>
+  createdAt: string
+}
+
 export type Athlete = {
   id: string
   squadId: SquadId
@@ -64,6 +92,7 @@ export type CoachEntry = {
 export type CoachLogData = {
   athletes: Athlete[]
   entries: CoachEntry[]
+  practices: JuniorPractice[]
 }
 
 export function squadById(id: SquadId) {
@@ -88,7 +117,95 @@ export function formatEntryDate(iso: string): string {
 }
 
 export function emptyLog(): CoachLogData {
-  return { athletes: [], entries: [] }
+  return { athletes: [], entries: [], practices: [] }
+}
+
+export function blankGroupNotes(): Record<JuniorGroupId, string> {
+  return { k2: '', 'grades-3-8': '', advanced: '' }
+}
+
+export function notesForPractice(
+  practice: JuniorPractice | undefined,
+): Record<JuniorGroupId, string> {
+  const notes = blankGroupNotes()
+  if (!practice) return notes
+  for (const group of JUNIOR_GROUPS) notes[group.id] = practice.groups[group.id]?.trim() ?? ''
+  return notes
+}
+
+export function compactGroupNotes(
+  notes: Record<JuniorGroupId, string>,
+): Partial<Record<JuniorGroupId, string>> {
+  const groups: Partial<Record<JuniorGroupId, string>> = {}
+  for (const group of JUNIOR_GROUPS) {
+    const text = notes[group.id].trim()
+    if (text) groups[group.id] = text
+  }
+  return groups
+}
+
+export function practiceOn(
+  practices: JuniorPractice[],
+  date: string,
+): JuniorPractice | undefined {
+  return practices.find((practice) => practice.date === date)
+}
+
+export function practicesNewest(practices: JuniorPractice[]): JuniorPractice[] {
+  return [...practices].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+}
+
+export function practicesForGroup(
+  practices: JuniorPractice[],
+  groupId: JuniorGroupId,
+): JuniorPractice[] {
+  return practicesNewest(practices).filter((practice) => (practice.groups[groupId] ?? '').trim())
+}
+
+export function practiceSnippet(text: string): string {
+  const line = text.trim().split('\n')[0] ?? ''
+  if (line.length <= 140) return line
+  return `${line.slice(0, 137)}…`
+}
+
+function isJuniorGroupId(value: string): value is JuniorGroupId {
+  return JUNIOR_GROUPS.some((group) => group.id === value)
+}
+
+function combinePractices(primary: JuniorPractice, extra: JuniorPractice): JuniorPractice {
+  const groups: Partial<Record<JuniorGroupId, string>> = { ...primary.groups }
+  for (const group of JUNIOR_GROUPS) {
+    const kept = (groups[group.id] ?? '').trim()
+    const incoming = (extra.groups[group.id] ?? '').trim()
+    const chosen = !kept ? incoming : !incoming ? kept : incoming.length > kept.length ? incoming : kept
+    if (chosen) groups[group.id] = chosen
+    else delete groups[group.id]
+  }
+  return {
+    ...primary,
+    groups,
+    createdAt: primary.createdAt <= extra.createdAt ? primary.createdAt : extra.createdAt,
+  }
+}
+
+/** Same calendar day collapses into one practice. The first list keeps its id. */
+export function mergePracticeList(
+  primary: JuniorPractice[],
+  extra: JuniorPractice[],
+): JuniorPractice[] {
+  const combined = primary.map((practice) => ({
+    ...practice,
+    groups: { ...practice.groups },
+  }))
+  for (const practice of extra) {
+    const index = combined.findIndex((item) => item.date === practice.date)
+    if (index === -1) {
+      combined.push({ ...practice, groups: { ...practice.groups } })
+      continue
+    }
+    combined[index] = combinePractices(combined[index], practice)
+  }
+  return combined
 }
 
 export function videoKey(entryId: string) {
@@ -244,7 +361,37 @@ export function parseCoachLog(raw: unknown): CoachLogData | null {
     })
   }
 
-  return { athletes, entries }
+  return { athletes, entries, practices: parsePractices(record.practices) }
+}
+
+function parsePractices(raw: unknown): JuniorPractice[] {
+  if (!Array.isArray(raw)) return []
+  const byDate = new Map<string, JuniorPractice>()
+  for (const item of raw) {
+    const row = asRecord(item)
+    if (!row || typeof row.id !== 'string') continue
+    const date = asString(row.date)
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue
+    const groupsRaw = asRecord(row.groups)
+    const groups: Partial<Record<JuniorGroupId, string>> = {}
+    if (groupsRaw) {
+      for (const [key, value] of Object.entries(groupsRaw)) {
+        if (!isJuniorGroupId(key)) continue
+        const text = asString(value).trim()
+        if (text) groups[key] = text
+      }
+    }
+    if (!JUNIOR_GROUPS.some((group) => groups[group.id])) continue
+    const practice: JuniorPractice = {
+      id: row.id,
+      date,
+      groups,
+      createdAt: asString(row.createdAt) || new Date(0).toISOString(),
+    }
+    const existing = byDate.get(date)
+    byDate.set(date, existing ? combinePractices(existing, practice) : practice)
+  }
+  return [...byDate.values()]
 }
 
 function openDb(): Promise<IDBDatabase> {

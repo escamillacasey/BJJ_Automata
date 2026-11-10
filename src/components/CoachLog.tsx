@@ -29,6 +29,7 @@ import {
   type SquadId,
 } from '../lib/coachStore'
 import { gwuNoGi2026 } from '../data/gwuNoGi2026'
+import { seedJuniorPractices } from '../data/juniorPracticeSeed'
 import {
   displayNameFromUser,
   signInWithGoogle,
@@ -43,6 +44,7 @@ import {
 } from '../lib/coachCloud'
 import { importSmoothcompPayload, resultLine, resultSummary } from '../lib/eventResults'
 import { EventSummary } from './EventSummary'
+import { PracticeBoard } from './PracticeBoard'
 
 type NoteDraft = {
   maintain: string
@@ -70,7 +72,20 @@ function newId() {
   return crypto.randomUUID()
 }
 
-export function CoachLog() {
+export function CoachLog({
+  focus = 'roster',
+  onFocus,
+}: {
+  focus?: 'roster' | 'practices'
+  onFocus?: (focus: 'roster' | 'practices') => void
+}) {
+  const [focusState, setFocusState] = useState<'roster' | 'practices'>(focus)
+  const mode = onFocus ? focus : focusState
+
+  function setMode(next: 'roster' | 'practices') {
+    setFocusState(next)
+    onFocus?.(next)
+  }
   const [data, setData] = useState<CoachLogData>(loadCoachLog)
   const [squadId, setSquadId] = useState<SquadId>('navy-bjj')
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -107,11 +122,15 @@ export function CoachLog() {
 
   useEffect(() => {
     const seeded = importSmoothcompPayload(gwuNoGi2026)
-    const local = loadCoachLog()
-    if (seeded.changed) {
-      setData(local)
-      setSquadId('navy-bjj')
-      setStatus(seeded.message)
+    const practicesAdded = seedJuniorPractices()
+    if (seeded.changed || practicesAdded) {
+      setData(loadCoachLog())
+      if (seeded.changed) {
+        setSquadId('navy-bjj')
+        setStatus(seeded.message)
+      } else {
+        setStatus('Logged junior practices for 2, 3, 5, and 9 Nov.')
+      }
       setError('')
     }
     if (!user || !coachCloudAvailable()) return
@@ -196,6 +215,7 @@ export function CoachLog() {
   }
 
   function selectSquad(id: SquadId) {
+    setMode('roster')
     setSquadId(id)
     setError('')
     setStatus('')
@@ -268,6 +288,7 @@ export function CoachLog() {
     try {
       await Promise.all(doomed.map((entry) => deleteEntryMedia(entry.id)))
       commit({
+        ...data,
         athletes: data.athletes.filter((athlete) => athlete.id !== selected.id),
         entries: data.entries.filter((entry) => entry.athleteId !== selected.id),
       })
@@ -464,12 +485,17 @@ export function CoachLog() {
       <header className="coach__header">
         <div>
           <p className="eyebrow">
-            {user ? `Signed in as ${displayNameFromUser(user)}` : 'Both squads'}
+            {mode === 'practices'
+              ? 'Navy Junior Wrestling'
+              : user
+                ? `Signed in as ${displayNameFromUser(user)}`
+                : 'Both squads'}
           </p>
-          <h2>Coach log</h2>
+          <h2>{mode === 'practices' ? 'Practice log' : 'Coach log'}</h2>
           <p>
-            After a competition or practice, write what to maintain. Attach a
-            photo or video when you have one.
+            {mode === 'practices'
+              ? 'Write what K-2, 3-8, and Advanced did. Each group keeps its own history, so you can see what you have already covered.'
+              : 'After a competition or practice, write what to maintain. Attach a photo or video when you have one.'}
           </p>
         </div>
         <div className="coach__header-actions">
@@ -518,16 +544,17 @@ export function CoachLog() {
         </div>
       </header>
 
-      <div className="coach__squads" role="tablist" aria-label="Squads">
+      <div className="coach__squads" role="tablist" aria-label="Logs">
         {SQUADS.map((item) => {
           const count = data.athletes.filter((athlete) => athlete.squadId === item.id).length
+          const selected = mode === 'roster' && squadId === item.id
           return (
             <button
               key={item.id}
               type="button"
               role="tab"
-              aria-selected={squadId === item.id}
-              className={squadId === item.id ? 'is-active' : ''}
+              aria-selected={selected}
+              className={selected ? 'is-active' : ''}
               onClick={() => selectSquad(item.id)}
             >
               {item.name}
@@ -535,14 +562,30 @@ export function CoachLog() {
             </button>
           )
         })}
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === 'practices'}
+          className={mode === 'practices' ? 'is-active' : ''}
+          onClick={() => setMode('practices')}
+        >
+          Junior practices
+          <span>{data.practices.length}</span>
+        </button>
       </div>
 
       <p className="coach__hint">
-        {user
-          ? 'Notes save to the team database while you are signed in. Video files stay on this device and are not in the backup.'
-          : coachCloudAvailable()
-            ? 'Sign in with Google to save these notes to the team database. Until then they stay on this browser. Video files stay on this device.'
-            : 'Cloud sign-in is not configured in this build. Notes stay on this browser. Video files stay on this device and are not in the backup.'}
+        {mode === 'practices'
+          ? user
+            ? 'Practice notes save to the team database while you are signed in.'
+            : coachCloudAvailable()
+              ? 'Sign in with Google to save practice notes to the team database. Until then they stay on this browser.'
+              : 'Cloud sign-in is not configured in this build. Practice notes stay on this browser.'
+          : user
+            ? 'Notes save to the team database while you are signed in. Video files stay on this device and are not in the backup.'
+            : coachCloudAvailable()
+              ? 'Sign in with Google to save these notes to the team database. Until then they stay on this browser. Video files stay on this device.'
+              : 'Cloud sign-in is not configured in this build. Notes stay on this browser. Video files stay on this device and are not in the backup.'}
       </p>
       {status && (
         <p className="coach__status" aria-live="polite">
@@ -557,6 +600,14 @@ export function CoachLog() {
 
       {showSummary && <EventSummary log={data} onStatus={setStatus} />}
 
+      {mode === 'practices' ? (
+        <PracticeBoard
+          data={data}
+          onCommit={commit}
+          onStatus={setStatus}
+          onError={setError}
+        />
+      ) : (
       <div className="coach__layout">
         <aside className="coach__roster">
           <h3>{squad.name}</h3>
@@ -953,6 +1004,7 @@ export function CoachLog() {
           )}
         </div>
       </div>
+      )}
     </section>
   )
 }

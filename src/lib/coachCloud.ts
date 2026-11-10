@@ -1,4 +1,5 @@
 import {
+  mergePracticeList,
   parseCoachLog,
   saveCoachLog,
   type Athlete,
@@ -110,7 +111,11 @@ export function mergeCoachLogs(local: CoachLogData, remote: CoachLogData): Coach
     take(entry, athleteId, true)
   }
 
-  return { athletes, entries: [...entries.values()] }
+  return {
+    athletes,
+    entries: [...entries.values()],
+    practices: mergePracticeList(remote.practices, local.practices),
+  }
 }
 
 function fingerprint(log: CoachLogData): string {
@@ -136,7 +141,18 @@ function fingerprint(log: CoachLogData): string {
       ].join('|'),
     )
     .sort()
-  return JSON.stringify({ athletes, entries })
+  const practices = [...log.practices]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map((practice) =>
+      [
+        practice.id,
+        practice.date,
+        practice.groups.k2 ?? '',
+        practice.groups['grades-3-8'] ?? '',
+        practice.groups.advanced ?? '',
+      ].join('|'),
+    )
+  return JSON.stringify({ athletes, entries, practices })
 }
 
 async function readTeamLog(): Promise<CoachLogData | null> {

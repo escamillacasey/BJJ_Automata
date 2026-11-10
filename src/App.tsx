@@ -15,11 +15,13 @@ import type { WorksheetResponse } from './lib/worksheet'
 import './App.css'
 
 type View = 'worksheet' | 'diagram' | 'admin' | 'coach'
+type CoachFocus = 'roster' | 'practices'
 
 export default function App() {
   const [graph, setGraph] = useState<GameGraph | null>(null)
   const [sourceLabel, setSourceLabel] = useState('no worksheet yet')
   const [view, setView] = useState<View>('worksheet')
+  const [coachFocus, setCoachFocus] = useState<CoachFocus>('roster')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [highlightIds, setHighlightIds] = useState<string[]>([])
   const [weighted, setWeighted] = useState(true)
@@ -74,13 +76,17 @@ export default function App() {
       <header className={view === 'coach' ? 'hero hero--solo' : 'hero'}>
         <div className="hero__brand">
           <p className="eyebrow">
-            {view === 'coach'
-              ? 'Navy Jiu-Jitsu · Navy Junior Wrestlers'
-              : 'A-game automata · finish-oriented'}
+            {view === 'coach' && coachFocus === 'practices'
+              ? 'Navy Junior Wrestling'
+              : view === 'coach'
+                ? 'Navy Jiu-Jitsu · Navy Junior Wrestlers'
+                : 'A-game automata · finish-oriented'}
           </p>
           <h1>BJJ Automata</h1>
           <p className="hero__lede">
-            {view === 'coach' ? (
+            {view === 'coach' && coachFocus === 'practices' ? (
+              'Log what K-2, 3-8, and Advanced did at practice.'
+            ) : view === 'coach' ? (
               'After each event, log what to maintain.'
             ) : (
               <>
@@ -128,10 +134,23 @@ export default function App() {
           </button>
           <button
             type="button"
-            className={view === 'coach' ? 'is-active' : ''}
-            onClick={() => setView('coach')}
+            className={view === 'coach' && coachFocus === 'roster' ? 'is-active' : ''}
+            onClick={() => {
+              setCoachFocus('roster')
+              setView('coach')
+            }}
           >
             Coach log
+          </button>
+          <button
+            type="button"
+            className={view === 'coach' && coachFocus === 'practices' ? 'is-active' : ''}
+            onClick={() => {
+              setCoachFocus('practices')
+              setView('coach')
+            }}
+          >
+            Practices
           </button>
         </div>
         {view === 'diagram' && graph && (
@@ -162,7 +181,7 @@ export default function App() {
 
       <main className={mainClass}>
         {view === 'coach' ? (
-          <CoachLog />
+          <CoachLog focus={coachFocus} onFocus={setCoachFocus} />
         ) : view === 'worksheet' ? (
           <WorksheetForm onGenerate={onGenerateWorksheet} />
         ) : view === 'admin' ? (
@@ -195,9 +214,11 @@ export default function App() {
 
       <footer className="footer">
         <p>
-          {view === 'coach'
-            ? 'Sign in with Google on the coach log to save notes to the team database. Video files stay on this device.'
-            : 'Analysis finds strongest finish chains (highest minimum belt) and coaching limiters — weak links, funnels, and missing bridges.'}
+          {view === 'coach' && coachFocus === 'practices'
+            ? 'Junior practice notes save with the coach log. Sign in with Google to keep them in the team database.'
+            : view === 'coach'
+              ? 'Sign in with Google on the coach log to save notes to the team database. Video files stay on this device.'
+              : 'Analysis finds strongest finish chains (highest minimum belt) and coaching limiters — weak links, funnels, and missing bridges.'}
         </p>
       </footer>
     </div>

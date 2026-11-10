@@ -1907,11 +1907,91 @@ a {
   color: var(--chalk-dim);
 }
 
+.practice-board {
+  display: grid;
+  gap: 1rem;
+}
+
+.practice-groups,
+.practice-form__groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.practice-group {
+  appearance: none;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  min-height: 8.5rem;
+  background: rgba(22, 26, 20, 0.72);
+  border: 1px solid rgba(232, 228, 217, 0.08);
+  color: inherit;
+  padding: 0.9rem 1rem;
+}
+
+.practice-group.is-active {
+  border-color: rgba(212, 160, 23, 0.65);
+  box-shadow: inset 0 -2px 0 var(--amber);
+}
+
+.practice-group__name {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.practice-group__when {
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.practice-group__did {
+  color: var(--chalk-dim);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.4;
+}
+
+.practice-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.practice-form h3 {
+  color: var(--amber);
+}
+
+.practice-form__lead {
+  margin: 0;
+  color: var(--chalk-dim);
+}
+
+.practice-form__date {
+  max-width: 16rem;
+}
+
+.practice-form label > span {
+  color: var(--amber);
+}
+
 @media (max-width: 800px) {
   .coach__layout,
   .coach-standing,
   .coach-form__meta,
-  .coach-form__media {
+  .coach-form__media,
+  .practice-groups,
+  .practice-form__groups {
     grid-template-columns: 1fr;
   }
 }
@@ -1926,6 +2006,7 @@ a {
   body.is-printing-summary .coach__status,
   body.is-printing-summary .coach__error,
   body.is-printing-summary .coach__layout,
+  body.is-printing-summary .practice-board,
   body.is-printing-summary .coach-summary__tools {
     display: none !important;
   }

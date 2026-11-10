@@ -388,7 +388,7 @@ export function applyEventImport(
     entries.push(created)
   }
 
-  return { log: { athletes, entries }, firstAthleteId, added, updated }
+  return { log: { ...log, athletes, entries }, firstAthleteId, added, updated }
 }
 
 export function notesForEvent(
